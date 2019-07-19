@@ -49,7 +49,7 @@ function parseUserInfoData(buf) {
         friendsId,
         friendsName,
         fakePlayer,
-        isHltv,
+        isHltv
     };
 }
 /**
@@ -65,7 +65,7 @@ class StringTables extends events_1.EventEmitter {
          * objects.
          */
         this.userDataCallbacks = {
-            userinfo: parseUserInfoData,
+            userinfo: parseUserInfoData
         };
     }
     listen(messageEvents) {
@@ -103,7 +103,7 @@ class StringTables extends events_1.EventEmitter {
                 table,
                 entryIndex,
                 entry,
-                userData,
+                userData
             });
         }
         // parse client-side entries
@@ -169,9 +169,7 @@ class StringTables extends events_1.EventEmitter {
             if (bitbuf.readOneBit()) {
                 // don't read the length, it's fixed length and the length was networked down already
                 if (table.userDataFixedSize) {
-                    const userDataArray = [
-                        bitbuf.readUBits(table.userDataSizeBits),
-                    ];
+                    const userDataArray = [bitbuf.readUBits(table.userDataSizeBits)];
                     userData = Buffer.from(userDataArray);
                 }
                 else {
@@ -195,7 +193,7 @@ class StringTables extends events_1.EventEmitter {
                 table,
                 entryIndex,
                 entry,
-                userData,
+                userData
             });
             return entryIndex;
         }, -1);
@@ -203,8 +201,7 @@ class StringTables extends events_1.EventEmitter {
     _handleCreateStringTable(msg) {
         const bitbuf = bitbuffer_1.BitStream.from(msg.stringData);
         // table shouldn't already exist
-        assert_1.default(this.findTableByName(msg.name) ===
-            undefined, "table already exists");
+        assert_1.default(this.findTableByName(msg.name) === undefined, "table already exists");
         assert_1.default(msg.userDataSize === Math.ceil(msg.userDataSizeBits / 8), "invalid user data byte size");
         assert_1.default(msg.userDataSizeBits <= 32, "userdata value too large");
         // create an empty table
@@ -213,7 +210,7 @@ class StringTables extends events_1.EventEmitter {
             entries: [],
             userDataSizeBits: msg.userDataSizeBits,
             userDataFixedSize: msg.userDataFixedSize,
-            maxEntries: msg.maxEntries,
+            maxEntries: msg.maxEntries
         };
         this.emit("create", table);
         this._parseStringTableUpdate(bitbuf, table, msg.numEntries);

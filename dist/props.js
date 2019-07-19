@@ -142,7 +142,7 @@ function makeVectorDecoder(sendProp) {
         const v = {
             x: floatDecode(bitbuf),
             y: floatDecode(bitbuf),
-            z: 0.0,
+            z: 0.0
         };
         if (isNormal) {
             const signBit = bitbuf.readOneBit();
@@ -168,7 +168,7 @@ function makeVectorXYDecoder(sendProp) {
     return bitbuf => ({
         x: floatDecode(bitbuf),
         y: floatDecode(bitbuf),
-        z: 0.0,
+        z: 0.0
     });
 }
 function makeStringDecoder(_sendProp) {

@@ -127,9 +127,7 @@ bit_buffer_1.BitStream.prototype.readBitCoordMP = function (coordType) {
         value =
             intval +
                 fractval *
-                    (lowPrecision
-                        ? COORD_RESOLUTION_LOWPRECISION
-                        : COORD_RESOLUTION);
+                    (lowPrecision ? COORD_RESOLUTION_LOWPRECISION : COORD_RESOLUTION);
     }
     if (signbit) {
         value = -value;
@@ -162,9 +160,7 @@ bit_buffer_1.BitStream.prototype.readBitCellCoord = function (bits, coordType) {
         value =
             intval +
                 fractval *
-                    (lowPrecision
-                        ? COORD_RESOLUTION_LOWPRECISION
-                        : COORD_RESOLUTION);
+                    (lowPrecision ? COORD_RESOLUTION_LOWPRECISION : COORD_RESOLUTION);
     }
     return value;
 };

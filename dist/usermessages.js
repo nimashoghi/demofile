@@ -31,7 +31,7 @@ class UserMessages extends events_1.EventEmitter {
             this.emit(um.name, msgInst);
             this.emit("message", {
                 name: um.name,
-                msg: msgInst,
+                msg: msgInst
             });
         }
     }

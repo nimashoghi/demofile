@@ -56,7 +56,7 @@ import { UserMessages } from "./usermessages";
 
 export { GameRules } from "./entities/gamerules";
 export { Player } from "./entities/player";
-export { Team } from "./entities/team";
+export { Team, TeamNumber } from "./entities/team";
 export { parseBinaryKeyValues } from "./keyvalues";
 
 interface IDemoHeader {

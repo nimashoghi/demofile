@@ -5,11 +5,10 @@
 
 import ansiStyles from "ansi-styles";
 import assert from "assert";
+import * as demo from "demofile";
+import { Player, TeamNumber } from "demofile";
 import fs from "fs";
 import util from "util";
-import * as demo from "../demo";
-import { Player } from "../entities/player";
-import { TeamNumber } from "../entities/team";
 
 const colourReplacements = [
   { pattern: /\x01/g, ansi: ansiStyles.whiteBright.open }, // Default

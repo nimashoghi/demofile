@@ -81,7 +81,7 @@ class Entities extends events_1.default {
             DT_Team: team_1.Team,
             DT_CSGameRules: gamerules_1.GameRules,
             DT_WeaponCSBase: weapon_1.Weapon,
-            DT_BaseEntity: baseentity_1.BaseEntity,
+            DT_BaseEntity: baseentity_1.BaseEntity
         };
         this._demo = null;
         this._singletonEnts = {};
@@ -177,7 +177,7 @@ class Entities extends events_1.default {
         return entity;
     }
     findAllWithTable(table) {
-        return this.entities.filter((ent) => ent != null ? table in ent.props : false);
+        return this.entities.filter((ent) => (ent != null ? table in ent.props : false));
     }
     findAllWithClass(klass) {
         return this.entities.filter(ent => (ent ? ent instanceof klass : false));
@@ -206,7 +206,7 @@ class Entities extends events_1.default {
                 name,
                 dtName,
                 dataTable,
-                flattenedProps: this._flattenDataTable(dataTable),
+                flattenedProps: this._flattenDataTable(dataTable)
             };
             this.serverClasses.push(serverClass);
             // parse any pending baseline
@@ -216,7 +216,7 @@ class Entities extends events_1.default {
                 this.emit("baselineupdate", {
                     classId,
                     serverClass,
-                    baseline: this.instanceBaselines[classId],
+                    baseline: this.instanceBaselines[classId]
                 });
                 delete this.pendingBaselines[classId];
             }
@@ -260,10 +260,8 @@ class Entities extends events_1.default {
                 flattened.push({
                     prop,
                     table,
-                    decode: props_1.makeDecoder(prop, prop.type === 5 /* Array */
-                        ? table.props[index - 1]
-                        : undefined),
-                    collapsible: true,
+                    decode: props_1.makeDecoder(prop, prop.type === 5 /* Array */ ? table.props[index - 1] : undefined),
+                    collapsible: true
                 });
             }
         }
@@ -284,8 +282,7 @@ class Entities extends events_1.default {
                 for (currentProp = start; currentProp < flattenedProps.length; ++currentProp) {
                     const prop = flattenedProps[currentProp].prop;
                     if (prop.priority === priority ||
-                        (priority === 64 &&
-                            (prop.flags & props_1.SPROP_CHANGES_OFTEN) !== 0)) {
+                        (priority === 64 && (prop.flags & props_1.SPROP_CHANGES_OFTEN) !== 0)) {
                         if (start !== currentProp) {
                             const temp = flattenedProps[start];
                             flattenedProps[start] = flattenedProps[currentProp];
@@ -348,7 +345,7 @@ class Entities extends events_1.default {
             assert_1.default(flattenedProp);
             updatedProps.push({
                 prop: flattenedProp,
-                value: flattenedProp.decode(entityBitBuffer),
+                value: flattenedProp.decode(entityBitBuffer)
             });
         }
         return updatedProps;
@@ -366,7 +363,7 @@ class Entities extends events_1.default {
                 tableName,
                 varName,
                 oldValue,
-                newValue: update.value,
+                newValue: update.value
             });
         }
     }
@@ -375,7 +372,7 @@ class Entities extends events_1.default {
             const tableName = update.prop.table.netTableName;
             const varName = update.prop.prop.varName;
             target[tableName] = Object.assign(target[tableName] || {}, {
-                [varName]: update.value,
+                [varName]: update.value
             });
         }
         return target;
@@ -391,8 +388,7 @@ class Entities extends events_1.default {
             }
             if (entityBitBuffer.readOneBit()) {
                 // TODO: figure out why this is the server class - 1
-                lastClassId =
-                    entityBitBuffer.readUBits(this.serverClassBits) - 1;
+                lastClassId = entityBitBuffer.readUBits(this.serverClassBits) - 1;
                 const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
                 lastProps = this._updatesToPropObject({}, updates);
             }
@@ -406,7 +402,7 @@ class Entities extends events_1.default {
                 delay: fireDelay,
                 classId: lastClassId,
                 serverClass: this.serverClasses[lastClassId],
-                props: lastProps,
+                props: lastProps
             });
         }
     }
@@ -436,7 +432,7 @@ class Entities extends events_1.default {
                 const newEnt = this._addEntity(entityIndex, classId, serialNum);
                 this._readNewEntity(entityBitBuffer, newEnt);
                 this.emit("postcreate", {
-                    entity: newEnt,
+                    entity: newEnt
                 });
             }
             else {
@@ -476,7 +472,7 @@ class Entities extends events_1.default {
         this.emit("baselineupdate", {
             classId,
             serverClass: this.serverClasses[classId],
-            baseline,
+            baseline
         });
     }
 }

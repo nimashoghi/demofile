@@ -8,7 +8,12 @@
     ],
     "strict": true,
     "outDir": "./dist",
-    "allowJs": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    // "allowJs": true,
     "target": "es2017",
     "lib": ["es2017"],
     "module": "commonjs",

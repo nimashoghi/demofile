@@ -1,6 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const assert = require("assert");
+const assert_1 = __importDefault(require("assert"));
 const bit_buffer_1 = require("bit-buffer");
 exports.BitStream = bit_buffer_1.BitStream;
 exports.BitView = bit_buffer_1.BitView;
@@ -58,15 +61,15 @@ bit_buffer_1.BitStream.prototype.readUBitVar = function () {
     switch (ret & (16 | 32)) {
         case 16:
             ret = (ret & 15) | (this.readUBits(4) << 4);
-            assert(ret >= 16);
+            assert_1.default(ret >= 16);
             break;
         case 32:
             ret = (ret & 15) | (this.readUBits(8) << 4);
-            assert(ret >= 256);
+            assert_1.default(ret >= 256);
             break;
         case 48:
             ret = (ret & 15) | (this.readUBits(32 - 4) << 4);
-            assert(ret >= 4096);
+            assert_1.default(ret >= 4096);
             break;
     }
     return ret;
@@ -124,7 +127,9 @@ bit_buffer_1.BitStream.prototype.readBitCoordMP = function (coordType) {
         value =
             intval +
                 fractval *
-                    (lowPrecision ? COORD_RESOLUTION_LOWPRECISION : COORD_RESOLUTION);
+                    (lowPrecision
+                        ? COORD_RESOLUTION_LOWPRECISION
+                        : COORD_RESOLUTION);
     }
     if (signbit) {
         value = -value;
@@ -157,7 +162,9 @@ bit_buffer_1.BitStream.prototype.readBitCellCoord = function (bits, coordType) {
         value =
             intval +
                 fractval *
-                    (lowPrecision ? COORD_RESOLUTION_LOWPRECISION : COORD_RESOLUTION);
+                    (lowPrecision
+                        ? COORD_RESOLUTION_LOWPRECISION
+                        : COORD_RESOLUTION);
     }
     return value;
 };

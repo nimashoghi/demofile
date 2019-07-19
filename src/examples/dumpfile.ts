@@ -3,11 +3,11 @@
 // This file is an thorough example of how to log player kills,
 // team scores, chat text and server cvar changes from a demo file.
 
-import ansiStyles = require("ansi-styles");
-import assert = require("assert");
-import fs = require("fs");
-import util = require("util");
-import demo = require("../demo");
+import ansiStyles from "ansi-styles";
+import assert from "assert";
+import fs from "fs";
+import util from "util";
+import * as demo from "../demo";
 import { Player } from "../entities/player";
 import { TeamNumber } from "../entities/team";
 
@@ -129,7 +129,7 @@ function parseDemoFile(path: string) {
     });
 
     demoFile.userMessages.on("TextMsg", e => {
-      const params = e.params
+      const [msgText, ...params] = e.params
         .map(
           param =>
             param[0] === "#"
@@ -138,7 +138,7 @@ function parseDemoFile(path: string) {
         )
         .filter(s => s.length);
 
-      const formatted = util.format.apply(null, params);
+      const formatted = util.format(msgText, ...params);
       console.log(formatSayText(0, formatted));
     });
 
@@ -150,7 +150,7 @@ function parseDemoFile(path: string) {
       const nonEmptyParams = e.params.filter(s => s.length);
       const msgText = standardMessages[e.msgName];
       const formatted = msgText
-        ? util.format.apply(null, [msgText].concat(nonEmptyParams))
+        ? util.format(msgText, ...nonEmptyParams)
         : `${e.msgName} ${nonEmptyParams.join(" ")}`;
 
       console.log(formatSayText(e.entIdx, formatted));

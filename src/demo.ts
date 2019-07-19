@@ -1,19 +1,14 @@
+import assert from "assert";
+import ByteBuffer from "bytebuffer";
 import { EventEmitter } from "events";
 import * as timers from "timers";
-
-import * as ByteBuffer from "bytebuffer";
-import { BitStream } from "./ext/bitbuffer";
-
-import assert = require("assert");
 import { MAX_OSPATH } from "./consts";
 import { ConVars } from "./convars";
 import { Entities } from "./entities";
-export { GameRules } from "./entities/gamerules";
-export { Player } from "./entities/player";
-export { Team } from "./entities/team";
 import { GameRules } from "./entities/gamerules";
 import { Player } from "./entities/player";
 import { Team } from "./entities/team";
+import { BitStream } from "./ext/bitbuffer";
 import { GameEvents } from "./gameevents";
 import * as net from "./net";
 import { NetMessageName } from "./net";
@@ -58,6 +53,10 @@ import {
 } from "./protobufs/netmessages";
 import { StringTables } from "./stringtables";
 import { UserMessages } from "./usermessages";
+
+export { GameRules } from "./entities/gamerules";
+export { Player } from "./entities/player";
+export { Team } from "./entities/team";
 export { parseBinaryKeyValues } from "./keyvalues";
 
 interface IDemoHeader {
@@ -427,7 +426,7 @@ export class DemoFile extends EventEmitter {
 
   private _bytebuf!: ByteBuffer;
   private _lastThreadYieldTime = 0;
-  private _immediateTimerToken: NodeJS.Timer | null = null;
+  private _immediateTimerToken: NodeJS.Immediate | null = null;
   private _timeoutTimerToken: NodeJS.Timer | null = null;
 
   /**

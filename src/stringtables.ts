@@ -1,8 +1,8 @@
-import * as assert from "assert";
-import * as ByteBuffer from "bytebuffer";
+import assert from "assert";
+import ByteBuffer from "bytebuffer";
 import { EventEmitter } from "events";
 import * as _ from "lodash";
-import * as Long from "long";
+import Long from "long";
 import assertExists from "./assert-exists";
 import * as consts from "./consts";
 import { MAX_PLAYER_NAME_LENGTH, SIGNED_GUID_LEN } from "./consts";

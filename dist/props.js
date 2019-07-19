@@ -1,8 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const assert = require("assert");
-const Long = require("long");
-const assert_exists_1 = require("./assert-exists");
+const assert_1 = __importDefault(require("assert"));
+const long_1 = __importDefault(require("long"));
+const assert_exists_1 = __importDefault(require("./assert-exists"));
 const consts_1 = require("./consts");
 const entityhandle_1 = require("./entityhandle");
 const bitbuffer_1 = require("./ext/bitbuffer");
@@ -29,7 +32,7 @@ exports.SPROP_VARINT = 1 << 19; // use var int encoded (google protobuf style), 
 const DT_MAX_STRING_BITS = 9;
 function makeDecoder(sendProp, arrayElementProp) {
     const type = sendProp.type;
-    assert(type !== 6 /* DataTable */);
+    assert_1.default(type !== 6 /* DataTable */);
     if (type === 5 /* Array */) {
         return makeArrayDecoder(sendProp, assert_exists_1.default(arrayElementProp, "array prop with no element prop"));
     }
@@ -139,7 +142,7 @@ function makeVectorDecoder(sendProp) {
         const v = {
             x: floatDecode(bitbuf),
             y: floatDecode(bitbuf),
-            z: 0.0
+            z: 0.0,
         };
         if (isNormal) {
             const signBit = bitbuf.readOneBit();
@@ -165,7 +168,7 @@ function makeVectorXYDecoder(sendProp) {
     return bitbuf => ({
         x: floatDecode(bitbuf),
         y: floatDecode(bitbuf),
-        z: 0.0
+        z: 0.0,
     });
 }
 function makeStringDecoder(_sendProp) {
@@ -191,7 +194,7 @@ function makeInt64Decoder(sendProp) {
             return bitbuf => {
                 const lowInt = bitbuf.readUBits(32);
                 const highInt = bitbuf.readUBits(highBits);
-                return Long.fromBits(lowInt, highInt, false);
+                return long_1.default.fromBits(lowInt, highInt, false);
             };
         }
         else {
@@ -199,7 +202,7 @@ function makeInt64Decoder(sendProp) {
                 const neg = bitbuf.readOneBit();
                 const lowInt = bitbuf.readUBits(32);
                 const highInt = bitbuf.readUBits(highBits - 1);
-                return Long.fromBits(lowInt, highInt, !neg);
+                return long_1.default.fromBits(lowInt, highInt, !neg);
             };
         }
     }

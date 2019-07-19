@@ -1,8 +1,8 @@
 // tslint:disable:no-console
 
-import assert = require("assert");
-import fs = require("fs");
-import _ = require("lodash");
+import assert from "assert";
+import fs from "fs";
+import * as _ from "lodash";
 import { NUM_NETWORKED_EHANDLE_BITS } from "../consts";
 import { DemoFile } from "../demo";
 import {

@@ -1,14 +1,8 @@
-import assert = require("assert");
-import EventEmitter = require("events");
-import _ = require("lodash");
-
+import assert from "assert";
+import EventEmitter from "events";
+import * as _ from "lodash";
 import assertExists from "./assert-exists";
-import { BitStream } from "./ext/bitbuffer";
-
-import consts = require("./consts");
-import functional = require("./functional");
-import net = require("./net");
-
+import * as consts from "./consts";
 import { DemoFile } from "./demo";
 import { BaseEntity } from "./entities/baseentity";
 import { GameRules } from "./entities/gamerules";
@@ -17,6 +11,9 @@ import { Player } from "./entities/player";
 import { Team } from "./entities/team";
 import { Weapon } from "./entities/weapon";
 import { EntityHandle } from "./entityhandle";
+import { BitStream } from "./ext/bitbuffer";
+import * as functional from "./functional";
+import * as net from "./net";
 import {
   makeDecoder,
   PropType,
@@ -503,7 +500,7 @@ export class Entities extends EventEmitter {
 
       if (prop.type === PropType.DataTable) {
         const subTable = assertExists(this._findTableByName(prop.dtName));
-        excludes.push.apply(excludes, this._gatherExcludes(subTable));
+        excludes.push(...this._gatherExcludes(subTable));
       }
     }
 
@@ -537,7 +534,7 @@ export class Entities extends EventEmitter {
           }
         }
 
-        flattened.push.apply(flattened, childProps);
+        flattened.push(...childProps);
       } else {
         flattened.push({
           prop,

@@ -1,15 +1,25 @@
 "use strict";
 // tslint:disable:no-console
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const assert = require("assert");
-const fs = require("fs");
-const _ = require("lodash");
+const assert_1 = __importDefault(require("assert"));
+const fs_1 = __importDefault(require("fs"));
+const _ = __importStar(require("lodash"));
 const consts_1 = require("../consts");
 const demo_1 = require("../demo");
 const props_1 = require("../props");
 function parseDemoFile(path) {
-    fs.readFile(path, (err, buffer) => {
-        assert.ifError(err);
+    fs_1.default.readFile(path, (err, buffer) => {
+        assert_1.default.ifError(err);
         const demoFile = new demo_1.DemoFile();
         demoFile.entities.on("datatablesready", () => {
             console.log("// DO NOT MODIFY!");

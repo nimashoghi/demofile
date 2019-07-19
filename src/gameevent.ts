@@ -1,5 +1,6 @@
-import assert = require("assert");
-import _ = require("lodash");
+import assert from "assert";
+import * as _ from "lodash";
+import Long from "long";
 import {
   CSVCMsg_GameEventList,
   ICSVCMsg_GameEvent
@@ -18,7 +19,16 @@ export class GameEvent {
     this.keyNames = descriptor.keys.map(key => key.name);
   }
 
-  public messageToObject(eventMsg: RequiredNonNullable<ICSVCMsg_GameEvent>) {
+  public messageToObject(
+    eventMsg: RequiredNonNullable<ICSVCMsg_GameEvent>
+  ): _.Dictionary<
+    | string
+    | number
+    | boolean
+    | RequiredNonNullable<Uint8Array>
+    | RequiredNonNullable<Long>
+    | undefined
+  > {
     assert(eventMsg.eventid === this.id);
 
     return _.zipObject(

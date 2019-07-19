@@ -1,31 +1,41 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const assert = require("assert");
-const ByteBuffer = require("bytebuffer");
+const assert_1 = __importDefault(require("assert"));
+const bytebuffer_1 = __importDefault(require("bytebuffer"));
 const events_1 = require("events");
-const _ = require("lodash");
-const Long = require("long");
-const assert_exists_1 = require("./assert-exists");
-const consts = require("./consts");
+const _ = __importStar(require("lodash"));
+const long_1 = __importDefault(require("long"));
+const assert_exists_1 = __importDefault(require("./assert-exists"));
+const consts = __importStar(require("./consts"));
 const consts_1 = require("./consts");
 const bitbuffer_1 = require("./ext/bitbuffer");
 function parseUserInfoData(buf) {
-    const bytebuf = ByteBuffer.wrap(buf, ByteBuffer.BIG_ENDIAN);
+    const bytebuf = bytebuffer_1.default.wrap(buf, bytebuffer_1.default.BIG_ENDIAN);
     bytebuf.skip(8);
     const hi = bytebuf.readUint32();
     const lo = bytebuf.readUint32();
-    const xuid = Long.fromBits(lo, hi);
+    const xuid = long_1.default.fromBits(lo, hi);
     const name = bytebuf
-        .readString(consts_1.MAX_PLAYER_NAME_LENGTH, ByteBuffer.METRICS_BYTES)
+        .readString(consts_1.MAX_PLAYER_NAME_LENGTH, bytebuffer_1.default.METRICS_BYTES)
         .split("\0", 2)[0];
     const userId = bytebuf.readUint32();
     const guid = bytebuf
-        .readString(consts_1.SIGNED_GUID_LEN + 1, ByteBuffer.METRICS_BYTES)
+        .readString(consts_1.SIGNED_GUID_LEN + 1, bytebuffer_1.default.METRICS_BYTES)
         .split("\0", 2)[0];
     bytebuf.skip(3);
     const friendsId = bytebuf.readUint32();
     const friendsName = bytebuf
-        .readString(consts_1.MAX_PLAYER_NAME_LENGTH, ByteBuffer.METRICS_BYTES)
+        .readString(consts_1.MAX_PLAYER_NAME_LENGTH, bytebuffer_1.default.METRICS_BYTES)
         .split("\0", 2)[0];
     const fakePlayer = bytebuf.readByte() !== 0;
     bytebuf.skip(3);
@@ -39,7 +49,7 @@ function parseUserInfoData(buf) {
         friendsId,
         friendsName,
         fakePlayer,
-        isHltv
+        isHltv,
     };
 }
 /**
@@ -55,7 +65,7 @@ class StringTables extends events_1.EventEmitter {
          * objects.
          */
         this.userDataCallbacks = {
-            userinfo: parseUserInfoData
+            userinfo: parseUserInfoData,
         };
     }
     listen(messageEvents) {
@@ -93,7 +103,7 @@ class StringTables extends events_1.EventEmitter {
                 table,
                 entryIndex,
                 entry,
-                userData
+                userData,
             });
         }
         // parse client-side entries
@@ -123,13 +133,13 @@ class StringTables extends events_1.EventEmitter {
         const history = [];
         const entryBits = Math.ceil(Math.log2(table.maxEntries));
         const userDataCallback = this.userDataCallbacks[table.name];
-        assert(!bitbuf.readOneBit(), "dictionary encoding unsupported");
+        assert_1.default(!bitbuf.readOneBit(), "dictionary encoding unsupported");
         _.reduce(_.range(entries), lastEntry => {
             let entryIndex = lastEntry + 1;
             if (!bitbuf.readOneBit()) {
                 entryIndex = bitbuf.readUBits(entryBits);
             }
-            assert(entryIndex >= 0 && entryIndex < table.maxEntries, "bogus string index");
+            assert_1.default(entryIndex >= 0 && entryIndex < table.maxEntries, "bogus string index");
             const existingEntry = table.entries[entryIndex];
             let entry = null;
             // has the entry changed?
@@ -159,7 +169,9 @@ class StringTables extends events_1.EventEmitter {
             if (bitbuf.readOneBit()) {
                 // don't read the length, it's fixed length and the length was networked down already
                 if (table.userDataFixedSize) {
-                    const userDataArray = [bitbuf.readUBits(table.userDataSizeBits)];
+                    const userDataArray = [
+                        bitbuf.readUBits(table.userDataSizeBits),
+                    ];
                     userData = Buffer.from(userDataArray);
                 }
                 else {
@@ -183,7 +195,7 @@ class StringTables extends events_1.EventEmitter {
                 table,
                 entryIndex,
                 entry,
-                userData
+                userData,
             });
             return entryIndex;
         }, -1);
@@ -191,16 +203,17 @@ class StringTables extends events_1.EventEmitter {
     _handleCreateStringTable(msg) {
         const bitbuf = bitbuffer_1.BitStream.from(msg.stringData);
         // table shouldn't already exist
-        assert(this.findTableByName(msg.name) === undefined, "table already exists");
-        assert(msg.userDataSize === Math.ceil(msg.userDataSizeBits / 8), "invalid user data byte size");
-        assert(msg.userDataSizeBits <= 32, "userdata value too large");
+        assert_1.default(this.findTableByName(msg.name) ===
+            undefined, "table already exists");
+        assert_1.default(msg.userDataSize === Math.ceil(msg.userDataSizeBits / 8), "invalid user data byte size");
+        assert_1.default(msg.userDataSizeBits <= 32, "userdata value too large");
         // create an empty table
         const table = {
             name: msg.name,
             entries: [],
             userDataSizeBits: msg.userDataSizeBits,
             userDataFixedSize: msg.userDataFixedSize,
-            maxEntries: msg.maxEntries
+            maxEntries: msg.maxEntries,
         };
         this.emit("create", table);
         this._parseStringTableUpdate(bitbuf, table, msg.numEntries);
@@ -209,7 +222,7 @@ class StringTables extends events_1.EventEmitter {
     _handleUpdateStringTable(msg) {
         const bitbuf = bitbuffer_1.BitStream.from(msg.stringData);
         const table = this.tables[msg.tableId];
-        assert(table !== undefined, "bad table index");
+        assert_1.default(table !== undefined, "bad table index");
         this._parseStringTableUpdate(bitbuf, table, msg.numChangedEntries);
     }
 }

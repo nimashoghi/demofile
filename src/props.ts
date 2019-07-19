@@ -1,6 +1,5 @@
-import assert = require("assert");
-import _ = require("lodash");
-import Long = require("long");
+import assert from "assert";
+import Long from "long";
 import assertExists from "./assert-exists";
 import { NUM_NETWORKED_EHANDLE_BITS } from "./consts";
 import { ISendProp } from "./entities";

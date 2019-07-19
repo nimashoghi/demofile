@@ -23,6 +23,7 @@
     "postversion": "git push && git push --tags && npm publish"
   },
   "main": "dist/demo.js",
+  "types": "dist/demo.d.ts",
   "dependencies": {
     "bit-buffer": "0.0.3",
     "bytebuffer": "^5.0.0",

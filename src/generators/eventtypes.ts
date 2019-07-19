@@ -1,7 +1,7 @@
 // tslint:disable:no-console
 
-import assert = require("assert");
-import fs = require("fs");
+import assert from "assert";
+import fs from "fs";
 import { DemoFile } from "../demo";
 
 function parseDemoFile(path: string) {

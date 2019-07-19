@@ -1,6 +1,5 @@
-import * as assert from "assert";
+import assert from "assert";
 import { BitStream, BitView } from "bit-buffer";
-import * as _ from "lodash";
 
 export enum CoordType {
   None = 0,

@@ -1,23 +1,33 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const assert_1 = __importDefault(require("assert"));
+const bytebuffer_1 = __importDefault(require("bytebuffer"));
 const events_1 = require("events");
-const timers = require("timers");
-const ByteBuffer = require("bytebuffer");
-const bitbuffer_1 = require("./ext/bitbuffer");
-const assert = require("assert");
+const timers = __importStar(require("timers"));
 const consts_1 = require("./consts");
 const convars_1 = require("./convars");
 const entities_1 = require("./entities");
+const bitbuffer_1 = require("./ext/bitbuffer");
+const gameevents_1 = require("./gameevents");
+const net = __importStar(require("./net"));
+const stringtables_1 = require("./stringtables");
+const usermessages_1 = require("./usermessages");
 var gamerules_1 = require("./entities/gamerules");
 exports.GameRules = gamerules_1.GameRules;
 var player_1 = require("./entities/player");
 exports.Player = player_1.Player;
 var team_1 = require("./entities/team");
 exports.Team = team_1.Team;
-const gameevents_1 = require("./gameevents");
-const net = require("./net");
-const stringtables_1 = require("./stringtables");
-const usermessages_1 = require("./usermessages");
 var keyvalues_1 = require("./keyvalues");
 exports.parseBinaryKeyValues = keyvalues_1.parseBinaryKeyValues;
 /**
@@ -26,27 +36,29 @@ exports.parseBinaryKeyValues = keyvalues_1.parseBinaryKeyValues;
  * @returns {IDemoHeader} Header object
  */
 function parseHeader(buffer) {
-    const bytebuf = ByteBuffer.wrap(buffer, true);
+    const bytebuf = bytebuffer_1.default.wrap(buffer, true);
     return {
-        magic: bytebuf.readString(8, ByteBuffer.METRICS_BYTES).split("\0", 2)[0],
+        magic: bytebuf
+            .readString(8, bytebuffer_1.default.METRICS_BYTES)
+            .split("\0", 2)[0],
         protocol: bytebuf.readInt32(),
         networkProtocol: bytebuf.readInt32(),
         serverName: bytebuf
-            .readString(consts_1.MAX_OSPATH, ByteBuffer.METRICS_BYTES)
+            .readString(consts_1.MAX_OSPATH, bytebuffer_1.default.METRICS_BYTES)
             .split("\0", 2)[0],
         clientName: bytebuf
-            .readString(consts_1.MAX_OSPATH, ByteBuffer.METRICS_BYTES)
+            .readString(consts_1.MAX_OSPATH, bytebuffer_1.default.METRICS_BYTES)
             .split("\0", 2)[0],
         mapName: bytebuf
-            .readString(consts_1.MAX_OSPATH, ByteBuffer.METRICS_BYTES)
+            .readString(consts_1.MAX_OSPATH, bytebuffer_1.default.METRICS_BYTES)
             .split("\0", 2)[0],
         gameDirectory: bytebuf
-            .readString(consts_1.MAX_OSPATH, ByteBuffer.METRICS_BYTES)
+            .readString(consts_1.MAX_OSPATH, bytebuffer_1.default.METRICS_BYTES)
             .split("\0", 2)[0],
         playbackTime: bytebuf.readFloat(),
         playbackTicks: bytebuf.readInt32(),
         playbackFrames: bytebuf.readInt32(),
-        signonLength: bytebuf.readInt32()
+        signonLength: bytebuf.readInt32(),
     };
 }
 exports.parseHeader = parseHeader;
@@ -103,7 +115,8 @@ class DemoFile extends events_1.EventEmitter {
      * @returns Number of seconds elapsed
      */
     get currentTime() {
-        return (this.currentTick * (this.header.playbackTime / this.header.playbackTicks));
+        return (this.currentTick *
+            (this.header.playbackTime / this.header.playbackTicks));
     }
     /**
      * Shortcut for `this.entities.players`
@@ -128,7 +141,7 @@ class DemoFile extends events_1.EventEmitter {
     }
     parse(buffer) {
         this.header = parseHeader(buffer);
-        this._bytebuf = ByteBuffer.wrap(buffer.slice(1072), true);
+        this._bytebuf = bytebuffer_1.default.wrap(buffer.slice(1072), true);
         this.emit("start");
         timers.setTimeout(this._parseRecurse.bind(this), 0);
     }
@@ -161,7 +174,7 @@ class DemoFile extends events_1.EventEmitter {
             const cmd = chunk.readVarint32();
             const size = chunk.readVarint32();
             const message = net.findByType(cmd);
-            assert(message != null, `No message handler for ${cmd}`);
+            assert_1.default(message != null, `No message handler for ${cmd}`);
             if (message === null) {
                 chunk.skip(size);
                 continue;

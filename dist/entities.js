@@ -1,19 +1,29 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const assert = require("assert");
-const EventEmitter = require("events");
-const _ = require("lodash");
-const assert_exists_1 = require("./assert-exists");
-const bitbuffer_1 = require("./ext/bitbuffer");
-const consts = require("./consts");
-const functional = require("./functional");
-const net = require("./net");
+const assert_1 = __importDefault(require("assert"));
+const events_1 = __importDefault(require("events"));
+const _ = __importStar(require("lodash"));
+const assert_exists_1 = __importDefault(require("./assert-exists"));
+const consts = __importStar(require("./consts"));
 const baseentity_1 = require("./entities/baseentity");
 const gamerules_1 = require("./entities/gamerules");
 const networkable_1 = require("./entities/networkable");
 const player_1 = require("./entities/player");
 const team_1 = require("./entities/team");
 const weapon_1 = require("./entities/weapon");
+const bitbuffer_1 = require("./ext/bitbuffer");
+const functional = __importStar(require("./functional"));
+const net = __importStar(require("./net"));
 const props_1 = require("./props");
 function isPropExcluded(excludes, table, prop) {
     return excludes.find(excluded => table.netTableName === excluded.dtName &&
@@ -32,15 +42,15 @@ function readFieldIndex(entityBitBuffer, lastIndex, newWay) {
         switch (ret & (32 | 64)) {
             case 32:
                 ret = (ret & ~96) | (entityBitBuffer.readUBits(2) << 5);
-                assert(ret >= 32);
+                assert_1.default(ret >= 32);
                 break;
             case 64:
                 ret = (ret & ~96) | (entityBitBuffer.readUBits(4) << 5);
-                assert(ret >= 128);
+                assert_1.default(ret >= 128);
                 break;
             case 96:
                 ret = (ret & ~96) | (entityBitBuffer.readUBits(7) << 5);
-                assert(ret >= 512);
+                assert_1.default(ret >= 512);
                 break;
         }
     }
@@ -53,7 +63,7 @@ function readFieldIndex(entityBitBuffer, lastIndex, newWay) {
 /**
  * Represents entities and networked properties within a demo.
  */
-class Entities extends EventEmitter {
+class Entities extends events_1.default {
     constructor() {
         super(...arguments);
         this.dataTables = [];
@@ -71,7 +81,7 @@ class Entities extends EventEmitter {
             DT_Team: team_1.Team,
             DT_CSGameRules: gamerules_1.GameRules,
             DT_WeaponCSBase: weapon_1.Weapon,
-            DT_BaseEntity: baseentity_1.BaseEntity
+            DT_BaseEntity: baseentity_1.BaseEntity,
         };
         this._demo = null;
         this._singletonEnts = {};
@@ -167,7 +177,7 @@ class Entities extends EventEmitter {
         return entity;
     }
     findAllWithTable(table) {
-        return this.entities.filter((ent) => (ent != null ? table in ent.props : false));
+        return this.entities.filter((ent) => ent != null ? table in ent.props : false);
     }
     findAllWithClass(klass) {
         return this.entities.filter(ent => (ent ? ent instanceof klass : false));
@@ -176,7 +186,7 @@ class Entities extends EventEmitter {
         while (true) {
             // eslint-disable-line no-constant-condition
             const descriptor = net.findByType(chunk.readVarint32());
-            assert(descriptor.name === "svc_SendTable", "expected SendTable message");
+            assert_1.default(descriptor.name === "svc_SendTable", "expected SendTable message");
             const length = chunk.readVarint32();
             const msg = descriptor.class.decode(new Uint8Array(chunk.readBytes(length).toBuffer()));
             if (msg.isEnd) {
@@ -188,7 +198,7 @@ class Entities extends EventEmitter {
         this.serverClassBits = Math.ceil(Math.log2(serverClasses));
         for (let i = 0; i < serverClasses; ++i) {
             const classId = chunk.readShort();
-            assert(classId === i, "server class entry for invalid class ID");
+            assert_1.default(classId === i, "server class entry for invalid class ID");
             const name = chunk.readCString();
             const dtName = chunk.readCString();
             const dataTable = assert_exists_1.default(this._findTableByName(dtName), "no data table for server class");
@@ -196,7 +206,7 @@ class Entities extends EventEmitter {
                 name,
                 dtName,
                 dataTable,
-                flattenedProps: this._flattenDataTable(dataTable)
+                flattenedProps: this._flattenDataTable(dataTable),
             };
             this.serverClasses.push(serverClass);
             // parse any pending baseline
@@ -206,12 +216,12 @@ class Entities extends EventEmitter {
                 this.emit("baselineupdate", {
                     classId,
                     serverClass,
-                    baseline: this.instanceBaselines[classId]
+                    baseline: this.instanceBaselines[classId],
                 });
                 delete this.pendingBaselines[classId];
             }
         }
-        assert.equal(chunk.remaining(), 0);
+        assert_1.default.equal(chunk.remaining(), 0);
         this.emit("datatablesready");
     }
     _gatherExcludes(table) {
@@ -222,7 +232,7 @@ class Entities extends EventEmitter {
             }
             if (prop.type === 6 /* DataTable */) {
                 const subTable = assert_exists_1.default(this._findTableByName(prop.dtName));
-                excludes.push.apply(excludes, this._gatherExcludes(subTable));
+                excludes.push(...this._gatherExcludes(subTable));
             }
         }
         return excludes;
@@ -244,14 +254,16 @@ class Entities extends EventEmitter {
                         fp.collapsible = false;
                     }
                 }
-                flattened.push.apply(flattened, childProps);
+                flattened.push(...childProps);
             }
             else {
                 flattened.push({
                     prop,
                     table,
-                    decode: props_1.makeDecoder(prop, prop.type === 5 /* Array */ ? table.props[index - 1] : undefined),
-                    collapsible: true
+                    decode: props_1.makeDecoder(prop, prop.type === 5 /* Array */
+                        ? table.props[index - 1]
+                        : undefined),
+                    collapsible: true,
                 });
             }
         }
@@ -272,7 +284,8 @@ class Entities extends EventEmitter {
                 for (currentProp = start; currentProp < flattenedProps.length; ++currentProp) {
                     const prop = flattenedProps[currentProp].prop;
                     if (prop.priority === priority ||
-                        (priority === 64 && (prop.flags & props_1.SPROP_CHANGES_OFTEN) !== 0)) {
+                        (priority === 64 &&
+                            (prop.flags & props_1.SPROP_CHANGES_OFTEN) !== 0)) {
                         if (start !== currentProp) {
                             const temp = flattenedProps[start];
                             flattenedProps[start] = flattenedProps[currentProp];
@@ -320,7 +333,7 @@ class Entities extends EventEmitter {
             this.emit("remove", { index });
         }
         else {
-            assert(!entity.deleting, "cannot delete an entity already marked for deletion");
+            assert_1.default(!entity.deleting, "cannot delete an entity already marked for deletion");
             entity.deleting = true;
             this.markedForDeletion.push(index);
         }
@@ -332,10 +345,10 @@ class Entities extends EventEmitter {
         const updatedProps = [];
         for (const index of fieldIndices) {
             const flattenedProp = serverClass.flattenedProps[index];
-            assert(flattenedProp);
+            assert_1.default(flattenedProp);
             updatedProps.push({
                 prop: flattenedProp,
-                value: flattenedProp.decode(entityBitBuffer)
+                value: flattenedProp.decode(entityBitBuffer),
             });
         }
         return updatedProps;
@@ -353,7 +366,7 @@ class Entities extends EventEmitter {
                 tableName,
                 varName,
                 oldValue,
-                newValue: update.value
+                newValue: update.value,
             });
         }
     }
@@ -362,7 +375,7 @@ class Entities extends EventEmitter {
             const tableName = update.prop.table.netTableName;
             const varName = update.prop.prop.varName;
             target[tableName] = Object.assign(target[tableName] || {}, {
-                [varName]: update.value
+                [varName]: update.value,
             });
         }
         return target;
@@ -378,13 +391,14 @@ class Entities extends EventEmitter {
             }
             if (entityBitBuffer.readOneBit()) {
                 // TODO: figure out why this is the server class - 1
-                lastClassId = entityBitBuffer.readUBits(this.serverClassBits) - 1;
+                lastClassId =
+                    entityBitBuffer.readUBits(this.serverClassBits) - 1;
                 const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
                 lastProps = this._updatesToPropObject({}, updates);
             }
             else {
                 // delta against last temp entity
-                assert(lastClassId !== -1, "Delta with no baseline");
+                assert_1.default(lastClassId !== -1, "Delta with no baseline");
                 const updates = this._parseEntityUpdate(entityBitBuffer, lastClassId);
                 lastProps = this._updatesToPropObject(_.cloneDeep(assert_exists_1.default(lastProps)), updates);
             }
@@ -392,7 +406,7 @@ class Entities extends EventEmitter {
                 delay: fireDelay,
                 classId: lastClassId,
                 serverClass: this.serverClasses[lastClassId],
-                props: lastProps
+                props: lastProps,
             });
         }
     }
@@ -404,14 +418,14 @@ class Entities extends EventEmitter {
         // https://github.com/VSES/SourceEngine2007/blob/43a5c90a5ada1e69ca044595383be67f40b33c61/se2007/engine/baseclientstate.cpp#L1245-L1312
         for (let i = 0; i < msg.updatedEntries; ++i) {
             entityIndex += 1 + entityBitBuffer.readUBitVar();
-            assert(entityIndex < this.entities.length, "newEntity >= MAX_EDICTS");
+            assert_1.default(entityIndex < this.entities.length, "newEntity >= MAX_EDICTS");
             if (entityBitBuffer.readOneBit()) {
                 if (entityBitBuffer.readOneBit()) {
-                    assert(msg.isDelta, "deleting entity on full update");
+                    assert_1.default(msg.isDelta, "deleting entity on full update");
                     this._removeEntity(entityIndex, false);
                 }
                 else {
-                    assert(msg.isDelta, "entity leaving PVS on full update");
+                    assert_1.default(msg.isDelta, "entity leaving PVS on full update");
                     // Maybe set a flag on the entity indicating that it is out of PVS?
                 }
                 // tslint:disable-next-line:no-identical-conditions
@@ -422,7 +436,7 @@ class Entities extends EventEmitter {
                 const newEnt = this._addEntity(entityIndex, classId, serialNum);
                 this._readNewEntity(entityBitBuffer, newEnt);
                 this.emit("postcreate", {
-                    entity: newEnt
+                    entity: newEnt,
                 });
             }
             else {
@@ -462,7 +476,7 @@ class Entities extends EventEmitter {
         this.emit("baselineupdate", {
             classId,
             serverClass: this.serverClasses[classId],
-            baseline
+            baseline,
         });
     }
 }

@@ -38,9 +38,7 @@ exports.parseBinaryKeyValues = keyvalues_1.parseBinaryKeyValues;
 function parseHeader(buffer) {
     const bytebuf = bytebuffer_1.default.wrap(buffer, true);
     return {
-        magic: bytebuf
-            .readString(8, bytebuffer_1.default.METRICS_BYTES)
-            .split("\0", 2)[0],
+        magic: bytebuf.readString(8, bytebuffer_1.default.METRICS_BYTES).split("\0", 2)[0],
         protocol: bytebuf.readInt32(),
         networkProtocol: bytebuf.readInt32(),
         serverName: bytebuf
@@ -58,7 +56,7 @@ function parseHeader(buffer) {
         playbackTime: bytebuf.readFloat(),
         playbackTicks: bytebuf.readInt32(),
         playbackFrames: bytebuf.readInt32(),
-        signonLength: bytebuf.readInt32(),
+        signonLength: bytebuf.readInt32()
     };
 }
 exports.parseHeader = parseHeader;
@@ -115,8 +113,7 @@ class DemoFile extends events_1.EventEmitter {
      * @returns Number of seconds elapsed
      */
     get currentTime() {
-        return (this.currentTick *
-            (this.header.playbackTime / this.header.playbackTicks));
+        return (this.currentTick * (this.header.playbackTime / this.header.playbackTicks));
     }
     /**
      * Shortcut for `this.entities.players`

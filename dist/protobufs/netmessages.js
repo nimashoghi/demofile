@@ -1,12 +1,12 @@
+"use strict";
+exports.__esModule = true;
 /* tslint:disable */
-import * as $protobuf from "protobufjs/minimal";
-
+var $protobuf = require("protobufjs/minimal");
 // Common aliases
-const $Reader = $protobuf.Reader, $util = $protobuf.util;
-
+var $Reader = $protobuf.Reader, $util = $protobuf.util;
 // Exported root namespace
-const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
-
+var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
+exports["default"] = $root;
 /**
  * NET_Messages enum.
  * @exports NET_Messages
@@ -21,8 +21,8 @@ const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
  * @property {number} net_SignonState=7 net_SignonState value
  * @property {number} net_PlayerAvatarData=100 net_PlayerAvatarData value
  */
-export const NET_Messages = $root.NET_Messages = (function () {
-    const valuesById = {}, values = Object.create(valuesById);
+exports.NET_Messages = $root.NET_Messages = (function () {
+    var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "net_NOP"] = 0;
     values[valuesById[1] = "net_Disconnect"] = 1;
     values[valuesById[2] = "net_File"] = 2;
@@ -34,7 +34,6 @@ export const NET_Messages = $root.NET_Messages = (function () {
     values[valuesById[100] = "net_PlayerAvatarData"] = 100;
     return values;
 })();
-
 /**
  * CLC_Messages enum.
  * @exports CLC_Messages
@@ -53,7 +52,7 @@ export const NET_Messages = $root.NET_Messages = (function () {
  * @property {number} clc_HltvReplay=20 clc_HltvReplay value
  */
 $root.CLC_Messages = (function () {
-    const valuesById = {}, values = Object.create(valuesById);
+    var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[8] = "clc_ClientInfo"] = 8;
     values[valuesById[9] = "clc_Move"] = 9;
     values[valuesById[10] = "clc_VoiceData"] = 10;
@@ -68,7 +67,6 @@ $root.CLC_Messages = (function () {
     values[valuesById[20] = "clc_HltvReplay"] = 20;
     return values;
 })();
-
 /**
  * VoiceDataFormat_t enum.
  * @exports VoiceDataFormat_t
@@ -77,12 +75,11 @@ $root.CLC_Messages = (function () {
  * @property {number} VOICEDATA_FORMAT_ENGINE=1 VOICEDATA_FORMAT_ENGINE value
  */
 $root.VoiceDataFormat_t = (function () {
-    const valuesById = {}, values = Object.create(valuesById);
+    var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "VOICEDATA_FORMAT_STEAM"] = 0;
     values[valuesById[1] = "VOICEDATA_FORMAT_ENGINE"] = 1;
     return values;
 })();
-
 /**
  * ESplitScreenMessageType enum.
  * @exports ESplitScreenMessageType
@@ -92,13 +89,12 @@ $root.VoiceDataFormat_t = (function () {
  * @property {number} MSG_SPLITSCREEN_TYPE_BITS=1 MSG_SPLITSCREEN_TYPE_BITS value
  */
 $root.ESplitScreenMessageType = (function () {
-    const valuesById = {}, values = Object.create(valuesById);
+    var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "MSG_SPLITSCREEN_ADDUSER"] = 0;
     values[valuesById[1] = "MSG_SPLITSCREEN_REMOVEUSER"] = 1;
     values["MSG_SPLITSCREEN_TYPE_BITS"] = 1;
     return values;
 })();
-
 /**
  * SVC_Messages enum.
  * @exports SVC_Messages
@@ -132,8 +128,8 @@ $root.ESplitScreenMessageType = (function () {
  * @property {number} svc_EncryptedData=35 svc_EncryptedData value
  * @property {number} svc_HltvReplay=36 svc_HltvReplay value
  */
-export const SVC_Messages = $root.SVC_Messages = (function () {
-    const valuesById = {}, values = Object.create(valuesById);
+exports.SVC_Messages = $root.SVC_Messages = (function () {
+    var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[8] = "svc_ServerInfo"] = 8;
     values[valuesById[9] = "svc_SendTable"] = 9;
     values[valuesById[10] = "svc_ClassInfo"] = 10;
@@ -164,7 +160,6 @@ export const SVC_Messages = $root.SVC_Messages = (function () {
     values[valuesById[36] = "svc_HltvReplay"] = 36;
     return values;
 })();
-
 /**
  * ReplayEventType_t enum.
  * @exports ReplayEventType_t
@@ -174,15 +169,13 @@ export const SVC_Messages = $root.SVC_Messages = (function () {
  * @property {number} REPLAY_EVENT_GENERIC=2 REPLAY_EVENT_GENERIC value
  */
 $root.ReplayEventType_t = (function () {
-    const valuesById = {}, values = Object.create(valuesById);
+    var valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "REPLAY_EVENT_CANCEL"] = 0;
     values[valuesById[1] = "REPLAY_EVENT_DEATH"] = 1;
     values[valuesById[2] = "REPLAY_EVENT_GENERIC"] = 2;
     return values;
 })();
-
-export const CMsgVector = $root.CMsgVector = (() => {
-
+exports.CMsgVector = $root.CMsgVector = (function () {
     /**
      * Properties of a CMsgVector.
      * @exports ICMsgVector
@@ -191,7 +184,6 @@ export const CMsgVector = $root.CMsgVector = (() => {
      * @property {number|null} [y] CMsgVector y
      * @property {number|null} [z] CMsgVector z
      */
-
     /**
      * Constructs a new CMsgVector.
      * @exports CMsgVector
@@ -202,11 +194,10 @@ export const CMsgVector = $root.CMsgVector = (() => {
      */
     function CMsgVector(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CMsgVector x.
      * @member {number} x
@@ -214,7 +205,6 @@ export const CMsgVector = $root.CMsgVector = (() => {
      * @instance
      */
     CMsgVector.prototype.x = 0;
-
     /**
      * CMsgVector y.
      * @member {number} y
@@ -222,7 +212,6 @@ export const CMsgVector = $root.CMsgVector = (() => {
      * @instance
      */
     CMsgVector.prototype.y = 0;
-
     /**
      * CMsgVector z.
      * @member {number} z
@@ -230,7 +219,6 @@ export const CMsgVector = $root.CMsgVector = (() => {
      * @instance
      */
     CMsgVector.prototype.z = 0;
-
     /**
      * Decodes a CMsgVector message from the specified reader or buffer.
      * @function decode
@@ -245,9 +233,9 @@ export const CMsgVector = $root.CMsgVector = (() => {
     CMsgVector.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsgVector();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsgVector();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.x = reader.float();
@@ -265,12 +253,9 @@ export const CMsgVector = $root.CMsgVector = (() => {
         }
         return message;
     };
-
     return CMsgVector;
 })();
-
-export const CMsgVector2D = $root.CMsgVector2D = (() => {
-
+exports.CMsgVector2D = $root.CMsgVector2D = (function () {
     /**
      * Properties of a CMsgVector2D.
      * @exports ICMsgVector2D
@@ -278,7 +263,6 @@ export const CMsgVector2D = $root.CMsgVector2D = (() => {
      * @property {number|null} [x] CMsgVector2D x
      * @property {number|null} [y] CMsgVector2D y
      */
-
     /**
      * Constructs a new CMsgVector2D.
      * @exports CMsgVector2D
@@ -289,11 +273,10 @@ export const CMsgVector2D = $root.CMsgVector2D = (() => {
      */
     function CMsgVector2D(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CMsgVector2D x.
      * @member {number} x
@@ -301,7 +284,6 @@ export const CMsgVector2D = $root.CMsgVector2D = (() => {
      * @instance
      */
     CMsgVector2D.prototype.x = 0;
-
     /**
      * CMsgVector2D y.
      * @member {number} y
@@ -309,7 +291,6 @@ export const CMsgVector2D = $root.CMsgVector2D = (() => {
      * @instance
      */
     CMsgVector2D.prototype.y = 0;
-
     /**
      * Decodes a CMsgVector2D message from the specified reader or buffer.
      * @function decode
@@ -324,9 +305,9 @@ export const CMsgVector2D = $root.CMsgVector2D = (() => {
     CMsgVector2D.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsgVector2D();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsgVector2D();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.x = reader.float();
@@ -341,12 +322,9 @@ export const CMsgVector2D = $root.CMsgVector2D = (() => {
         }
         return message;
     };
-
     return CMsgVector2D;
 })();
-
-export const CMsgQAngle = $root.CMsgQAngle = (() => {
-
+exports.CMsgQAngle = $root.CMsgQAngle = (function () {
     /**
      * Properties of a CMsgQAngle.
      * @exports ICMsgQAngle
@@ -355,7 +333,6 @@ export const CMsgQAngle = $root.CMsgQAngle = (() => {
      * @property {number|null} [y] CMsgQAngle y
      * @property {number|null} [z] CMsgQAngle z
      */
-
     /**
      * Constructs a new CMsgQAngle.
      * @exports CMsgQAngle
@@ -366,11 +343,10 @@ export const CMsgQAngle = $root.CMsgQAngle = (() => {
      */
     function CMsgQAngle(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CMsgQAngle x.
      * @member {number} x
@@ -378,7 +354,6 @@ export const CMsgQAngle = $root.CMsgQAngle = (() => {
      * @instance
      */
     CMsgQAngle.prototype.x = 0;
-
     /**
      * CMsgQAngle y.
      * @member {number} y
@@ -386,7 +361,6 @@ export const CMsgQAngle = $root.CMsgQAngle = (() => {
      * @instance
      */
     CMsgQAngle.prototype.y = 0;
-
     /**
      * CMsgQAngle z.
      * @member {number} z
@@ -394,7 +368,6 @@ export const CMsgQAngle = $root.CMsgQAngle = (() => {
      * @instance
      */
     CMsgQAngle.prototype.z = 0;
-
     /**
      * Decodes a CMsgQAngle message from the specified reader or buffer.
      * @function decode
@@ -409,9 +382,9 @@ export const CMsgQAngle = $root.CMsgQAngle = (() => {
     CMsgQAngle.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsgQAngle();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsgQAngle();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.x = reader.float();
@@ -429,12 +402,9 @@ export const CMsgQAngle = $root.CMsgQAngle = (() => {
         }
         return message;
     };
-
     return CMsgQAngle;
 })();
-
-export const CMsgRGBA = $root.CMsgRGBA = (() => {
-
+exports.CMsgRGBA = $root.CMsgRGBA = (function () {
     /**
      * Properties of a CMsgRGBA.
      * @exports ICMsgRGBA
@@ -444,7 +414,6 @@ export const CMsgRGBA = $root.CMsgRGBA = (() => {
      * @property {number|null} [b] CMsgRGBA b
      * @property {number|null} [a] CMsgRGBA a
      */
-
     /**
      * Constructs a new CMsgRGBA.
      * @exports CMsgRGBA
@@ -455,11 +424,10 @@ export const CMsgRGBA = $root.CMsgRGBA = (() => {
      */
     function CMsgRGBA(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CMsgRGBA r.
      * @member {number} r
@@ -467,7 +435,6 @@ export const CMsgRGBA = $root.CMsgRGBA = (() => {
      * @instance
      */
     CMsgRGBA.prototype.r = 0;
-
     /**
      * CMsgRGBA g.
      * @member {number} g
@@ -475,7 +442,6 @@ export const CMsgRGBA = $root.CMsgRGBA = (() => {
      * @instance
      */
     CMsgRGBA.prototype.g = 0;
-
     /**
      * CMsgRGBA b.
      * @member {number} b
@@ -483,7 +449,6 @@ export const CMsgRGBA = $root.CMsgRGBA = (() => {
      * @instance
      */
     CMsgRGBA.prototype.b = 0;
-
     /**
      * CMsgRGBA a.
      * @member {number} a
@@ -491,7 +456,6 @@ export const CMsgRGBA = $root.CMsgRGBA = (() => {
      * @instance
      */
     CMsgRGBA.prototype.a = 0;
-
     /**
      * Decodes a CMsgRGBA message from the specified reader or buffer.
      * @function decode
@@ -506,9 +470,9 @@ export const CMsgRGBA = $root.CMsgRGBA = (() => {
     CMsgRGBA.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsgRGBA();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsgRGBA();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.r = reader.int32();
@@ -529,12 +493,9 @@ export const CMsgRGBA = $root.CMsgRGBA = (() => {
         }
         return message;
     };
-
     return CMsgRGBA;
 })();
-
-export const CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
-
+exports.CNETMsg_Tick = $root.CNETMsg_Tick = (function () {
     /**
      * Properties of a CNETMsg_Tick.
      * @exports ICNETMsg_Tick
@@ -545,7 +506,6 @@ export const CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
      * @property {number|null} [hostFramestarttimeStdDeviation] CNETMsg_Tick hostFramestarttimeStdDeviation
      * @property {number|null} [hltvReplayFlags] CNETMsg_Tick hltvReplayFlags
      */
-
     /**
      * Constructs a new CNETMsg_Tick.
      * @exports CNETMsg_Tick
@@ -556,11 +516,10 @@ export const CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
      */
     function CNETMsg_Tick(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CNETMsg_Tick tick.
      * @member {number} tick
@@ -568,7 +527,6 @@ export const CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
      * @instance
      */
     CNETMsg_Tick.prototype.tick = 0;
-
     /**
      * CNETMsg_Tick hostComputationtime.
      * @member {number} hostComputationtime
@@ -576,7 +534,6 @@ export const CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
      * @instance
      */
     CNETMsg_Tick.prototype.hostComputationtime = 0;
-
     /**
      * CNETMsg_Tick hostComputationtimeStdDeviation.
      * @member {number} hostComputationtimeStdDeviation
@@ -584,7 +541,6 @@ export const CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
      * @instance
      */
     CNETMsg_Tick.prototype.hostComputationtimeStdDeviation = 0;
-
     /**
      * CNETMsg_Tick hostFramestarttimeStdDeviation.
      * @member {number} hostFramestarttimeStdDeviation
@@ -592,7 +548,6 @@ export const CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
      * @instance
      */
     CNETMsg_Tick.prototype.hostFramestarttimeStdDeviation = 0;
-
     /**
      * CNETMsg_Tick hltvReplayFlags.
      * @member {number} hltvReplayFlags
@@ -600,7 +555,6 @@ export const CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
      * @instance
      */
     CNETMsg_Tick.prototype.hltvReplayFlags = 0;
-
     /**
      * Decodes a CNETMsg_Tick message from the specified reader or buffer.
      * @function decode
@@ -615,9 +569,9 @@ export const CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
     CNETMsg_Tick.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_Tick();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_Tick();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.tick = reader.uint32();
@@ -641,19 +595,15 @@ export const CNETMsg_Tick = $root.CNETMsg_Tick = (() => {
         }
         return message;
     };
-
     return CNETMsg_Tick;
 })();
-
-export const CNETMsg_StringCmd = $root.CNETMsg_StringCmd = (() => {
-
+exports.CNETMsg_StringCmd = $root.CNETMsg_StringCmd = (function () {
     /**
      * Properties of a CNETMsg_StringCmd.
      * @exports ICNETMsg_StringCmd
      * @interface ICNETMsg_StringCmd
      * @property {string|null} [command] CNETMsg_StringCmd command
      */
-
     /**
      * Constructs a new CNETMsg_StringCmd.
      * @exports CNETMsg_StringCmd
@@ -664,11 +614,10 @@ export const CNETMsg_StringCmd = $root.CNETMsg_StringCmd = (() => {
      */
     function CNETMsg_StringCmd(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CNETMsg_StringCmd command.
      * @member {string} command
@@ -676,7 +625,6 @@ export const CNETMsg_StringCmd = $root.CNETMsg_StringCmd = (() => {
      * @instance
      */
     CNETMsg_StringCmd.prototype.command = "";
-
     /**
      * Decodes a CNETMsg_StringCmd message from the specified reader or buffer.
      * @function decode
@@ -691,9 +639,9 @@ export const CNETMsg_StringCmd = $root.CNETMsg_StringCmd = (() => {
     CNETMsg_StringCmd.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_StringCmd();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_StringCmd();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.command = reader.string();
@@ -705,12 +653,9 @@ export const CNETMsg_StringCmd = $root.CNETMsg_StringCmd = (() => {
         }
         return message;
     };
-
     return CNETMsg_StringCmd;
 })();
-
-export const CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
-
+exports.CNETMsg_SignonState = $root.CNETMsg_SignonState = (function () {
     /**
      * Properties of a CNETMsg_SignonState.
      * @exports ICNETMsg_SignonState
@@ -721,7 +666,6 @@ export const CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
      * @property {Array.<string>|null} [playersNetworkids] CNETMsg_SignonState playersNetworkids
      * @property {string|null} [mapName] CNETMsg_SignonState mapName
      */
-
     /**
      * Constructs a new CNETMsg_SignonState.
      * @exports CNETMsg_SignonState
@@ -733,11 +677,10 @@ export const CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
     function CNETMsg_SignonState(properties) {
         this.playersNetworkids = [];
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CNETMsg_SignonState signonState.
      * @member {number} signonState
@@ -745,7 +688,6 @@ export const CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
      * @instance
      */
     CNETMsg_SignonState.prototype.signonState = 0;
-
     /**
      * CNETMsg_SignonState spawnCount.
      * @member {number} spawnCount
@@ -753,7 +695,6 @@ export const CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
      * @instance
      */
     CNETMsg_SignonState.prototype.spawnCount = 0;
-
     /**
      * CNETMsg_SignonState numServerPlayers.
      * @member {number} numServerPlayers
@@ -761,7 +702,6 @@ export const CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
      * @instance
      */
     CNETMsg_SignonState.prototype.numServerPlayers = 0;
-
     /**
      * CNETMsg_SignonState playersNetworkids.
      * @member {Array.<string>} playersNetworkids
@@ -769,7 +709,6 @@ export const CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
      * @instance
      */
     CNETMsg_SignonState.prototype.playersNetworkids = $util.emptyArray;
-
     /**
      * CNETMsg_SignonState mapName.
      * @member {string} mapName
@@ -777,7 +716,6 @@ export const CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
      * @instance
      */
     CNETMsg_SignonState.prototype.mapName = "";
-
     /**
      * Decodes a CNETMsg_SignonState message from the specified reader or buffer.
      * @function decode
@@ -792,9 +730,9 @@ export const CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
     CNETMsg_SignonState.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_SignonState();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_SignonState();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.signonState = reader.uint32();
@@ -820,19 +758,15 @@ export const CNETMsg_SignonState = $root.CNETMsg_SignonState = (() => {
         }
         return message;
     };
-
     return CNETMsg_SignonState;
 })();
-
-export const CMsg_CVars = $root.CMsg_CVars = (() => {
-
+exports.CMsg_CVars = $root.CMsg_CVars = (function () {
     /**
      * Properties of a CMsg_CVars.
      * @exports ICMsg_CVars
      * @interface ICMsg_CVars
      * @property {Array.<CMsg_CVars.ICVar>|null} [cvars] CMsg_CVars cvars
      */
-
     /**
      * Constructs a new CMsg_CVars.
      * @exports CMsg_CVars
@@ -844,11 +778,10 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
     function CMsg_CVars(properties) {
         this.cvars = [];
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CMsg_CVars cvars.
      * @member {Array.<CMsg_CVars.ICVar>} cvars
@@ -856,7 +789,6 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
      * @instance
      */
     CMsg_CVars.prototype.cvars = $util.emptyArray;
-
     /**
      * Decodes a CMsg_CVars message from the specified reader or buffer.
      * @function decode
@@ -871,9 +803,9 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
     CMsg_CVars.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsg_CVars();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsg_CVars();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     if (!(message.cvars && message.cvars.length))
@@ -887,9 +819,7 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
         }
         return message;
     };
-
     CMsg_CVars.CVar = (function () {
-
         /**
          * Properties of a CVar.
          * @memberof CMsg_CVars
@@ -898,7 +828,6 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
          * @property {string|null} [value] CVar value
          * @property {number|null} [dictionaryName] CVar dictionaryName
          */
-
         /**
          * Constructs a new CVar.
          * @memberof CMsg_CVars
@@ -909,11 +838,10 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
          */
         function CVar(properties) {
             if (properties)
-                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
-
         /**
          * CVar name.
          * @member {string} name
@@ -921,7 +849,6 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
          * @instance
          */
         CVar.prototype.name = "";
-
         /**
          * CVar value.
          * @member {string} value
@@ -929,7 +856,6 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
          * @instance
          */
         CVar.prototype.value = "";
-
         /**
          * CVar dictionaryName.
          * @member {number} dictionaryName
@@ -937,7 +863,6 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
          * @instance
          */
         CVar.prototype.dictionaryName = 0;
-
         /**
          * Decodes a CVar message from the specified reader or buffer.
          * @function decode
@@ -952,9 +877,9 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
         CVar.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsg_CVars.CVar();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CMsg_CVars.CVar();
             while (reader.pos < end) {
-                let tag = reader.uint32();
+                var tag = reader.uint32();
                 switch (tag >>> 3) {
                     case 1:
                         message.name = reader.string();
@@ -972,22 +897,17 @@ export const CMsg_CVars = $root.CMsg_CVars = (() => {
             }
             return message;
         };
-
         return CVar;
     })();
-
     return CMsg_CVars;
 })();
-
-export const CNETMsg_SetConVar = $root.CNETMsg_SetConVar = (() => {
-
+exports.CNETMsg_SetConVar = $root.CNETMsg_SetConVar = (function () {
     /**
      * Properties of a CNETMsg_SetConVar.
      * @exports ICNETMsg_SetConVar
      * @interface ICNETMsg_SetConVar
      * @property {ICMsg_CVars|null} [convars] CNETMsg_SetConVar convars
      */
-
     /**
      * Constructs a new CNETMsg_SetConVar.
      * @exports CNETMsg_SetConVar
@@ -998,11 +918,10 @@ export const CNETMsg_SetConVar = $root.CNETMsg_SetConVar = (() => {
      */
     function CNETMsg_SetConVar(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CNETMsg_SetConVar convars.
      * @member {ICMsg_CVars|null|undefined} convars
@@ -1010,7 +929,6 @@ export const CNETMsg_SetConVar = $root.CNETMsg_SetConVar = (() => {
      * @instance
      */
     CNETMsg_SetConVar.prototype.convars = null;
-
     /**
      * Decodes a CNETMsg_SetConVar message from the specified reader or buffer.
      * @function decode
@@ -1025,9 +943,9 @@ export const CNETMsg_SetConVar = $root.CNETMsg_SetConVar = (() => {
     CNETMsg_SetConVar.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_SetConVar();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_SetConVar();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.convars = $root.CMsg_CVars.decode(reader, reader.uint32());
@@ -1039,18 +957,14 @@ export const CNETMsg_SetConVar = $root.CNETMsg_SetConVar = (() => {
         }
         return message;
     };
-
     return CNETMsg_SetConVar;
 })();
-
-export const CNETMsg_NOP = $root.CNETMsg_NOP = (() => {
-
+exports.CNETMsg_NOP = $root.CNETMsg_NOP = (function () {
     /**
      * Properties of a CNETMsg_NOP.
      * @exports ICNETMsg_NOP
      * @interface ICNETMsg_NOP
      */
-
     /**
      * Constructs a new CNETMsg_NOP.
      * @exports CNETMsg_NOP
@@ -1061,11 +975,10 @@ export const CNETMsg_NOP = $root.CNETMsg_NOP = (() => {
      */
     function CNETMsg_NOP(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * Decodes a CNETMsg_NOP message from the specified reader or buffer.
      * @function decode
@@ -1080,9 +993,9 @@ export const CNETMsg_NOP = $root.CNETMsg_NOP = (() => {
     CNETMsg_NOP.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_NOP();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_NOP();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 default:
                     reader.skipType(tag & 7);
@@ -1091,19 +1004,15 @@ export const CNETMsg_NOP = $root.CNETMsg_NOP = (() => {
         }
         return message;
     };
-
     return CNETMsg_NOP;
 })();
-
-export const CNETMsg_Disconnect = $root.CNETMsg_Disconnect = (() => {
-
+exports.CNETMsg_Disconnect = $root.CNETMsg_Disconnect = (function () {
     /**
      * Properties of a CNETMsg_Disconnect.
      * @exports ICNETMsg_Disconnect
      * @interface ICNETMsg_Disconnect
      * @property {string|null} [text] CNETMsg_Disconnect text
      */
-
     /**
      * Constructs a new CNETMsg_Disconnect.
      * @exports CNETMsg_Disconnect
@@ -1114,11 +1023,10 @@ export const CNETMsg_Disconnect = $root.CNETMsg_Disconnect = (() => {
      */
     function CNETMsg_Disconnect(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CNETMsg_Disconnect text.
      * @member {string} text
@@ -1126,7 +1034,6 @@ export const CNETMsg_Disconnect = $root.CNETMsg_Disconnect = (() => {
      * @instance
      */
     CNETMsg_Disconnect.prototype.text = "";
-
     /**
      * Decodes a CNETMsg_Disconnect message from the specified reader or buffer.
      * @function decode
@@ -1141,9 +1048,9 @@ export const CNETMsg_Disconnect = $root.CNETMsg_Disconnect = (() => {
     CNETMsg_Disconnect.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_Disconnect();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_Disconnect();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.text = reader.string();
@@ -1155,12 +1062,9 @@ export const CNETMsg_Disconnect = $root.CNETMsg_Disconnect = (() => {
         }
         return message;
     };
-
     return CNETMsg_Disconnect;
 })();
-
-export const CNETMsg_File = $root.CNETMsg_File = (() => {
-
+exports.CNETMsg_File = $root.CNETMsg_File = (function () {
     /**
      * Properties of a CNETMsg_File.
      * @exports ICNETMsg_File
@@ -1170,7 +1074,6 @@ export const CNETMsg_File = $root.CNETMsg_File = (() => {
      * @property {boolean|null} [isReplayDemoFile] CNETMsg_File isReplayDemoFile
      * @property {boolean|null} [deny] CNETMsg_File deny
      */
-
     /**
      * Constructs a new CNETMsg_File.
      * @exports CNETMsg_File
@@ -1181,11 +1084,10 @@ export const CNETMsg_File = $root.CNETMsg_File = (() => {
      */
     function CNETMsg_File(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CNETMsg_File transferId.
      * @member {number} transferId
@@ -1193,7 +1095,6 @@ export const CNETMsg_File = $root.CNETMsg_File = (() => {
      * @instance
      */
     CNETMsg_File.prototype.transferId = 0;
-
     /**
      * CNETMsg_File fileName.
      * @member {string} fileName
@@ -1201,7 +1102,6 @@ export const CNETMsg_File = $root.CNETMsg_File = (() => {
      * @instance
      */
     CNETMsg_File.prototype.fileName = "";
-
     /**
      * CNETMsg_File isReplayDemoFile.
      * @member {boolean} isReplayDemoFile
@@ -1209,7 +1109,6 @@ export const CNETMsg_File = $root.CNETMsg_File = (() => {
      * @instance
      */
     CNETMsg_File.prototype.isReplayDemoFile = false;
-
     /**
      * CNETMsg_File deny.
      * @member {boolean} deny
@@ -1217,7 +1116,6 @@ export const CNETMsg_File = $root.CNETMsg_File = (() => {
      * @instance
      */
     CNETMsg_File.prototype.deny = false;
-
     /**
      * Decodes a CNETMsg_File message from the specified reader or buffer.
      * @function decode
@@ -1232,9 +1130,9 @@ export const CNETMsg_File = $root.CNETMsg_File = (() => {
     CNETMsg_File.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_File();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_File();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.transferId = reader.int32();
@@ -1255,19 +1153,15 @@ export const CNETMsg_File = $root.CNETMsg_File = (() => {
         }
         return message;
     };
-
     return CNETMsg_File;
 })();
-
-export const CNETMsg_SplitScreenUser = $root.CNETMsg_SplitScreenUser = (() => {
-
+exports.CNETMsg_SplitScreenUser = $root.CNETMsg_SplitScreenUser = (function () {
     /**
      * Properties of a CNETMsg_SplitScreenUser.
      * @exports ICNETMsg_SplitScreenUser
      * @interface ICNETMsg_SplitScreenUser
      * @property {number|null} [slot] CNETMsg_SplitScreenUser slot
      */
-
     /**
      * Constructs a new CNETMsg_SplitScreenUser.
      * @exports CNETMsg_SplitScreenUser
@@ -1278,11 +1172,10 @@ export const CNETMsg_SplitScreenUser = $root.CNETMsg_SplitScreenUser = (() => {
      */
     function CNETMsg_SplitScreenUser(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CNETMsg_SplitScreenUser slot.
      * @member {number} slot
@@ -1290,7 +1183,6 @@ export const CNETMsg_SplitScreenUser = $root.CNETMsg_SplitScreenUser = (() => {
      * @instance
      */
     CNETMsg_SplitScreenUser.prototype.slot = 0;
-
     /**
      * Decodes a CNETMsg_SplitScreenUser message from the specified reader or buffer.
      * @function decode
@@ -1305,9 +1197,9 @@ export const CNETMsg_SplitScreenUser = $root.CNETMsg_SplitScreenUser = (() => {
     CNETMsg_SplitScreenUser.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_SplitScreenUser();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_SplitScreenUser();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.slot = reader.int32();
@@ -1319,12 +1211,9 @@ export const CNETMsg_SplitScreenUser = $root.CNETMsg_SplitScreenUser = (() => {
         }
         return message;
     };
-
     return CNETMsg_SplitScreenUser;
 })();
-
-export const CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => {
-
+exports.CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (function () {
     /**
      * Properties of a CNETMsg_PlayerAvatarData.
      * @exports ICNETMsg_PlayerAvatarData
@@ -1332,7 +1221,6 @@ export const CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => 
      * @property {number|null} [accountid] CNETMsg_PlayerAvatarData accountid
      * @property {Uint8Array|null} [rgb] CNETMsg_PlayerAvatarData rgb
      */
-
     /**
      * Constructs a new CNETMsg_PlayerAvatarData.
      * @exports CNETMsg_PlayerAvatarData
@@ -1343,11 +1231,10 @@ export const CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => 
      */
     function CNETMsg_PlayerAvatarData(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CNETMsg_PlayerAvatarData accountid.
      * @member {number} accountid
@@ -1355,7 +1242,6 @@ export const CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => 
      * @instance
      */
     CNETMsg_PlayerAvatarData.prototype.accountid = 0;
-
     /**
      * CNETMsg_PlayerAvatarData rgb.
      * @member {Uint8Array} rgb
@@ -1363,7 +1249,6 @@ export const CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => 
      * @instance
      */
     CNETMsg_PlayerAvatarData.prototype.rgb = $util.newBuffer([]);
-
     /**
      * Decodes a CNETMsg_PlayerAvatarData message from the specified reader or buffer.
      * @function decode
@@ -1378,9 +1263,9 @@ export const CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => 
     CNETMsg_PlayerAvatarData.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_PlayerAvatarData();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CNETMsg_PlayerAvatarData();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.accountid = reader.uint32();
@@ -1395,12 +1280,9 @@ export const CNETMsg_PlayerAvatarData = $root.CNETMsg_PlayerAvatarData = (() => 
         }
         return message;
     };
-
     return CNETMsg_PlayerAvatarData;
 })();
-
-export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
-
+exports.CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (function () {
     /**
      * Properties of a CCLCMsg_ClientInfo.
      * @exports ICCLCMsg_ClientInfo
@@ -1413,7 +1295,6 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
      * @property {string|null} [friendsName] CCLCMsg_ClientInfo friendsName
      * @property {Array.<number>|null} [customFiles] CCLCMsg_ClientInfo customFiles
      */
-
     /**
      * Constructs a new CCLCMsg_ClientInfo.
      * @exports CCLCMsg_ClientInfo
@@ -1425,11 +1306,10 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
     function CCLCMsg_ClientInfo(properties) {
         this.customFiles = [];
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_ClientInfo sendTableCrc.
      * @member {number} sendTableCrc
@@ -1437,7 +1317,6 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
      * @instance
      */
     CCLCMsg_ClientInfo.prototype.sendTableCrc = 0;
-
     /**
      * CCLCMsg_ClientInfo serverCount.
      * @member {number} serverCount
@@ -1445,7 +1324,6 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
      * @instance
      */
     CCLCMsg_ClientInfo.prototype.serverCount = 0;
-
     /**
      * CCLCMsg_ClientInfo isHltv.
      * @member {boolean} isHltv
@@ -1453,7 +1331,6 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
      * @instance
      */
     CCLCMsg_ClientInfo.prototype.isHltv = false;
-
     /**
      * CCLCMsg_ClientInfo isReplay.
      * @member {boolean} isReplay
@@ -1461,7 +1338,6 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
      * @instance
      */
     CCLCMsg_ClientInfo.prototype.isReplay = false;
-
     /**
      * CCLCMsg_ClientInfo friendsId.
      * @member {number} friendsId
@@ -1469,7 +1345,6 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
      * @instance
      */
     CCLCMsg_ClientInfo.prototype.friendsId = 0;
-
     /**
      * CCLCMsg_ClientInfo friendsName.
      * @member {string} friendsName
@@ -1477,7 +1352,6 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
      * @instance
      */
     CCLCMsg_ClientInfo.prototype.friendsName = "";
-
     /**
      * CCLCMsg_ClientInfo customFiles.
      * @member {Array.<number>} customFiles
@@ -1485,7 +1359,6 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
      * @instance
      */
     CCLCMsg_ClientInfo.prototype.customFiles = $util.emptyArray;
-
     /**
      * Decodes a CCLCMsg_ClientInfo message from the specified reader or buffer.
      * @function decode
@@ -1500,9 +1373,9 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
     CCLCMsg_ClientInfo.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_ClientInfo();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_ClientInfo();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.sendTableCrc = reader.fixed32();
@@ -1526,10 +1399,11 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
                     if (!(message.customFiles && message.customFiles.length))
                         message.customFiles = [];
                     if ((tag & 7) === 2) {
-                        let end2 = reader.uint32() + reader.pos;
+                        var end2 = reader.uint32() + reader.pos;
                         while (reader.pos < end2)
                             message.customFiles.push(reader.fixed32());
-                    } else
+                    }
+                    else
                         message.customFiles.push(reader.fixed32());
                     break;
                 default:
@@ -1539,12 +1413,9 @@ export const CCLCMsg_ClientInfo = $root.CCLCMsg_ClientInfo = (() => {
         }
         return message;
     };
-
     return CCLCMsg_ClientInfo;
 })();
-
-export const CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
-
+exports.CCLCMsg_Move = $root.CCLCMsg_Move = (function () {
     /**
      * Properties of a CCLCMsg_Move.
      * @exports ICCLCMsg_Move
@@ -1553,7 +1424,6 @@ export const CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
      * @property {number|null} [numNewCommands] CCLCMsg_Move numNewCommands
      * @property {Uint8Array|null} [data] CCLCMsg_Move data
      */
-
     /**
      * Constructs a new CCLCMsg_Move.
      * @exports CCLCMsg_Move
@@ -1564,11 +1434,10 @@ export const CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
      */
     function CCLCMsg_Move(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_Move numBackupCommands.
      * @member {number} numBackupCommands
@@ -1576,7 +1445,6 @@ export const CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
      * @instance
      */
     CCLCMsg_Move.prototype.numBackupCommands = 0;
-
     /**
      * CCLCMsg_Move numNewCommands.
      * @member {number} numNewCommands
@@ -1584,7 +1452,6 @@ export const CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
      * @instance
      */
     CCLCMsg_Move.prototype.numNewCommands = 0;
-
     /**
      * CCLCMsg_Move data.
      * @member {Uint8Array} data
@@ -1592,7 +1459,6 @@ export const CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
      * @instance
      */
     CCLCMsg_Move.prototype.data = $util.newBuffer([]);
-
     /**
      * Decodes a CCLCMsg_Move message from the specified reader or buffer.
      * @function decode
@@ -1607,9 +1473,9 @@ export const CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
     CCLCMsg_Move.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_Move();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_Move();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.numBackupCommands = reader.uint32();
@@ -1627,12 +1493,9 @@ export const CCLCMsg_Move = $root.CCLCMsg_Move = (() => {
         }
         return message;
     };
-
     return CCLCMsg_Move;
 })();
-
-export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
-
+exports.CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (function () {
     /**
      * Properties of a CCLCMsg_VoiceData.
      * @exports ICCLCMsg_VoiceData
@@ -1644,7 +1507,6 @@ export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
      * @property {number|null} [sectionNumber] CCLCMsg_VoiceData sectionNumber
      * @property {number|null} [uncompressedSampleOffset] CCLCMsg_VoiceData uncompressedSampleOffset
      */
-
     /**
      * Constructs a new CCLCMsg_VoiceData.
      * @exports CCLCMsg_VoiceData
@@ -1655,11 +1517,10 @@ export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
      */
     function CCLCMsg_VoiceData(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_VoiceData data.
      * @member {Uint8Array} data
@@ -1667,7 +1528,6 @@ export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
      * @instance
      */
     CCLCMsg_VoiceData.prototype.data = $util.newBuffer([]);
-
     /**
      * CCLCMsg_VoiceData xuid.
      * @member {number|Long} xuid
@@ -1675,7 +1535,6 @@ export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
      * @instance
      */
     CCLCMsg_VoiceData.prototype.xuid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
-
     /**
      * CCLCMsg_VoiceData format.
      * @member {VoiceDataFormat_t} format
@@ -1683,7 +1542,6 @@ export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
      * @instance
      */
     CCLCMsg_VoiceData.prototype.format = 1;
-
     /**
      * CCLCMsg_VoiceData sequenceBytes.
      * @member {number} sequenceBytes
@@ -1691,7 +1549,6 @@ export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
      * @instance
      */
     CCLCMsg_VoiceData.prototype.sequenceBytes = 0;
-
     /**
      * CCLCMsg_VoiceData sectionNumber.
      * @member {number} sectionNumber
@@ -1699,7 +1556,6 @@ export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
      * @instance
      */
     CCLCMsg_VoiceData.prototype.sectionNumber = 0;
-
     /**
      * CCLCMsg_VoiceData uncompressedSampleOffset.
      * @member {number} uncompressedSampleOffset
@@ -1707,7 +1563,6 @@ export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
      * @instance
      */
     CCLCMsg_VoiceData.prototype.uncompressedSampleOffset = 0;
-
     /**
      * Decodes a CCLCMsg_VoiceData message from the specified reader or buffer.
      * @function decode
@@ -1722,9 +1577,9 @@ export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
     CCLCMsg_VoiceData.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_VoiceData();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_VoiceData();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.data = reader.bytes();
@@ -1751,12 +1606,9 @@ export const CCLCMsg_VoiceData = $root.CCLCMsg_VoiceData = (() => {
         }
         return message;
     };
-
     return CCLCMsg_VoiceData;
 })();
-
-export const CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
-
+exports.CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (function () {
     /**
      * Properties of a CCLCMsg_BaselineAck.
      * @exports ICCLCMsg_BaselineAck
@@ -1764,7 +1616,6 @@ export const CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
      * @property {number|null} [baselineTick] CCLCMsg_BaselineAck baselineTick
      * @property {number|null} [baselineNr] CCLCMsg_BaselineAck baselineNr
      */
-
     /**
      * Constructs a new CCLCMsg_BaselineAck.
      * @exports CCLCMsg_BaselineAck
@@ -1775,11 +1626,10 @@ export const CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
      */
     function CCLCMsg_BaselineAck(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_BaselineAck baselineTick.
      * @member {number} baselineTick
@@ -1787,7 +1637,6 @@ export const CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
      * @instance
      */
     CCLCMsg_BaselineAck.prototype.baselineTick = 0;
-
     /**
      * CCLCMsg_BaselineAck baselineNr.
      * @member {number} baselineNr
@@ -1795,7 +1644,6 @@ export const CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
      * @instance
      */
     CCLCMsg_BaselineAck.prototype.baselineNr = 0;
-
     /**
      * Decodes a CCLCMsg_BaselineAck message from the specified reader or buffer.
      * @function decode
@@ -1810,9 +1658,9 @@ export const CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
     CCLCMsg_BaselineAck.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_BaselineAck();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_BaselineAck();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.baselineTick = reader.int32();
@@ -1827,19 +1675,15 @@ export const CCLCMsg_BaselineAck = $root.CCLCMsg_BaselineAck = (() => {
         }
         return message;
     };
-
     return CCLCMsg_BaselineAck;
 })();
-
-export const CCLCMsg_ListenEvents = $root.CCLCMsg_ListenEvents = (() => {
-
+exports.CCLCMsg_ListenEvents = $root.CCLCMsg_ListenEvents = (function () {
     /**
      * Properties of a CCLCMsg_ListenEvents.
      * @exports ICCLCMsg_ListenEvents
      * @interface ICCLCMsg_ListenEvents
      * @property {Array.<number>|null} [eventMask] CCLCMsg_ListenEvents eventMask
      */
-
     /**
      * Constructs a new CCLCMsg_ListenEvents.
      * @exports CCLCMsg_ListenEvents
@@ -1851,11 +1695,10 @@ export const CCLCMsg_ListenEvents = $root.CCLCMsg_ListenEvents = (() => {
     function CCLCMsg_ListenEvents(properties) {
         this.eventMask = [];
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_ListenEvents eventMask.
      * @member {Array.<number>} eventMask
@@ -1863,7 +1706,6 @@ export const CCLCMsg_ListenEvents = $root.CCLCMsg_ListenEvents = (() => {
      * @instance
      */
     CCLCMsg_ListenEvents.prototype.eventMask = $util.emptyArray;
-
     /**
      * Decodes a CCLCMsg_ListenEvents message from the specified reader or buffer.
      * @function decode
@@ -1878,18 +1720,19 @@ export const CCLCMsg_ListenEvents = $root.CCLCMsg_ListenEvents = (() => {
     CCLCMsg_ListenEvents.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_ListenEvents();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_ListenEvents();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     if (!(message.eventMask && message.eventMask.length))
                         message.eventMask = [];
                     if ((tag & 7) === 2) {
-                        let end2 = reader.uint32() + reader.pos;
+                        var end2 = reader.uint32() + reader.pos;
                         while (reader.pos < end2)
                             message.eventMask.push(reader.fixed32());
-                    } else
+                    }
+                    else
                         message.eventMask.push(reader.fixed32());
                     break;
                 default:
@@ -1899,12 +1742,9 @@ export const CCLCMsg_ListenEvents = $root.CCLCMsg_ListenEvents = (() => {
         }
         return message;
     };
-
     return CCLCMsg_ListenEvents;
 })();
-
-export const CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => {
-
+exports.CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (function () {
     /**
      * Properties of a CCLCMsg_RespondCvarValue.
      * @exports ICCLCMsg_RespondCvarValue
@@ -1914,7 +1754,6 @@ export const CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => 
      * @property {string|null} [name] CCLCMsg_RespondCvarValue name
      * @property {string|null} [value] CCLCMsg_RespondCvarValue value
      */
-
     /**
      * Constructs a new CCLCMsg_RespondCvarValue.
      * @exports CCLCMsg_RespondCvarValue
@@ -1925,11 +1764,10 @@ export const CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => 
      */
     function CCLCMsg_RespondCvarValue(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_RespondCvarValue cookie.
      * @member {number} cookie
@@ -1937,7 +1775,6 @@ export const CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => 
      * @instance
      */
     CCLCMsg_RespondCvarValue.prototype.cookie = 0;
-
     /**
      * CCLCMsg_RespondCvarValue statusCode.
      * @member {number} statusCode
@@ -1945,7 +1782,6 @@ export const CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => 
      * @instance
      */
     CCLCMsg_RespondCvarValue.prototype.statusCode = 0;
-
     /**
      * CCLCMsg_RespondCvarValue name.
      * @member {string} name
@@ -1953,7 +1789,6 @@ export const CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => 
      * @instance
      */
     CCLCMsg_RespondCvarValue.prototype.name = "";
-
     /**
      * CCLCMsg_RespondCvarValue value.
      * @member {string} value
@@ -1961,7 +1796,6 @@ export const CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => 
      * @instance
      */
     CCLCMsg_RespondCvarValue.prototype.value = "";
-
     /**
      * Decodes a CCLCMsg_RespondCvarValue message from the specified reader or buffer.
      * @function decode
@@ -1976,9 +1810,9 @@ export const CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => 
     CCLCMsg_RespondCvarValue.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_RespondCvarValue();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_RespondCvarValue();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.cookie = reader.int32();
@@ -1999,12 +1833,9 @@ export const CCLCMsg_RespondCvarValue = $root.CCLCMsg_RespondCvarValue = (() => 
         }
         return message;
     };
-
     return CCLCMsg_RespondCvarValue;
 })();
-
-export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
-
+exports.CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (function () {
     /**
      * Properties of a CCLCMsg_FileCRCCheck.
      * @exports ICCLCMsg_FileCRCCheck
@@ -2021,7 +1852,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @property {number|null} [packFileId] CCLCMsg_FileCRCCheck packFileId
      * @property {number|null} [packFileNumber] CCLCMsg_FileCRCCheck packFileNumber
      */
-
     /**
      * Constructs a new CCLCMsg_FileCRCCheck.
      * @exports CCLCMsg_FileCRCCheck
@@ -2032,11 +1862,10 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      */
     function CCLCMsg_FileCRCCheck(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_FileCRCCheck codePath.
      * @member {number} codePath
@@ -2044,7 +1873,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.codePath = 0;
-
     /**
      * CCLCMsg_FileCRCCheck path.
      * @member {string} path
@@ -2052,7 +1880,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.path = "";
-
     /**
      * CCLCMsg_FileCRCCheck codeFilename.
      * @member {number} codeFilename
@@ -2060,7 +1887,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.codeFilename = 0;
-
     /**
      * CCLCMsg_FileCRCCheck filename.
      * @member {string} filename
@@ -2068,7 +1894,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.filename = "";
-
     /**
      * CCLCMsg_FileCRCCheck fileFraction.
      * @member {number} fileFraction
@@ -2076,7 +1901,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.fileFraction = 0;
-
     /**
      * CCLCMsg_FileCRCCheck md5.
      * @member {Uint8Array} md5
@@ -2084,7 +1908,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.md5 = $util.newBuffer([]);
-
     /**
      * CCLCMsg_FileCRCCheck crc.
      * @member {number} crc
@@ -2092,7 +1915,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.crc = 0;
-
     /**
      * CCLCMsg_FileCRCCheck fileHashType.
      * @member {number} fileHashType
@@ -2100,7 +1922,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.fileHashType = 0;
-
     /**
      * CCLCMsg_FileCRCCheck fileLen.
      * @member {number} fileLen
@@ -2108,7 +1929,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.fileLen = 0;
-
     /**
      * CCLCMsg_FileCRCCheck packFileId.
      * @member {number} packFileId
@@ -2116,7 +1936,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.packFileId = 0;
-
     /**
      * CCLCMsg_FileCRCCheck packFileNumber.
      * @member {number} packFileNumber
@@ -2124,7 +1943,6 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
      * @instance
      */
     CCLCMsg_FileCRCCheck.prototype.packFileNumber = 0;
-
     /**
      * Decodes a CCLCMsg_FileCRCCheck message from the specified reader or buffer.
      * @function decode
@@ -2139,9 +1957,9 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
     CCLCMsg_FileCRCCheck.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_FileCRCCheck();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_FileCRCCheck();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.codePath = reader.int32();
@@ -2183,19 +2001,15 @@ export const CCLCMsg_FileCRCCheck = $root.CCLCMsg_FileCRCCheck = (() => {
         }
         return message;
     };
-
     return CCLCMsg_FileCRCCheck;
 })();
-
-export const CCLCMsg_LoadingProgress = $root.CCLCMsg_LoadingProgress = (() => {
-
+exports.CCLCMsg_LoadingProgress = $root.CCLCMsg_LoadingProgress = (function () {
     /**
      * Properties of a CCLCMsg_LoadingProgress.
      * @exports ICCLCMsg_LoadingProgress
      * @interface ICCLCMsg_LoadingProgress
      * @property {number|null} [progress] CCLCMsg_LoadingProgress progress
      */
-
     /**
      * Constructs a new CCLCMsg_LoadingProgress.
      * @exports CCLCMsg_LoadingProgress
@@ -2206,11 +2020,10 @@ export const CCLCMsg_LoadingProgress = $root.CCLCMsg_LoadingProgress = (() => {
      */
     function CCLCMsg_LoadingProgress(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_LoadingProgress progress.
      * @member {number} progress
@@ -2218,7 +2031,6 @@ export const CCLCMsg_LoadingProgress = $root.CCLCMsg_LoadingProgress = (() => {
      * @instance
      */
     CCLCMsg_LoadingProgress.prototype.progress = 0;
-
     /**
      * Decodes a CCLCMsg_LoadingProgress message from the specified reader or buffer.
      * @function decode
@@ -2233,9 +2045,9 @@ export const CCLCMsg_LoadingProgress = $root.CCLCMsg_LoadingProgress = (() => {
     CCLCMsg_LoadingProgress.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_LoadingProgress();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_LoadingProgress();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.progress = reader.int32();
@@ -2247,19 +2059,15 @@ export const CCLCMsg_LoadingProgress = $root.CCLCMsg_LoadingProgress = (() => {
         }
         return message;
     };
-
     return CCLCMsg_LoadingProgress;
 })();
-
-export const CCLCMsg_SplitPlayerConnect = $root.CCLCMsg_SplitPlayerConnect = (() => {
-
+exports.CCLCMsg_SplitPlayerConnect = $root.CCLCMsg_SplitPlayerConnect = (function () {
     /**
      * Properties of a CCLCMsg_SplitPlayerConnect.
      * @exports ICCLCMsg_SplitPlayerConnect
      * @interface ICCLCMsg_SplitPlayerConnect
      * @property {ICMsg_CVars|null} [convars] CCLCMsg_SplitPlayerConnect convars
      */
-
     /**
      * Constructs a new CCLCMsg_SplitPlayerConnect.
      * @exports CCLCMsg_SplitPlayerConnect
@@ -2270,11 +2078,10 @@ export const CCLCMsg_SplitPlayerConnect = $root.CCLCMsg_SplitPlayerConnect = (()
      */
     function CCLCMsg_SplitPlayerConnect(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_SplitPlayerConnect convars.
      * @member {ICMsg_CVars|null|undefined} convars
@@ -2282,7 +2089,6 @@ export const CCLCMsg_SplitPlayerConnect = $root.CCLCMsg_SplitPlayerConnect = (()
      * @instance
      */
     CCLCMsg_SplitPlayerConnect.prototype.convars = null;
-
     /**
      * Decodes a CCLCMsg_SplitPlayerConnect message from the specified reader or buffer.
      * @function decode
@@ -2297,9 +2103,9 @@ export const CCLCMsg_SplitPlayerConnect = $root.CCLCMsg_SplitPlayerConnect = (()
     CCLCMsg_SplitPlayerConnect.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_SplitPlayerConnect();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_SplitPlayerConnect();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.convars = $root.CMsg_CVars.decode(reader, reader.uint32());
@@ -2311,19 +2117,15 @@ export const CCLCMsg_SplitPlayerConnect = $root.CCLCMsg_SplitPlayerConnect = (()
         }
         return message;
     };
-
     return CCLCMsg_SplitPlayerConnect;
 })();
-
-export const CCLCMsg_CmdKeyValues = $root.CCLCMsg_CmdKeyValues = (() => {
-
+exports.CCLCMsg_CmdKeyValues = $root.CCLCMsg_CmdKeyValues = (function () {
     /**
      * Properties of a CCLCMsg_CmdKeyValues.
      * @exports ICCLCMsg_CmdKeyValues
      * @interface ICCLCMsg_CmdKeyValues
      * @property {Uint8Array|null} [keyvalues] CCLCMsg_CmdKeyValues keyvalues
      */
-
     /**
      * Constructs a new CCLCMsg_CmdKeyValues.
      * @exports CCLCMsg_CmdKeyValues
@@ -2334,11 +2136,10 @@ export const CCLCMsg_CmdKeyValues = $root.CCLCMsg_CmdKeyValues = (() => {
      */
     function CCLCMsg_CmdKeyValues(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_CmdKeyValues keyvalues.
      * @member {Uint8Array} keyvalues
@@ -2346,7 +2147,6 @@ export const CCLCMsg_CmdKeyValues = $root.CCLCMsg_CmdKeyValues = (() => {
      * @instance
      */
     CCLCMsg_CmdKeyValues.prototype.keyvalues = $util.newBuffer([]);
-
     /**
      * Decodes a CCLCMsg_CmdKeyValues message from the specified reader or buffer.
      * @function decode
@@ -2361,9 +2161,9 @@ export const CCLCMsg_CmdKeyValues = $root.CCLCMsg_CmdKeyValues = (() => {
     CCLCMsg_CmdKeyValues.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_CmdKeyValues();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_CmdKeyValues();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.keyvalues = reader.bytes();
@@ -2375,12 +2175,9 @@ export const CCLCMsg_CmdKeyValues = $root.CCLCMsg_CmdKeyValues = (() => {
         }
         return message;
     };
-
     return CCLCMsg_CmdKeyValues;
 })();
-
-export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
-
+exports.CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (function () {
     /**
      * Properties of a CSVCMsg_ServerInfo.
      * @exports ICSVCMsg_ServerInfo
@@ -2408,7 +2205,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @property {number|null} [publicIp] CSVCMsg_ServerInfo publicIp
      * @property {number|Long|null} [ugcMapId] CSVCMsg_ServerInfo ugcMapId
      */
-
     /**
      * Constructs a new CSVCMsg_ServerInfo.
      * @exports CSVCMsg_ServerInfo
@@ -2419,11 +2215,10 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      */
     function CSVCMsg_ServerInfo(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_ServerInfo protocol.
      * @member {number} protocol
@@ -2431,7 +2226,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.protocol = 0;
-
     /**
      * CSVCMsg_ServerInfo serverCount.
      * @member {number} serverCount
@@ -2439,7 +2233,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.serverCount = 0;
-
     /**
      * CSVCMsg_ServerInfo isDedicated.
      * @member {boolean} isDedicated
@@ -2447,7 +2240,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.isDedicated = false;
-
     /**
      * CSVCMsg_ServerInfo isOfficialValveServer.
      * @member {boolean} isOfficialValveServer
@@ -2455,7 +2247,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.isOfficialValveServer = false;
-
     /**
      * CSVCMsg_ServerInfo isHltv.
      * @member {boolean} isHltv
@@ -2463,7 +2254,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.isHltv = false;
-
     /**
      * CSVCMsg_ServerInfo isReplay.
      * @member {boolean} isReplay
@@ -2471,7 +2261,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.isReplay = false;
-
     /**
      * CSVCMsg_ServerInfo isRedirectingToProxyRelay.
      * @member {boolean} isRedirectingToProxyRelay
@@ -2479,7 +2268,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.isRedirectingToProxyRelay = false;
-
     /**
      * CSVCMsg_ServerInfo cOs.
      * @member {number} cOs
@@ -2487,7 +2275,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.cOs = 0;
-
     /**
      * CSVCMsg_ServerInfo mapCrc.
      * @member {number} mapCrc
@@ -2495,7 +2282,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.mapCrc = 0;
-
     /**
      * CSVCMsg_ServerInfo clientCrc.
      * @member {number} clientCrc
@@ -2503,7 +2289,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.clientCrc = 0;
-
     /**
      * CSVCMsg_ServerInfo stringTableCrc.
      * @member {number} stringTableCrc
@@ -2511,7 +2296,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.stringTableCrc = 0;
-
     /**
      * CSVCMsg_ServerInfo maxClients.
      * @member {number} maxClients
@@ -2519,7 +2303,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.maxClients = 0;
-
     /**
      * CSVCMsg_ServerInfo maxClasses.
      * @member {number} maxClasses
@@ -2527,7 +2310,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.maxClasses = 0;
-
     /**
      * CSVCMsg_ServerInfo playerSlot.
      * @member {number} playerSlot
@@ -2535,7 +2317,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.playerSlot = 0;
-
     /**
      * CSVCMsg_ServerInfo tickInterval.
      * @member {number} tickInterval
@@ -2543,7 +2324,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.tickInterval = 0;
-
     /**
      * CSVCMsg_ServerInfo gameDir.
      * @member {string} gameDir
@@ -2551,7 +2331,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.gameDir = "";
-
     /**
      * CSVCMsg_ServerInfo mapName.
      * @member {string} mapName
@@ -2559,7 +2338,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.mapName = "";
-
     /**
      * CSVCMsg_ServerInfo mapGroupName.
      * @member {string} mapGroupName
@@ -2567,7 +2345,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.mapGroupName = "";
-
     /**
      * CSVCMsg_ServerInfo skyName.
      * @member {string} skyName
@@ -2575,7 +2352,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.skyName = "";
-
     /**
      * CSVCMsg_ServerInfo hostName.
      * @member {string} hostName
@@ -2583,7 +2359,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.hostName = "";
-
     /**
      * CSVCMsg_ServerInfo publicIp.
      * @member {number} publicIp
@@ -2591,7 +2366,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.publicIp = 0;
-
     /**
      * CSVCMsg_ServerInfo ugcMapId.
      * @member {number|Long} ugcMapId
@@ -2599,7 +2373,6 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
      * @instance
      */
     CSVCMsg_ServerInfo.prototype.ugcMapId = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
-
     /**
      * Decodes a CSVCMsg_ServerInfo message from the specified reader or buffer.
      * @function decode
@@ -2614,9 +2387,9 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
     CSVCMsg_ServerInfo.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_ServerInfo();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_ServerInfo();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.protocol = reader.int32();
@@ -2691,12 +2464,9 @@ export const CSVCMsg_ServerInfo = $root.CSVCMsg_ServerInfo = (() => {
         }
         return message;
     };
-
     return CSVCMsg_ServerInfo;
 })();
-
-export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
-
+exports.CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (function () {
     /**
      * Properties of a CSVCMsg_ClassInfo.
      * @exports ICSVCMsg_ClassInfo
@@ -2704,7 +2474,6 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
      * @property {boolean|null} [createOnClient] CSVCMsg_ClassInfo createOnClient
      * @property {Array.<CSVCMsg_ClassInfo.Iclass_t>|null} [classes] CSVCMsg_ClassInfo classes
      */
-
     /**
      * Constructs a new CSVCMsg_ClassInfo.
      * @exports CSVCMsg_ClassInfo
@@ -2716,11 +2485,10 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
     function CSVCMsg_ClassInfo(properties) {
         this.classes = [];
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_ClassInfo createOnClient.
      * @member {boolean} createOnClient
@@ -2728,7 +2496,6 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
      * @instance
      */
     CSVCMsg_ClassInfo.prototype.createOnClient = false;
-
     /**
      * CSVCMsg_ClassInfo classes.
      * @member {Array.<CSVCMsg_ClassInfo.Iclass_t>} classes
@@ -2736,7 +2503,6 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
      * @instance
      */
     CSVCMsg_ClassInfo.prototype.classes = $util.emptyArray;
-
     /**
      * Decodes a CSVCMsg_ClassInfo message from the specified reader or buffer.
      * @function decode
@@ -2751,9 +2517,9 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
     CSVCMsg_ClassInfo.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_ClassInfo();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_ClassInfo();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.createOnClient = reader.bool();
@@ -2770,9 +2536,7 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
         }
         return message;
     };
-
     CSVCMsg_ClassInfo.class_t = (function () {
-
         /**
          * Properties of a class_t.
          * @memberof CSVCMsg_ClassInfo
@@ -2781,7 +2545,6 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
          * @property {string|null} [dataTableName] class_t dataTableName
          * @property {string|null} [className] class_t className
          */
-
         /**
          * Constructs a new class_t.
          * @memberof CSVCMsg_ClassInfo
@@ -2792,11 +2555,10 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
          */
         function class_t(properties) {
             if (properties)
-                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
-
         /**
          * class_t classId.
          * @member {number} classId
@@ -2804,7 +2566,6 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
          * @instance
          */
         class_t.prototype.classId = 0;
-
         /**
          * class_t dataTableName.
          * @member {string} dataTableName
@@ -2812,7 +2573,6 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
          * @instance
          */
         class_t.prototype.dataTableName = "";
-
         /**
          * class_t className.
          * @member {string} className
@@ -2820,7 +2580,6 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
          * @instance
          */
         class_t.prototype.className = "";
-
         /**
          * Decodes a class_t message from the specified reader or buffer.
          * @function decode
@@ -2835,9 +2594,9 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
         class_t.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_ClassInfo.class_t();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_ClassInfo.class_t();
             while (reader.pos < end) {
-                let tag = reader.uint32();
+                var tag = reader.uint32();
                 switch (tag >>> 3) {
                     case 1:
                         message.classId = reader.int32();
@@ -2855,15 +2614,11 @@ export const CSVCMsg_ClassInfo = $root.CSVCMsg_ClassInfo = (() => {
             }
             return message;
         };
-
         return class_t;
     })();
-
     return CSVCMsg_ClassInfo;
 })();
-
-export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
-
+exports.CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (function () {
     /**
      * Properties of a CSVCMsg_SendTable.
      * @exports ICSVCMsg_SendTable
@@ -2873,7 +2628,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
      * @property {boolean|null} [needsDecoder] CSVCMsg_SendTable needsDecoder
      * @property {Array.<CSVCMsg_SendTable.Isendprop_t>|null} [props] CSVCMsg_SendTable props
      */
-
     /**
      * Constructs a new CSVCMsg_SendTable.
      * @exports CSVCMsg_SendTable
@@ -2885,11 +2639,10 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
     function CSVCMsg_SendTable(properties) {
         this.props = [];
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_SendTable isEnd.
      * @member {boolean} isEnd
@@ -2897,7 +2650,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
      * @instance
      */
     CSVCMsg_SendTable.prototype.isEnd = false;
-
     /**
      * CSVCMsg_SendTable netTableName.
      * @member {string} netTableName
@@ -2905,7 +2657,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
      * @instance
      */
     CSVCMsg_SendTable.prototype.netTableName = "";
-
     /**
      * CSVCMsg_SendTable needsDecoder.
      * @member {boolean} needsDecoder
@@ -2913,7 +2664,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
      * @instance
      */
     CSVCMsg_SendTable.prototype.needsDecoder = false;
-
     /**
      * CSVCMsg_SendTable props.
      * @member {Array.<CSVCMsg_SendTable.Isendprop_t>} props
@@ -2921,7 +2671,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
      * @instance
      */
     CSVCMsg_SendTable.prototype.props = $util.emptyArray;
-
     /**
      * Decodes a CSVCMsg_SendTable message from the specified reader or buffer.
      * @function decode
@@ -2936,9 +2685,9 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
     CSVCMsg_SendTable.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_SendTable();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_SendTable();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.isEnd = reader.bool();
@@ -2961,9 +2710,7 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
         }
         return message;
     };
-
     CSVCMsg_SendTable.sendprop_t = (function () {
-
         /**
          * Properties of a sendprop_t.
          * @memberof CSVCMsg_SendTable
@@ -2978,7 +2725,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          * @property {number|null} [highValue] sendprop_t highValue
          * @property {number|null} [numBits] sendprop_t numBits
          */
-
         /**
          * Constructs a new sendprop_t.
          * @memberof CSVCMsg_SendTable
@@ -2989,11 +2735,10 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          */
         function sendprop_t(properties) {
             if (properties)
-                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
-
         /**
          * sendprop_t type.
          * @member {number} type
@@ -3001,7 +2746,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          * @instance
          */
         sendprop_t.prototype.type = 0;
-
         /**
          * sendprop_t varName.
          * @member {string} varName
@@ -3009,7 +2753,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          * @instance
          */
         sendprop_t.prototype.varName = "";
-
         /**
          * sendprop_t flags.
          * @member {number} flags
@@ -3017,7 +2760,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          * @instance
          */
         sendprop_t.prototype.flags = 0;
-
         /**
          * sendprop_t priority.
          * @member {number} priority
@@ -3025,7 +2767,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          * @instance
          */
         sendprop_t.prototype.priority = 0;
-
         /**
          * sendprop_t dtName.
          * @member {string} dtName
@@ -3033,7 +2774,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          * @instance
          */
         sendprop_t.prototype.dtName = "";
-
         /**
          * sendprop_t numElements.
          * @member {number} numElements
@@ -3041,7 +2781,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          * @instance
          */
         sendprop_t.prototype.numElements = 0;
-
         /**
          * sendprop_t lowValue.
          * @member {number} lowValue
@@ -3049,7 +2788,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          * @instance
          */
         sendprop_t.prototype.lowValue = 0;
-
         /**
          * sendprop_t highValue.
          * @member {number} highValue
@@ -3057,7 +2795,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          * @instance
          */
         sendprop_t.prototype.highValue = 0;
-
         /**
          * sendprop_t numBits.
          * @member {number} numBits
@@ -3065,7 +2802,6 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
          * @instance
          */
         sendprop_t.prototype.numBits = 0;
-
         /**
          * Decodes a sendprop_t message from the specified reader or buffer.
          * @function decode
@@ -3080,9 +2816,9 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
         sendprop_t.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_SendTable.sendprop_t();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_SendTable.sendprop_t();
             while (reader.pos < end) {
-                let tag = reader.uint32();
+                var tag = reader.uint32();
                 switch (tag >>> 3) {
                     case 1:
                         message.type = reader.int32();
@@ -3118,22 +2854,17 @@ export const CSVCMsg_SendTable = $root.CSVCMsg_SendTable = (() => {
             }
             return message;
         };
-
         return sendprop_t;
     })();
-
     return CSVCMsg_SendTable;
 })();
-
-export const CSVCMsg_Print = $root.CSVCMsg_Print = (() => {
-
+exports.CSVCMsg_Print = $root.CSVCMsg_Print = (function () {
     /**
      * Properties of a CSVCMsg_Print.
      * @exports ICSVCMsg_Print
      * @interface ICSVCMsg_Print
      * @property {string|null} [text] CSVCMsg_Print text
      */
-
     /**
      * Constructs a new CSVCMsg_Print.
      * @exports CSVCMsg_Print
@@ -3144,11 +2875,10 @@ export const CSVCMsg_Print = $root.CSVCMsg_Print = (() => {
      */
     function CSVCMsg_Print(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_Print text.
      * @member {string} text
@@ -3156,7 +2886,6 @@ export const CSVCMsg_Print = $root.CSVCMsg_Print = (() => {
      * @instance
      */
     CSVCMsg_Print.prototype.text = "";
-
     /**
      * Decodes a CSVCMsg_Print message from the specified reader or buffer.
      * @function decode
@@ -3171,9 +2900,9 @@ export const CSVCMsg_Print = $root.CSVCMsg_Print = (() => {
     CSVCMsg_Print.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_Print();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_Print();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.text = reader.string();
@@ -3185,19 +2914,15 @@ export const CSVCMsg_Print = $root.CSVCMsg_Print = (() => {
         }
         return message;
     };
-
     return CSVCMsg_Print;
 })();
-
-export const CSVCMsg_SetPause = $root.CSVCMsg_SetPause = (() => {
-
+exports.CSVCMsg_SetPause = $root.CSVCMsg_SetPause = (function () {
     /**
      * Properties of a CSVCMsg_SetPause.
      * @exports ICSVCMsg_SetPause
      * @interface ICSVCMsg_SetPause
      * @property {boolean|null} [paused] CSVCMsg_SetPause paused
      */
-
     /**
      * Constructs a new CSVCMsg_SetPause.
      * @exports CSVCMsg_SetPause
@@ -3208,11 +2933,10 @@ export const CSVCMsg_SetPause = $root.CSVCMsg_SetPause = (() => {
      */
     function CSVCMsg_SetPause(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_SetPause paused.
      * @member {boolean} paused
@@ -3220,7 +2944,6 @@ export const CSVCMsg_SetPause = $root.CSVCMsg_SetPause = (() => {
      * @instance
      */
     CSVCMsg_SetPause.prototype.paused = false;
-
     /**
      * Decodes a CSVCMsg_SetPause message from the specified reader or buffer.
      * @function decode
@@ -3235,9 +2958,9 @@ export const CSVCMsg_SetPause = $root.CSVCMsg_SetPause = (() => {
     CSVCMsg_SetPause.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_SetPause();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_SetPause();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.paused = reader.bool();
@@ -3249,19 +2972,15 @@ export const CSVCMsg_SetPause = $root.CSVCMsg_SetPause = (() => {
         }
         return message;
     };
-
     return CSVCMsg_SetPause;
 })();
-
-export const CSVCMsg_SetView = $root.CSVCMsg_SetView = (() => {
-
+exports.CSVCMsg_SetView = $root.CSVCMsg_SetView = (function () {
     /**
      * Properties of a CSVCMsg_SetView.
      * @exports ICSVCMsg_SetView
      * @interface ICSVCMsg_SetView
      * @property {number|null} [entityIndex] CSVCMsg_SetView entityIndex
      */
-
     /**
      * Constructs a new CSVCMsg_SetView.
      * @exports CSVCMsg_SetView
@@ -3272,11 +2991,10 @@ export const CSVCMsg_SetView = $root.CSVCMsg_SetView = (() => {
      */
     function CSVCMsg_SetView(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_SetView entityIndex.
      * @member {number} entityIndex
@@ -3284,7 +3002,6 @@ export const CSVCMsg_SetView = $root.CSVCMsg_SetView = (() => {
      * @instance
      */
     CSVCMsg_SetView.prototype.entityIndex = 0;
-
     /**
      * Decodes a CSVCMsg_SetView message from the specified reader or buffer.
      * @function decode
@@ -3299,9 +3016,9 @@ export const CSVCMsg_SetView = $root.CSVCMsg_SetView = (() => {
     CSVCMsg_SetView.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_SetView();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_SetView();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.entityIndex = reader.int32();
@@ -3313,12 +3030,9 @@ export const CSVCMsg_SetView = $root.CSVCMsg_SetView = (() => {
         }
         return message;
     };
-
     return CSVCMsg_SetView;
 })();
-
-export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() => {
-
+exports.CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (function () {
     /**
      * Properties of a CSVCMsg_CreateStringTable.
      * @exports ICSVCMsg_CreateStringTable
@@ -3332,7 +3046,6 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
      * @property {number|null} [flags] CSVCMsg_CreateStringTable flags
      * @property {Uint8Array|null} [stringData] CSVCMsg_CreateStringTable stringData
      */
-
     /**
      * Constructs a new CSVCMsg_CreateStringTable.
      * @exports CSVCMsg_CreateStringTable
@@ -3343,11 +3056,10 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
      */
     function CSVCMsg_CreateStringTable(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_CreateStringTable name.
      * @member {string} name
@@ -3355,7 +3067,6 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
      * @instance
      */
     CSVCMsg_CreateStringTable.prototype.name = "";
-
     /**
      * CSVCMsg_CreateStringTable maxEntries.
      * @member {number} maxEntries
@@ -3363,7 +3074,6 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
      * @instance
      */
     CSVCMsg_CreateStringTable.prototype.maxEntries = 0;
-
     /**
      * CSVCMsg_CreateStringTable numEntries.
      * @member {number} numEntries
@@ -3371,7 +3081,6 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
      * @instance
      */
     CSVCMsg_CreateStringTable.prototype.numEntries = 0;
-
     /**
      * CSVCMsg_CreateStringTable userDataFixedSize.
      * @member {boolean} userDataFixedSize
@@ -3379,7 +3088,6 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
      * @instance
      */
     CSVCMsg_CreateStringTable.prototype.userDataFixedSize = false;
-
     /**
      * CSVCMsg_CreateStringTable userDataSize.
      * @member {number} userDataSize
@@ -3387,7 +3095,6 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
      * @instance
      */
     CSVCMsg_CreateStringTable.prototype.userDataSize = 0;
-
     /**
      * CSVCMsg_CreateStringTable userDataSizeBits.
      * @member {number} userDataSizeBits
@@ -3395,7 +3102,6 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
      * @instance
      */
     CSVCMsg_CreateStringTable.prototype.userDataSizeBits = 0;
-
     /**
      * CSVCMsg_CreateStringTable flags.
      * @member {number} flags
@@ -3403,7 +3109,6 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
      * @instance
      */
     CSVCMsg_CreateStringTable.prototype.flags = 0;
-
     /**
      * CSVCMsg_CreateStringTable stringData.
      * @member {Uint8Array} stringData
@@ -3411,7 +3116,6 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
      * @instance
      */
     CSVCMsg_CreateStringTable.prototype.stringData = $util.newBuffer([]);
-
     /**
      * Decodes a CSVCMsg_CreateStringTable message from the specified reader or buffer.
      * @function decode
@@ -3426,9 +3130,9 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
     CSVCMsg_CreateStringTable.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_CreateStringTable();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_CreateStringTable();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.name = reader.string();
@@ -3461,12 +3165,9 @@ export const CSVCMsg_CreateStringTable = $root.CSVCMsg_CreateStringTable = (() =
         }
         return message;
     };
-
     return CSVCMsg_CreateStringTable;
 })();
-
-export const CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() => {
-
+exports.CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (function () {
     /**
      * Properties of a CSVCMsg_UpdateStringTable.
      * @exports ICSVCMsg_UpdateStringTable
@@ -3475,7 +3176,6 @@ export const CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() =
      * @property {number|null} [numChangedEntries] CSVCMsg_UpdateStringTable numChangedEntries
      * @property {Uint8Array|null} [stringData] CSVCMsg_UpdateStringTable stringData
      */
-
     /**
      * Constructs a new CSVCMsg_UpdateStringTable.
      * @exports CSVCMsg_UpdateStringTable
@@ -3486,11 +3186,10 @@ export const CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() =
      */
     function CSVCMsg_UpdateStringTable(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_UpdateStringTable tableId.
      * @member {number} tableId
@@ -3498,7 +3197,6 @@ export const CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() =
      * @instance
      */
     CSVCMsg_UpdateStringTable.prototype.tableId = 0;
-
     /**
      * CSVCMsg_UpdateStringTable numChangedEntries.
      * @member {number} numChangedEntries
@@ -3506,7 +3204,6 @@ export const CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() =
      * @instance
      */
     CSVCMsg_UpdateStringTable.prototype.numChangedEntries = 0;
-
     /**
      * CSVCMsg_UpdateStringTable stringData.
      * @member {Uint8Array} stringData
@@ -3514,7 +3211,6 @@ export const CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() =
      * @instance
      */
     CSVCMsg_UpdateStringTable.prototype.stringData = $util.newBuffer([]);
-
     /**
      * Decodes a CSVCMsg_UpdateStringTable message from the specified reader or buffer.
      * @function decode
@@ -3529,9 +3225,9 @@ export const CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() =
     CSVCMsg_UpdateStringTable.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_UpdateStringTable();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_UpdateStringTable();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.tableId = reader.int32();
@@ -3549,12 +3245,9 @@ export const CSVCMsg_UpdateStringTable = $root.CSVCMsg_UpdateStringTable = (() =
         }
         return message;
     };
-
     return CSVCMsg_UpdateStringTable;
 })();
-
-export const CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
-
+exports.CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (function () {
     /**
      * Properties of a CSVCMsg_VoiceInit.
      * @exports ICSVCMsg_VoiceInit
@@ -3563,7 +3256,6 @@ export const CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
      * @property {string|null} [codec] CSVCMsg_VoiceInit codec
      * @property {number|null} [version] CSVCMsg_VoiceInit version
      */
-
     /**
      * Constructs a new CSVCMsg_VoiceInit.
      * @exports CSVCMsg_VoiceInit
@@ -3574,11 +3266,10 @@ export const CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
      */
     function CSVCMsg_VoiceInit(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_VoiceInit quality.
      * @member {number} quality
@@ -3586,7 +3277,6 @@ export const CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
      * @instance
      */
     CSVCMsg_VoiceInit.prototype.quality = 0;
-
     /**
      * CSVCMsg_VoiceInit codec.
      * @member {string} codec
@@ -3594,7 +3284,6 @@ export const CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
      * @instance
      */
     CSVCMsg_VoiceInit.prototype.codec = "";
-
     /**
      * CSVCMsg_VoiceInit version.
      * @member {number} version
@@ -3602,7 +3291,6 @@ export const CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
      * @instance
      */
     CSVCMsg_VoiceInit.prototype.version = 0;
-
     /**
      * Decodes a CSVCMsg_VoiceInit message from the specified reader or buffer.
      * @function decode
@@ -3617,9 +3305,9 @@ export const CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
     CSVCMsg_VoiceInit.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_VoiceInit();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_VoiceInit();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.quality = reader.int32();
@@ -3637,12 +3325,9 @@ export const CSVCMsg_VoiceInit = $root.CSVCMsg_VoiceInit = (() => {
         }
         return message;
     };
-
     return CSVCMsg_VoiceInit;
 })();
-
-export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
-
+exports.CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (function () {
     /**
      * Properties of a CSVCMsg_VoiceData.
      * @exports ICSVCMsg_VoiceData
@@ -3658,7 +3343,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @property {number|null} [sectionNumber] CSVCMsg_VoiceData sectionNumber
      * @property {number|null} [uncompressedSampleOffset] CSVCMsg_VoiceData uncompressedSampleOffset
      */
-
     /**
      * Constructs a new CSVCMsg_VoiceData.
      * @exports CSVCMsg_VoiceData
@@ -3669,11 +3353,10 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      */
     function CSVCMsg_VoiceData(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_VoiceData client.
      * @member {number} client
@@ -3681,7 +3364,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @instance
      */
     CSVCMsg_VoiceData.prototype.client = 0;
-
     /**
      * CSVCMsg_VoiceData proximity.
      * @member {boolean} proximity
@@ -3689,7 +3371,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @instance
      */
     CSVCMsg_VoiceData.prototype.proximity = false;
-
     /**
      * CSVCMsg_VoiceData xuid.
      * @member {number|Long} xuid
@@ -3697,7 +3378,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @instance
      */
     CSVCMsg_VoiceData.prototype.xuid = $util.Long ? $util.Long.fromBits(0, 0, false) : 0;
-
     /**
      * CSVCMsg_VoiceData audibleMask.
      * @member {number} audibleMask
@@ -3705,7 +3385,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @instance
      */
     CSVCMsg_VoiceData.prototype.audibleMask = 0;
-
     /**
      * CSVCMsg_VoiceData voiceData.
      * @member {Uint8Array} voiceData
@@ -3713,7 +3392,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @instance
      */
     CSVCMsg_VoiceData.prototype.voiceData = $util.newBuffer([]);
-
     /**
      * CSVCMsg_VoiceData caster.
      * @member {boolean} caster
@@ -3721,7 +3399,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @instance
      */
     CSVCMsg_VoiceData.prototype.caster = false;
-
     /**
      * CSVCMsg_VoiceData format.
      * @member {VoiceDataFormat_t} format
@@ -3729,7 +3406,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @instance
      */
     CSVCMsg_VoiceData.prototype.format = 1;
-
     /**
      * CSVCMsg_VoiceData sequenceBytes.
      * @member {number} sequenceBytes
@@ -3737,7 +3413,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @instance
      */
     CSVCMsg_VoiceData.prototype.sequenceBytes = 0;
-
     /**
      * CSVCMsg_VoiceData sectionNumber.
      * @member {number} sectionNumber
@@ -3745,7 +3420,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @instance
      */
     CSVCMsg_VoiceData.prototype.sectionNumber = 0;
-
     /**
      * CSVCMsg_VoiceData uncompressedSampleOffset.
      * @member {number} uncompressedSampleOffset
@@ -3753,7 +3427,6 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
      * @instance
      */
     CSVCMsg_VoiceData.prototype.uncompressedSampleOffset = 0;
-
     /**
      * Decodes a CSVCMsg_VoiceData message from the specified reader or buffer.
      * @function decode
@@ -3768,9 +3441,9 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
     CSVCMsg_VoiceData.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_VoiceData();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_VoiceData();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.client = reader.int32();
@@ -3809,12 +3482,9 @@ export const CSVCMsg_VoiceData = $root.CSVCMsg_VoiceData = (() => {
         }
         return message;
     };
-
     return CSVCMsg_VoiceData;
 })();
-
-export const CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
-
+exports.CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (function () {
     /**
      * Properties of a CSVCMsg_FixAngle.
      * @exports ICSVCMsg_FixAngle
@@ -3822,7 +3492,6 @@ export const CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
      * @property {boolean|null} [relative] CSVCMsg_FixAngle relative
      * @property {ICMsgQAngle|null} [angle] CSVCMsg_FixAngle angle
      */
-
     /**
      * Constructs a new CSVCMsg_FixAngle.
      * @exports CSVCMsg_FixAngle
@@ -3833,11 +3502,10 @@ export const CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
      */
     function CSVCMsg_FixAngle(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_FixAngle relative.
      * @member {boolean} relative
@@ -3845,7 +3513,6 @@ export const CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
      * @instance
      */
     CSVCMsg_FixAngle.prototype.relative = false;
-
     /**
      * CSVCMsg_FixAngle angle.
      * @member {ICMsgQAngle|null|undefined} angle
@@ -3853,7 +3520,6 @@ export const CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
      * @instance
      */
     CSVCMsg_FixAngle.prototype.angle = null;
-
     /**
      * Decodes a CSVCMsg_FixAngle message from the specified reader or buffer.
      * @function decode
@@ -3868,9 +3534,9 @@ export const CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
     CSVCMsg_FixAngle.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_FixAngle();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_FixAngle();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.relative = reader.bool();
@@ -3885,19 +3551,15 @@ export const CSVCMsg_FixAngle = $root.CSVCMsg_FixAngle = (() => {
         }
         return message;
     };
-
     return CSVCMsg_FixAngle;
 })();
-
-export const CSVCMsg_CrosshairAngle = $root.CSVCMsg_CrosshairAngle = (() => {
-
+exports.CSVCMsg_CrosshairAngle = $root.CSVCMsg_CrosshairAngle = (function () {
     /**
      * Properties of a CSVCMsg_CrosshairAngle.
      * @exports ICSVCMsg_CrosshairAngle
      * @interface ICSVCMsg_CrosshairAngle
      * @property {ICMsgQAngle|null} [angle] CSVCMsg_CrosshairAngle angle
      */
-
     /**
      * Constructs a new CSVCMsg_CrosshairAngle.
      * @exports CSVCMsg_CrosshairAngle
@@ -3908,11 +3570,10 @@ export const CSVCMsg_CrosshairAngle = $root.CSVCMsg_CrosshairAngle = (() => {
      */
     function CSVCMsg_CrosshairAngle(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_CrosshairAngle angle.
      * @member {ICMsgQAngle|null|undefined} angle
@@ -3920,7 +3581,6 @@ export const CSVCMsg_CrosshairAngle = $root.CSVCMsg_CrosshairAngle = (() => {
      * @instance
      */
     CSVCMsg_CrosshairAngle.prototype.angle = null;
-
     /**
      * Decodes a CSVCMsg_CrosshairAngle message from the specified reader or buffer.
      * @function decode
@@ -3935,9 +3595,9 @@ export const CSVCMsg_CrosshairAngle = $root.CSVCMsg_CrosshairAngle = (() => {
     CSVCMsg_CrosshairAngle.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_CrosshairAngle();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_CrosshairAngle();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.angle = $root.CMsgQAngle.decode(reader, reader.uint32());
@@ -3949,19 +3609,15 @@ export const CSVCMsg_CrosshairAngle = $root.CSVCMsg_CrosshairAngle = (() => {
         }
         return message;
     };
-
     return CSVCMsg_CrosshairAngle;
 })();
-
-export const CSVCMsg_Prefetch = $root.CSVCMsg_Prefetch = (() => {
-
+exports.CSVCMsg_Prefetch = $root.CSVCMsg_Prefetch = (function () {
     /**
      * Properties of a CSVCMsg_Prefetch.
      * @exports ICSVCMsg_Prefetch
      * @interface ICSVCMsg_Prefetch
      * @property {number|null} [soundIndex] CSVCMsg_Prefetch soundIndex
      */
-
     /**
      * Constructs a new CSVCMsg_Prefetch.
      * @exports CSVCMsg_Prefetch
@@ -3972,11 +3628,10 @@ export const CSVCMsg_Prefetch = $root.CSVCMsg_Prefetch = (() => {
      */
     function CSVCMsg_Prefetch(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_Prefetch soundIndex.
      * @member {number} soundIndex
@@ -3984,7 +3639,6 @@ export const CSVCMsg_Prefetch = $root.CSVCMsg_Prefetch = (() => {
      * @instance
      */
     CSVCMsg_Prefetch.prototype.soundIndex = 0;
-
     /**
      * Decodes a CSVCMsg_Prefetch message from the specified reader or buffer.
      * @function decode
@@ -3999,9 +3653,9 @@ export const CSVCMsg_Prefetch = $root.CSVCMsg_Prefetch = (() => {
     CSVCMsg_Prefetch.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_Prefetch();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_Prefetch();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.soundIndex = reader.int32();
@@ -4013,12 +3667,9 @@ export const CSVCMsg_Prefetch = $root.CSVCMsg_Prefetch = (() => {
         }
         return message;
     };
-
     return CSVCMsg_Prefetch;
 })();
-
-export const CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
-
+exports.CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (function () {
     /**
      * Properties of a CSVCMsg_BSPDecal.
      * @exports ICSVCMsg_BSPDecal
@@ -4029,7 +3680,6 @@ export const CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
      * @property {number|null} [modelIndex] CSVCMsg_BSPDecal modelIndex
      * @property {boolean|null} [lowPriority] CSVCMsg_BSPDecal lowPriority
      */
-
     /**
      * Constructs a new CSVCMsg_BSPDecal.
      * @exports CSVCMsg_BSPDecal
@@ -4040,11 +3690,10 @@ export const CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
      */
     function CSVCMsg_BSPDecal(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_BSPDecal pos.
      * @member {ICMsgVector|null|undefined} pos
@@ -4052,7 +3701,6 @@ export const CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
      * @instance
      */
     CSVCMsg_BSPDecal.prototype.pos = null;
-
     /**
      * CSVCMsg_BSPDecal decalTextureIndex.
      * @member {number} decalTextureIndex
@@ -4060,7 +3708,6 @@ export const CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
      * @instance
      */
     CSVCMsg_BSPDecal.prototype.decalTextureIndex = 0;
-
     /**
      * CSVCMsg_BSPDecal entityIndex.
      * @member {number} entityIndex
@@ -4068,7 +3715,6 @@ export const CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
      * @instance
      */
     CSVCMsg_BSPDecal.prototype.entityIndex = 0;
-
     /**
      * CSVCMsg_BSPDecal modelIndex.
      * @member {number} modelIndex
@@ -4076,7 +3722,6 @@ export const CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
      * @instance
      */
     CSVCMsg_BSPDecal.prototype.modelIndex = 0;
-
     /**
      * CSVCMsg_BSPDecal lowPriority.
      * @member {boolean} lowPriority
@@ -4084,7 +3729,6 @@ export const CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
      * @instance
      */
     CSVCMsg_BSPDecal.prototype.lowPriority = false;
-
     /**
      * Decodes a CSVCMsg_BSPDecal message from the specified reader or buffer.
      * @function decode
@@ -4099,9 +3743,9 @@ export const CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
     CSVCMsg_BSPDecal.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_BSPDecal();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_BSPDecal();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.pos = $root.CMsgVector.decode(reader, reader.uint32());
@@ -4125,12 +3769,9 @@ export const CSVCMsg_BSPDecal = $root.CSVCMsg_BSPDecal = (() => {
         }
         return message;
     };
-
     return CSVCMsg_BSPDecal;
 })();
-
-export const CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
-
+exports.CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (function () {
     /**
      * Properties of a CSVCMsg_SplitScreen.
      * @exports ICSVCMsg_SplitScreen
@@ -4139,7 +3780,6 @@ export const CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
      * @property {number|null} [slot] CSVCMsg_SplitScreen slot
      * @property {number|null} [playerIndex] CSVCMsg_SplitScreen playerIndex
      */
-
     /**
      * Constructs a new CSVCMsg_SplitScreen.
      * @exports CSVCMsg_SplitScreen
@@ -4150,11 +3790,10 @@ export const CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
      */
     function CSVCMsg_SplitScreen(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_SplitScreen type.
      * @member {ESplitScreenMessageType} type
@@ -4162,7 +3801,6 @@ export const CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
      * @instance
      */
     CSVCMsg_SplitScreen.prototype.type = 0;
-
     /**
      * CSVCMsg_SplitScreen slot.
      * @member {number} slot
@@ -4170,7 +3808,6 @@ export const CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
      * @instance
      */
     CSVCMsg_SplitScreen.prototype.slot = 0;
-
     /**
      * CSVCMsg_SplitScreen playerIndex.
      * @member {number} playerIndex
@@ -4178,7 +3815,6 @@ export const CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
      * @instance
      */
     CSVCMsg_SplitScreen.prototype.playerIndex = 0;
-
     /**
      * Decodes a CSVCMsg_SplitScreen message from the specified reader or buffer.
      * @function decode
@@ -4193,9 +3829,9 @@ export const CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
     CSVCMsg_SplitScreen.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_SplitScreen();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_SplitScreen();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.type = reader.int32();
@@ -4213,12 +3849,9 @@ export const CSVCMsg_SplitScreen = $root.CSVCMsg_SplitScreen = (() => {
         }
         return message;
     };
-
     return CSVCMsg_SplitScreen;
 })();
-
-export const CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
-
+exports.CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (function () {
     /**
      * Properties of a CSVCMsg_GetCvarValue.
      * @exports ICSVCMsg_GetCvarValue
@@ -4226,7 +3859,6 @@ export const CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
      * @property {number|null} [cookie] CSVCMsg_GetCvarValue cookie
      * @property {string|null} [cvarName] CSVCMsg_GetCvarValue cvarName
      */
-
     /**
      * Constructs a new CSVCMsg_GetCvarValue.
      * @exports CSVCMsg_GetCvarValue
@@ -4237,11 +3869,10 @@ export const CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
      */
     function CSVCMsg_GetCvarValue(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_GetCvarValue cookie.
      * @member {number} cookie
@@ -4249,7 +3880,6 @@ export const CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
      * @instance
      */
     CSVCMsg_GetCvarValue.prototype.cookie = 0;
-
     /**
      * CSVCMsg_GetCvarValue cvarName.
      * @member {string} cvarName
@@ -4257,7 +3887,6 @@ export const CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
      * @instance
      */
     CSVCMsg_GetCvarValue.prototype.cvarName = "";
-
     /**
      * Decodes a CSVCMsg_GetCvarValue message from the specified reader or buffer.
      * @function decode
@@ -4272,9 +3901,9 @@ export const CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
     CSVCMsg_GetCvarValue.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GetCvarValue();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GetCvarValue();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.cookie = reader.int32();
@@ -4289,12 +3918,9 @@ export const CSVCMsg_GetCvarValue = $root.CSVCMsg_GetCvarValue = (() => {
         }
         return message;
     };
-
     return CSVCMsg_GetCvarValue;
 })();
-
-export const CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
-
+exports.CSVCMsg_Menu = $root.CSVCMsg_Menu = (function () {
     /**
      * Properties of a CSVCMsg_Menu.
      * @exports ICSVCMsg_Menu
@@ -4302,7 +3928,6 @@ export const CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
      * @property {number|null} [dialogType] CSVCMsg_Menu dialogType
      * @property {Uint8Array|null} [menuKeyValues] CSVCMsg_Menu menuKeyValues
      */
-
     /**
      * Constructs a new CSVCMsg_Menu.
      * @exports CSVCMsg_Menu
@@ -4313,11 +3938,10 @@ export const CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
      */
     function CSVCMsg_Menu(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_Menu dialogType.
      * @member {number} dialogType
@@ -4325,7 +3949,6 @@ export const CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
      * @instance
      */
     CSVCMsg_Menu.prototype.dialogType = 0;
-
     /**
      * CSVCMsg_Menu menuKeyValues.
      * @member {Uint8Array} menuKeyValues
@@ -4333,7 +3956,6 @@ export const CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
      * @instance
      */
     CSVCMsg_Menu.prototype.menuKeyValues = $util.newBuffer([]);
-
     /**
      * Decodes a CSVCMsg_Menu message from the specified reader or buffer.
      * @function decode
@@ -4348,9 +3970,9 @@ export const CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
     CSVCMsg_Menu.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_Menu();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_Menu();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.dialogType = reader.int32();
@@ -4365,12 +3987,9 @@ export const CSVCMsg_Menu = $root.CSVCMsg_Menu = (() => {
         }
         return message;
     };
-
     return CSVCMsg_Menu;
 })();
-
-export const CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
-
+exports.CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (function () {
     /**
      * Properties of a CSVCMsg_UserMessage.
      * @exports ICSVCMsg_UserMessage
@@ -4379,7 +3998,6 @@ export const CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
      * @property {Uint8Array|null} [msgData] CSVCMsg_UserMessage msgData
      * @property {number|null} [passthrough] CSVCMsg_UserMessage passthrough
      */
-
     /**
      * Constructs a new CSVCMsg_UserMessage.
      * @exports CSVCMsg_UserMessage
@@ -4390,11 +4008,10 @@ export const CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
      */
     function CSVCMsg_UserMessage(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_UserMessage msgType.
      * @member {number} msgType
@@ -4402,7 +4019,6 @@ export const CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
      * @instance
      */
     CSVCMsg_UserMessage.prototype.msgType = 0;
-
     /**
      * CSVCMsg_UserMessage msgData.
      * @member {Uint8Array} msgData
@@ -4410,7 +4026,6 @@ export const CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
      * @instance
      */
     CSVCMsg_UserMessage.prototype.msgData = $util.newBuffer([]);
-
     /**
      * CSVCMsg_UserMessage passthrough.
      * @member {number} passthrough
@@ -4418,7 +4033,6 @@ export const CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
      * @instance
      */
     CSVCMsg_UserMessage.prototype.passthrough = 0;
-
     /**
      * Decodes a CSVCMsg_UserMessage message from the specified reader or buffer.
      * @function decode
@@ -4433,9 +4047,9 @@ export const CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
     CSVCMsg_UserMessage.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_UserMessage();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_UserMessage();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.msgType = reader.int32();
@@ -4453,19 +4067,15 @@ export const CSVCMsg_UserMessage = $root.CSVCMsg_UserMessage = (() => {
         }
         return message;
     };
-
     return CSVCMsg_UserMessage;
 })();
-
-export const CSVCMsg_PaintmapData = $root.CSVCMsg_PaintmapData = (() => {
-
+exports.CSVCMsg_PaintmapData = $root.CSVCMsg_PaintmapData = (function () {
     /**
      * Properties of a CSVCMsg_PaintmapData.
      * @exports ICSVCMsg_PaintmapData
      * @interface ICSVCMsg_PaintmapData
      * @property {Uint8Array|null} [paintmap] CSVCMsg_PaintmapData paintmap
      */
-
     /**
      * Constructs a new CSVCMsg_PaintmapData.
      * @exports CSVCMsg_PaintmapData
@@ -4476,11 +4086,10 @@ export const CSVCMsg_PaintmapData = $root.CSVCMsg_PaintmapData = (() => {
      */
     function CSVCMsg_PaintmapData(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_PaintmapData paintmap.
      * @member {Uint8Array} paintmap
@@ -4488,7 +4097,6 @@ export const CSVCMsg_PaintmapData = $root.CSVCMsg_PaintmapData = (() => {
      * @instance
      */
     CSVCMsg_PaintmapData.prototype.paintmap = $util.newBuffer([]);
-
     /**
      * Decodes a CSVCMsg_PaintmapData message from the specified reader or buffer.
      * @function decode
@@ -4503,9 +4111,9 @@ export const CSVCMsg_PaintmapData = $root.CSVCMsg_PaintmapData = (() => {
     CSVCMsg_PaintmapData.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_PaintmapData();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_PaintmapData();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.paintmap = reader.bytes();
@@ -4517,12 +4125,9 @@ export const CSVCMsg_PaintmapData = $root.CSVCMsg_PaintmapData = (() => {
         }
         return message;
     };
-
     return CSVCMsg_PaintmapData;
 })();
-
-export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
-
+exports.CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (function () {
     /**
      * Properties of a CSVCMsg_GameEvent.
      * @exports ICSVCMsg_GameEvent
@@ -4532,7 +4137,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
      * @property {Array.<CSVCMsg_GameEvent.Ikey_t>|null} [keys] CSVCMsg_GameEvent keys
      * @property {number|null} [passthrough] CSVCMsg_GameEvent passthrough
      */
-
     /**
      * Constructs a new CSVCMsg_GameEvent.
      * @exports CSVCMsg_GameEvent
@@ -4544,11 +4148,10 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
     function CSVCMsg_GameEvent(properties) {
         this.keys = [];
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_GameEvent eventName.
      * @member {string} eventName
@@ -4556,7 +4159,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
      * @instance
      */
     CSVCMsg_GameEvent.prototype.eventName = "";
-
     /**
      * CSVCMsg_GameEvent eventid.
      * @member {number} eventid
@@ -4564,7 +4166,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
      * @instance
      */
     CSVCMsg_GameEvent.prototype.eventid = 0;
-
     /**
      * CSVCMsg_GameEvent keys.
      * @member {Array.<CSVCMsg_GameEvent.Ikey_t>} keys
@@ -4572,7 +4173,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
      * @instance
      */
     CSVCMsg_GameEvent.prototype.keys = $util.emptyArray;
-
     /**
      * CSVCMsg_GameEvent passthrough.
      * @member {number} passthrough
@@ -4580,7 +4180,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
      * @instance
      */
     CSVCMsg_GameEvent.prototype.passthrough = 0;
-
     /**
      * Decodes a CSVCMsg_GameEvent message from the specified reader or buffer.
      * @function decode
@@ -4595,9 +4194,9 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
     CSVCMsg_GameEvent.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GameEvent();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GameEvent();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.eventName = reader.string();
@@ -4620,9 +4219,7 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
         }
         return message;
     };
-
     CSVCMsg_GameEvent.key_t = (function () {
-
         /**
          * Properties of a key_t.
          * @memberof CSVCMsg_GameEvent
@@ -4637,7 +4234,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @property {number|Long|null} [valUint64] key_t valUint64
          * @property {Uint8Array|null} [valWstring] key_t valWstring
          */
-
         /**
          * Constructs a new key_t.
          * @memberof CSVCMsg_GameEvent
@@ -4648,11 +4244,10 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          */
         function key_t(properties) {
             if (properties)
-                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
-
         /**
          * key_t type.
          * @member {number} type
@@ -4660,7 +4255,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @instance
          */
         key_t.prototype.type = 0;
-
         /**
          * key_t valString.
          * @member {string} valString
@@ -4668,7 +4262,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @instance
          */
         key_t.prototype.valString = "";
-
         /**
          * key_t valFloat.
          * @member {number} valFloat
@@ -4676,7 +4269,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @instance
          */
         key_t.prototype.valFloat = 0;
-
         /**
          * key_t valLong.
          * @member {number} valLong
@@ -4684,7 +4276,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @instance
          */
         key_t.prototype.valLong = 0;
-
         /**
          * key_t valShort.
          * @member {number} valShort
@@ -4692,7 +4283,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @instance
          */
         key_t.prototype.valShort = 0;
-
         /**
          * key_t valByte.
          * @member {number} valByte
@@ -4700,7 +4290,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @instance
          */
         key_t.prototype.valByte = 0;
-
         /**
          * key_t valBool.
          * @member {boolean} valBool
@@ -4708,7 +4297,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @instance
          */
         key_t.prototype.valBool = false;
-
         /**
          * key_t valUint64.
          * @member {number|Long} valUint64
@@ -4716,7 +4304,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @instance
          */
         key_t.prototype.valUint64 = $util.Long ? $util.Long.fromBits(0, 0, true) : 0;
-
         /**
          * key_t valWstring.
          * @member {Uint8Array} valWstring
@@ -4724,7 +4311,6 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
          * @instance
          */
         key_t.prototype.valWstring = $util.newBuffer([]);
-
         /**
          * Decodes a key_t message from the specified reader or buffer.
          * @function decode
@@ -4739,9 +4325,9 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
         key_t.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GameEvent.key_t();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GameEvent.key_t();
             while (reader.pos < end) {
-                let tag = reader.uint32();
+                var tag = reader.uint32();
                 switch (tag >>> 3) {
                     case 1:
                         message.type = reader.int32();
@@ -4777,22 +4363,17 @@ export const CSVCMsg_GameEvent = $root.CSVCMsg_GameEvent = (() => {
             }
             return message;
         };
-
         return key_t;
     })();
-
     return CSVCMsg_GameEvent;
 })();
-
-export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
-
+exports.CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (function () {
     /**
      * Properties of a CSVCMsg_GameEventList.
      * @exports ICSVCMsg_GameEventList
      * @interface ICSVCMsg_GameEventList
      * @property {Array.<CSVCMsg_GameEventList.Idescriptor_t>|null} [descriptors] CSVCMsg_GameEventList descriptors
      */
-
     /**
      * Constructs a new CSVCMsg_GameEventList.
      * @exports CSVCMsg_GameEventList
@@ -4804,11 +4385,10 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
     function CSVCMsg_GameEventList(properties) {
         this.descriptors = [];
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_GameEventList descriptors.
      * @member {Array.<CSVCMsg_GameEventList.Idescriptor_t>} descriptors
@@ -4816,7 +4396,6 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
      * @instance
      */
     CSVCMsg_GameEventList.prototype.descriptors = $util.emptyArray;
-
     /**
      * Decodes a CSVCMsg_GameEventList message from the specified reader or buffer.
      * @function decode
@@ -4831,9 +4410,9 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
     CSVCMsg_GameEventList.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GameEventList();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GameEventList();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     if (!(message.descriptors && message.descriptors.length))
@@ -4847,9 +4426,7 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
         }
         return message;
     };
-
     CSVCMsg_GameEventList.key_t = (function () {
-
         /**
          * Properties of a key_t.
          * @memberof CSVCMsg_GameEventList
@@ -4857,7 +4434,6 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
          * @property {number|null} [type] key_t type
          * @property {string|null} [name] key_t name
          */
-
         /**
          * Constructs a new key_t.
          * @memberof CSVCMsg_GameEventList
@@ -4868,11 +4444,10 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
          */
         function key_t(properties) {
             if (properties)
-                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
-
         /**
          * key_t type.
          * @member {number} type
@@ -4880,7 +4455,6 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
          * @instance
          */
         key_t.prototype.type = 0;
-
         /**
          * key_t name.
          * @member {string} name
@@ -4888,7 +4462,6 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
          * @instance
          */
         key_t.prototype.name = "";
-
         /**
          * Decodes a key_t message from the specified reader or buffer.
          * @function decode
@@ -4903,9 +4476,9 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
         key_t.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GameEventList.key_t();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GameEventList.key_t();
             while (reader.pos < end) {
-                let tag = reader.uint32();
+                var tag = reader.uint32();
                 switch (tag >>> 3) {
                     case 1:
                         message.type = reader.int32();
@@ -4920,12 +4493,9 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
             }
             return message;
         };
-
         return key_t;
     })();
-
     CSVCMsg_GameEventList.descriptor_t = (function () {
-
         /**
          * Properties of a descriptor_t.
          * @memberof CSVCMsg_GameEventList
@@ -4934,7 +4504,6 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
          * @property {string|null} [name] descriptor_t name
          * @property {Array.<CSVCMsg_GameEventList.Ikey_t>|null} [keys] descriptor_t keys
          */
-
         /**
          * Constructs a new descriptor_t.
          * @memberof CSVCMsg_GameEventList
@@ -4946,11 +4515,10 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
         function descriptor_t(properties) {
             this.keys = [];
             if (properties)
-                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
-
         /**
          * descriptor_t eventid.
          * @member {number} eventid
@@ -4958,7 +4526,6 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
          * @instance
          */
         descriptor_t.prototype.eventid = 0;
-
         /**
          * descriptor_t name.
          * @member {string} name
@@ -4966,7 +4533,6 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
          * @instance
          */
         descriptor_t.prototype.name = "";
-
         /**
          * descriptor_t keys.
          * @member {Array.<CSVCMsg_GameEventList.Ikey_t>} keys
@@ -4974,7 +4540,6 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
          * @instance
          */
         descriptor_t.prototype.keys = $util.emptyArray;
-
         /**
          * Decodes a descriptor_t message from the specified reader or buffer.
          * @function decode
@@ -4989,9 +4554,9 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
         descriptor_t.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GameEventList.descriptor_t();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_GameEventList.descriptor_t();
             while (reader.pos < end) {
-                let tag = reader.uint32();
+                var tag = reader.uint32();
                 switch (tag >>> 3) {
                     case 1:
                         message.eventid = reader.int32();
@@ -5011,15 +4576,11 @@ export const CSVCMsg_GameEventList = $root.CSVCMsg_GameEventList = (() => {
             }
             return message;
         };
-
         return descriptor_t;
     })();
-
     return CSVCMsg_GameEventList;
 })();
-
-export const CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
-
+exports.CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (function () {
     /**
      * Properties of a CSVCMsg_TempEntities.
      * @exports ICSVCMsg_TempEntities
@@ -5028,7 +4589,6 @@ export const CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
      * @property {number|null} [numEntries] CSVCMsg_TempEntities numEntries
      * @property {Uint8Array|null} [entityData] CSVCMsg_TempEntities entityData
      */
-
     /**
      * Constructs a new CSVCMsg_TempEntities.
      * @exports CSVCMsg_TempEntities
@@ -5039,11 +4599,10 @@ export const CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
      */
     function CSVCMsg_TempEntities(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_TempEntities reliable.
      * @member {boolean} reliable
@@ -5051,7 +4610,6 @@ export const CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
      * @instance
      */
     CSVCMsg_TempEntities.prototype.reliable = false;
-
     /**
      * CSVCMsg_TempEntities numEntries.
      * @member {number} numEntries
@@ -5059,7 +4617,6 @@ export const CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
      * @instance
      */
     CSVCMsg_TempEntities.prototype.numEntries = 0;
-
     /**
      * CSVCMsg_TempEntities entityData.
      * @member {Uint8Array} entityData
@@ -5067,7 +4624,6 @@ export const CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
      * @instance
      */
     CSVCMsg_TempEntities.prototype.entityData = $util.newBuffer([]);
-
     /**
      * Decodes a CSVCMsg_TempEntities message from the specified reader or buffer.
      * @function decode
@@ -5082,9 +4638,9 @@ export const CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
     CSVCMsg_TempEntities.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_TempEntities();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_TempEntities();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.reliable = reader.bool();
@@ -5102,12 +4658,9 @@ export const CSVCMsg_TempEntities = $root.CSVCMsg_TempEntities = (() => {
         }
         return message;
     };
-
     return CSVCMsg_TempEntities;
 })();
-
-export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
-
+exports.CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (function () {
     /**
      * Properties of a CSVCMsg_PacketEntities.
      * @exports ICSVCMsg_PacketEntities
@@ -5120,7 +4673,6 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
      * @property {number|null} [deltaFrom] CSVCMsg_PacketEntities deltaFrom
      * @property {Uint8Array|null} [entityData] CSVCMsg_PacketEntities entityData
      */
-
     /**
      * Constructs a new CSVCMsg_PacketEntities.
      * @exports CSVCMsg_PacketEntities
@@ -5131,11 +4683,10 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
      */
     function CSVCMsg_PacketEntities(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_PacketEntities maxEntries.
      * @member {number} maxEntries
@@ -5143,7 +4694,6 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
      * @instance
      */
     CSVCMsg_PacketEntities.prototype.maxEntries = 0;
-
     /**
      * CSVCMsg_PacketEntities updatedEntries.
      * @member {number} updatedEntries
@@ -5151,7 +4701,6 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
      * @instance
      */
     CSVCMsg_PacketEntities.prototype.updatedEntries = 0;
-
     /**
      * CSVCMsg_PacketEntities isDelta.
      * @member {boolean} isDelta
@@ -5159,7 +4708,6 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
      * @instance
      */
     CSVCMsg_PacketEntities.prototype.isDelta = false;
-
     /**
      * CSVCMsg_PacketEntities updateBaseline.
      * @member {boolean} updateBaseline
@@ -5167,7 +4715,6 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
      * @instance
      */
     CSVCMsg_PacketEntities.prototype.updateBaseline = false;
-
     /**
      * CSVCMsg_PacketEntities baseline.
      * @member {number} baseline
@@ -5175,7 +4722,6 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
      * @instance
      */
     CSVCMsg_PacketEntities.prototype.baseline = 0;
-
     /**
      * CSVCMsg_PacketEntities deltaFrom.
      * @member {number} deltaFrom
@@ -5183,7 +4729,6 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
      * @instance
      */
     CSVCMsg_PacketEntities.prototype.deltaFrom = 0;
-
     /**
      * CSVCMsg_PacketEntities entityData.
      * @member {Uint8Array} entityData
@@ -5191,7 +4736,6 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
      * @instance
      */
     CSVCMsg_PacketEntities.prototype.entityData = $util.newBuffer([]);
-
     /**
      * Decodes a CSVCMsg_PacketEntities message from the specified reader or buffer.
      * @function decode
@@ -5206,9 +4750,9 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
     CSVCMsg_PacketEntities.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_PacketEntities();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_PacketEntities();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.maxEntries = reader.int32();
@@ -5238,12 +4782,9 @@ export const CSVCMsg_PacketEntities = $root.CSVCMsg_PacketEntities = (() => {
         }
         return message;
     };
-
     return CSVCMsg_PacketEntities;
 })();
-
-export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
-
+exports.CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (function () {
     /**
      * Properties of a CSVCMsg_Sounds.
      * @exports ICSVCMsg_Sounds
@@ -5251,7 +4792,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
      * @property {boolean|null} [reliableSound] CSVCMsg_Sounds reliableSound
      * @property {Array.<CSVCMsg_Sounds.Isounddata_t>|null} [sounds] CSVCMsg_Sounds sounds
      */
-
     /**
      * Constructs a new CSVCMsg_Sounds.
      * @exports CSVCMsg_Sounds
@@ -5263,11 +4803,10 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
     function CSVCMsg_Sounds(properties) {
         this.sounds = [];
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_Sounds reliableSound.
      * @member {boolean} reliableSound
@@ -5275,7 +4814,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
      * @instance
      */
     CSVCMsg_Sounds.prototype.reliableSound = false;
-
     /**
      * CSVCMsg_Sounds sounds.
      * @member {Array.<CSVCMsg_Sounds.Isounddata_t>} sounds
@@ -5283,7 +4821,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
      * @instance
      */
     CSVCMsg_Sounds.prototype.sounds = $util.emptyArray;
-
     /**
      * Decodes a CSVCMsg_Sounds message from the specified reader or buffer.
      * @function decode
@@ -5298,9 +4835,9 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
     CSVCMsg_Sounds.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_Sounds();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_Sounds();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.reliableSound = reader.bool();
@@ -5317,9 +4854,7 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
         }
         return message;
     };
-
     CSVCMsg_Sounds.sounddata_t = (function () {
-
         /**
          * Properties of a sounddata_t.
          * @memberof CSVCMsg_Sounds
@@ -5342,7 +4877,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @property {boolean|null} [isSentence] sounddata_t isSentence
          * @property {boolean|null} [isAmbient] sounddata_t isAmbient
          */
-
         /**
          * Constructs a new sounddata_t.
          * @memberof CSVCMsg_Sounds
@@ -5353,11 +4887,10 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          */
         function sounddata_t(properties) {
             if (properties)
-                for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
                         this[keys[i]] = properties[keys[i]];
         }
-
         /**
          * sounddata_t originX.
          * @member {number} originX
@@ -5365,7 +4898,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.originX = 0;
-
         /**
          * sounddata_t originY.
          * @member {number} originY
@@ -5373,7 +4905,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.originY = 0;
-
         /**
          * sounddata_t originZ.
          * @member {number} originZ
@@ -5381,7 +4912,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.originZ = 0;
-
         /**
          * sounddata_t volume.
          * @member {number} volume
@@ -5389,7 +4919,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.volume = 0;
-
         /**
          * sounddata_t delayValue.
          * @member {number} delayValue
@@ -5397,7 +4926,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.delayValue = 0;
-
         /**
          * sounddata_t sequenceNumber.
          * @member {number} sequenceNumber
@@ -5405,7 +4933,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.sequenceNumber = 0;
-
         /**
          * sounddata_t entityIndex.
          * @member {number} entityIndex
@@ -5413,7 +4940,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.entityIndex = 0;
-
         /**
          * sounddata_t channel.
          * @member {number} channel
@@ -5421,7 +4947,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.channel = 0;
-
         /**
          * sounddata_t pitch.
          * @member {number} pitch
@@ -5429,7 +4954,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.pitch = 0;
-
         /**
          * sounddata_t flags.
          * @member {number} flags
@@ -5437,7 +4961,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.flags = 0;
-
         /**
          * sounddata_t soundNum.
          * @member {number} soundNum
@@ -5445,7 +4968,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.soundNum = 0;
-
         /**
          * sounddata_t soundNumHandle.
          * @member {number} soundNumHandle
@@ -5453,7 +4975,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.soundNumHandle = 0;
-
         /**
          * sounddata_t speakerEntity.
          * @member {number} speakerEntity
@@ -5461,7 +4982,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.speakerEntity = 0;
-
         /**
          * sounddata_t randomSeed.
          * @member {number} randomSeed
@@ -5469,7 +4989,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.randomSeed = 0;
-
         /**
          * sounddata_t soundLevel.
          * @member {number} soundLevel
@@ -5477,7 +4996,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.soundLevel = 0;
-
         /**
          * sounddata_t isSentence.
          * @member {boolean} isSentence
@@ -5485,7 +5003,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.isSentence = false;
-
         /**
          * sounddata_t isAmbient.
          * @member {boolean} isAmbient
@@ -5493,7 +5010,6 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
          * @instance
          */
         sounddata_t.prototype.isAmbient = false;
-
         /**
          * Decodes a sounddata_t message from the specified reader or buffer.
          * @function decode
@@ -5508,9 +5024,9 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
         sounddata_t.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_Sounds.sounddata_t();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_Sounds.sounddata_t();
             while (reader.pos < end) {
-                let tag = reader.uint32();
+                var tag = reader.uint32();
                 switch (tag >>> 3) {
                     case 1:
                         message.originX = reader.sint32();
@@ -5570,15 +5086,11 @@ export const CSVCMsg_Sounds = $root.CSVCMsg_Sounds = (() => {
             }
             return message;
         };
-
         return sounddata_t;
     })();
-
     return CSVCMsg_Sounds;
 })();
-
-export const CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
-
+exports.CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (function () {
     /**
      * Properties of a CSVCMsg_EntityMsg.
      * @exports ICSVCMsg_EntityMsg
@@ -5587,7 +5099,6 @@ export const CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
      * @property {number|null} [classId] CSVCMsg_EntityMsg classId
      * @property {Uint8Array|null} [entData] CSVCMsg_EntityMsg entData
      */
-
     /**
      * Constructs a new CSVCMsg_EntityMsg.
      * @exports CSVCMsg_EntityMsg
@@ -5598,11 +5109,10 @@ export const CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
      */
     function CSVCMsg_EntityMsg(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_EntityMsg entIndex.
      * @member {number} entIndex
@@ -5610,7 +5120,6 @@ export const CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
      * @instance
      */
     CSVCMsg_EntityMsg.prototype.entIndex = 0;
-
     /**
      * CSVCMsg_EntityMsg classId.
      * @member {number} classId
@@ -5618,7 +5127,6 @@ export const CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
      * @instance
      */
     CSVCMsg_EntityMsg.prototype.classId = 0;
-
     /**
      * CSVCMsg_EntityMsg entData.
      * @member {Uint8Array} entData
@@ -5626,7 +5134,6 @@ export const CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
      * @instance
      */
     CSVCMsg_EntityMsg.prototype.entData = $util.newBuffer([]);
-
     /**
      * Decodes a CSVCMsg_EntityMsg message from the specified reader or buffer.
      * @function decode
@@ -5641,9 +5148,9 @@ export const CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
     CSVCMsg_EntityMsg.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_EntityMsg();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_EntityMsg();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.entIndex = reader.int32();
@@ -5661,19 +5168,15 @@ export const CSVCMsg_EntityMsg = $root.CSVCMsg_EntityMsg = (() => {
         }
         return message;
     };
-
     return CSVCMsg_EntityMsg;
 })();
-
-export const CSVCMsg_CmdKeyValues = $root.CSVCMsg_CmdKeyValues = (() => {
-
+exports.CSVCMsg_CmdKeyValues = $root.CSVCMsg_CmdKeyValues = (function () {
     /**
      * Properties of a CSVCMsg_CmdKeyValues.
      * @exports ICSVCMsg_CmdKeyValues
      * @interface ICSVCMsg_CmdKeyValues
      * @property {Uint8Array|null} [keyvalues] CSVCMsg_CmdKeyValues keyvalues
      */
-
     /**
      * Constructs a new CSVCMsg_CmdKeyValues.
      * @exports CSVCMsg_CmdKeyValues
@@ -5684,11 +5187,10 @@ export const CSVCMsg_CmdKeyValues = $root.CSVCMsg_CmdKeyValues = (() => {
      */
     function CSVCMsg_CmdKeyValues(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_CmdKeyValues keyvalues.
      * @member {Uint8Array} keyvalues
@@ -5696,7 +5198,6 @@ export const CSVCMsg_CmdKeyValues = $root.CSVCMsg_CmdKeyValues = (() => {
      * @instance
      */
     CSVCMsg_CmdKeyValues.prototype.keyvalues = $util.newBuffer([]);
-
     /**
      * Decodes a CSVCMsg_CmdKeyValues message from the specified reader or buffer.
      * @function decode
@@ -5711,9 +5212,9 @@ export const CSVCMsg_CmdKeyValues = $root.CSVCMsg_CmdKeyValues = (() => {
     CSVCMsg_CmdKeyValues.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_CmdKeyValues();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_CmdKeyValues();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.keyvalues = reader.bytes();
@@ -5725,12 +5226,9 @@ export const CSVCMsg_CmdKeyValues = $root.CSVCMsg_CmdKeyValues = (() => {
         }
         return message;
     };
-
     return CSVCMsg_CmdKeyValues;
 })();
-
-export const CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
-
+exports.CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (function () {
     /**
      * Properties of a CSVCMsg_EncryptedData.
      * @exports ICSVCMsg_EncryptedData
@@ -5738,7 +5236,6 @@ export const CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
      * @property {Uint8Array|null} [encrypted] CSVCMsg_EncryptedData encrypted
      * @property {number|null} [keyType] CSVCMsg_EncryptedData keyType
      */
-
     /**
      * Constructs a new CSVCMsg_EncryptedData.
      * @exports CSVCMsg_EncryptedData
@@ -5749,11 +5246,10 @@ export const CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
      */
     function CSVCMsg_EncryptedData(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_EncryptedData encrypted.
      * @member {Uint8Array} encrypted
@@ -5761,7 +5257,6 @@ export const CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
      * @instance
      */
     CSVCMsg_EncryptedData.prototype.encrypted = $util.newBuffer([]);
-
     /**
      * CSVCMsg_EncryptedData keyType.
      * @member {number} keyType
@@ -5769,7 +5264,6 @@ export const CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
      * @instance
      */
     CSVCMsg_EncryptedData.prototype.keyType = 0;
-
     /**
      * Decodes a CSVCMsg_EncryptedData message from the specified reader or buffer.
      * @function decode
@@ -5784,9 +5278,9 @@ export const CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
     CSVCMsg_EncryptedData.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_EncryptedData();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_EncryptedData();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.encrypted = reader.bytes();
@@ -5801,12 +5295,9 @@ export const CSVCMsg_EncryptedData = $root.CSVCMsg_EncryptedData = (() => {
         }
         return message;
     };
-
     return CSVCMsg_EncryptedData;
 })();
-
-export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
-
+exports.CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (function () {
     /**
      * Properties of a CSVCMsg_HltvReplay.
      * @exports ICSVCMsg_HltvReplay
@@ -5819,7 +5310,6 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
      * @property {number|null} [replaySlowdownEnd] CSVCMsg_HltvReplay replaySlowdownEnd
      * @property {number|null} [replaySlowdownRate] CSVCMsg_HltvReplay replaySlowdownRate
      */
-
     /**
      * Constructs a new CSVCMsg_HltvReplay.
      * @exports CSVCMsg_HltvReplay
@@ -5830,11 +5320,10 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
      */
     function CSVCMsg_HltvReplay(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CSVCMsg_HltvReplay delay.
      * @member {number} delay
@@ -5842,7 +5331,6 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
      * @instance
      */
     CSVCMsg_HltvReplay.prototype.delay = 0;
-
     /**
      * CSVCMsg_HltvReplay primaryTarget.
      * @member {number} primaryTarget
@@ -5850,7 +5338,6 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
      * @instance
      */
     CSVCMsg_HltvReplay.prototype.primaryTarget = 0;
-
     /**
      * CSVCMsg_HltvReplay replayStopAt.
      * @member {number} replayStopAt
@@ -5858,7 +5345,6 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
      * @instance
      */
     CSVCMsg_HltvReplay.prototype.replayStopAt = 0;
-
     /**
      * CSVCMsg_HltvReplay replayStartAt.
      * @member {number} replayStartAt
@@ -5866,7 +5352,6 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
      * @instance
      */
     CSVCMsg_HltvReplay.prototype.replayStartAt = 0;
-
     /**
      * CSVCMsg_HltvReplay replaySlowdownBegin.
      * @member {number} replaySlowdownBegin
@@ -5874,7 +5359,6 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
      * @instance
      */
     CSVCMsg_HltvReplay.prototype.replaySlowdownBegin = 0;
-
     /**
      * CSVCMsg_HltvReplay replaySlowdownEnd.
      * @member {number} replaySlowdownEnd
@@ -5882,7 +5366,6 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
      * @instance
      */
     CSVCMsg_HltvReplay.prototype.replaySlowdownEnd = 0;
-
     /**
      * CSVCMsg_HltvReplay replaySlowdownRate.
      * @member {number} replaySlowdownRate
@@ -5890,7 +5373,6 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
      * @instance
      */
     CSVCMsg_HltvReplay.prototype.replaySlowdownRate = 0;
-
     /**
      * Decodes a CSVCMsg_HltvReplay message from the specified reader or buffer.
      * @function decode
@@ -5905,9 +5387,9 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
     CSVCMsg_HltvReplay.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_HltvReplay();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CSVCMsg_HltvReplay();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.delay = reader.int32();
@@ -5937,12 +5419,9 @@ export const CSVCMsg_HltvReplay = $root.CSVCMsg_HltvReplay = (() => {
         }
         return message;
     };
-
     return CSVCMsg_HltvReplay;
 })();
-
-export const CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
-
+exports.CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (function () {
     /**
      * Properties of a CCLCMsg_HltvReplay.
      * @exports ICCLCMsg_HltvReplay
@@ -5953,7 +5432,6 @@ export const CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
      * @property {number|null} [primaryTargetEntIndex] CCLCMsg_HltvReplay primaryTargetEntIndex
      * @property {number|null} [eventTime] CCLCMsg_HltvReplay eventTime
      */
-
     /**
      * Constructs a new CCLCMsg_HltvReplay.
      * @exports CCLCMsg_HltvReplay
@@ -5964,11 +5442,10 @@ export const CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
      */
     function CCLCMsg_HltvReplay(properties) {
         if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
-
     /**
      * CCLCMsg_HltvReplay request.
      * @member {number} request
@@ -5976,7 +5453,6 @@ export const CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
      * @instance
      */
     CCLCMsg_HltvReplay.prototype.request = 0;
-
     /**
      * CCLCMsg_HltvReplay slowdownLength.
      * @member {number} slowdownLength
@@ -5984,7 +5460,6 @@ export const CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
      * @instance
      */
     CCLCMsg_HltvReplay.prototype.slowdownLength = 0;
-
     /**
      * CCLCMsg_HltvReplay slowdownRate.
      * @member {number} slowdownRate
@@ -5992,7 +5467,6 @@ export const CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
      * @instance
      */
     CCLCMsg_HltvReplay.prototype.slowdownRate = 0;
-
     /**
      * CCLCMsg_HltvReplay primaryTargetEntIndex.
      * @member {number} primaryTargetEntIndex
@@ -6000,7 +5474,6 @@ export const CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
      * @instance
      */
     CCLCMsg_HltvReplay.prototype.primaryTargetEntIndex = 0;
-
     /**
      * CCLCMsg_HltvReplay eventTime.
      * @member {number} eventTime
@@ -6008,7 +5481,6 @@ export const CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
      * @instance
      */
     CCLCMsg_HltvReplay.prototype.eventTime = 0;
-
     /**
      * Decodes a CCLCMsg_HltvReplay message from the specified reader or buffer.
      * @function decode
@@ -6023,9 +5495,9 @@ export const CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
     CCLCMsg_HltvReplay.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_HltvReplay();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CCLCMsg_HltvReplay();
         while (reader.pos < end) {
-            let tag = reader.uint32();
+            var tag = reader.uint32();
             switch (tag >>> 3) {
                 case 1:
                     message.request = reader.int32();
@@ -6049,8 +5521,5 @@ export const CCLCMsg_HltvReplay = $root.CCLCMsg_HltvReplay = (() => {
         }
         return message;
     };
-
     return CCLCMsg_HltvReplay;
 })();
-
-export { $root as default };

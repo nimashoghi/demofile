@@ -1,26 +1,15 @@
 {
-    "name": "demofile",
-    "version": "1.0.6",
-    "author": "Saul Rennison <saul.rennison@gmail.com>",
+    "name": "@nimashoghi/demofile",
+    "version": "0.0.1",
+    "author": "Nima Shoghi",
     "license": "MIT",
-    "keywords": [
-        "demo",
-        "source",
-        "csgo"
-    ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/saul/demofile.git"
+        "url": "https://github.com/nimashoghi/demofile.git"
     },
     "scripts": {
-        "lint": "tslint -p . --fix --exclude 'src/**/*.d.ts'",
         "build": "tsc && mkdir -p ./dist/protobufs/ && tsc --allowJs --declaration false --outDir ./dist/protobufs/ ./src/protobufs/*.js && cp ./src/protobufs/*.d.ts ./dist/protobufs/",
-        "watch": "tsc -w",
-        "generate-docs": "shx rm -rf docs && typedoc --out docs/ && shx touch docs/.nojekyll",
-        "bundle": "npm run build && browserify browser/app.js -d -o browser/bundle.js",
-        "preversion": "npm run lint && shx rm -rf dist browser/bundle.js && npm run bundle && git add -A browser/bundle.js dist/**",
-        "version": "npm run generate-docs && git add -A docs",
-        "postversion": "git push && git push --tags && npm publish"
+        "watch": "tsc -w"
     },
     "main": "dist/demo.js",
     "types": "dist/demo.d.ts",

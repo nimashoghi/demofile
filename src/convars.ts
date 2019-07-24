@@ -9,15 +9,25 @@ interface IConVarChangeEvent {
     oldValue?: string
 }
 
+export interface ConVarEventsMap {
+    change: IConVarChangeEvent
+}
+
 export declare interface ConVars {
     /**
      * Fired when any console variable is changed (e.g., 'mp_buytime').
      */
+    on(event: "change", listener: (event: IConVarChangeEvent) => void): this
+    emit(name: "change", event: IConVarChangeEvent): boolean
+
     on(
-        event: "change" | string,
-        listener: (event: IConVarChangeEvent) => void,
+        event: keyof ConVarEventsMap,
+        listener: (event: ConVarEventsMap[keyof ConVarEventsMap]) => void,
     ): this
-    emit(name: "change" | string, event: IConVarChangeEvent): boolean
+    emit(
+        name: keyof ConVarEventsMap,
+        event: ConVarEventsMap[keyof ConVarEventsMap],
+    ): boolean
 }
 
 /**
@@ -45,7 +55,7 @@ export class ConVars extends EventEmitter {
                         oldValue,
                     }
 
-                    this.emit(cvar.name, args)
+                    this.emit(cvar.name as any, args)
                     this.emit("change", args)
                 }
             },

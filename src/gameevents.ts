@@ -9,501 +9,256 @@ interface GameEventEvent<T> {
     event: T
 }
 
-export interface EventsMap {
+export interface GameEventsMap {
     event: GameEventTypes.INonSpecificGameEvent
-
     server_spawn: GameEventTypes.IEventServerSpawn
-
     server_pre_shutdown: GameEventTypes.IEventServerPreShutdown
-
     server_shutdown: GameEventTypes.IEventServerShutdown
-
     server_cvar: GameEventTypes.IEventServerCvar
-
     server_message: GameEventTypes.IEventServerMessage
-
     server_addban: GameEventTypes.IEventServerAddban
-
     server_removeban: GameEventTypes.IEventServerRemoveban
-
     player_connect: GameEventTypes.IEventPlayerConnect
-
     player_info: GameEventTypes.IEventPlayerInfo
-
     player_disconnect: GameEventTypes.IEventPlayerDisconnect
-
     player_activate: GameEventTypes.IEventPlayerActivate
-
     player_connect_full: GameEventTypes.IEventPlayerConnectFull
-
     player_say: GameEventTypes.IEventPlayerSay
-
     cs_round_start_beep: GameEventTypes.IEventCsRoundStartBeep
-
     cs_round_final_beep: GameEventTypes.IEventCsRoundFinalBeep
-
     round_time_warning: GameEventTypes.IEventRoundTimeWarning
-
     team_info: GameEventTypes.IEventTeamInfo
-
     team_score: GameEventTypes.IEventTeamScore
-
     teamplay_broadcast_audio: GameEventTypes.IEventTeamplayBroadcastAudio
-
     gameui_hidden: GameEventTypes.IEventGameuiHidden
-
     items_gifted: GameEventTypes.IEventItemsGifted
-
     player_team: GameEventTypes.IEventPlayerTeam
-
     player_class: GameEventTypes.IEventPlayerClass
-
     player_death: GameEventTypes.IEventPlayerDeath
-
     player_hurt: GameEventTypes.IEventPlayerHurt
-
     player_chat: GameEventTypes.IEventPlayerChat
-
     player_score: GameEventTypes.IEventPlayerScore
-
     player_spawn: GameEventTypes.IEventPlayerSpawn
-
     player_shoot: GameEventTypes.IEventPlayerShoot
-
     player_use: GameEventTypes.IEventPlayerUse
-
     player_changename: GameEventTypes.IEventPlayerChangename
-
     player_hintmessage: GameEventTypes.IEventPlayerHintmessage
-
     game_init: GameEventTypes.IEventGameInit
-
     game_newmap: GameEventTypes.IEventGameNewmap
-
     game_start: GameEventTypes.IEventGameStart
-
     game_end: GameEventTypes.IEventGameEnd
-
     round_start: GameEventTypes.IEventRoundStart
-
     round_announce_match_point: GameEventTypes.IEventRoundAnnounceMatchPoint
-
     round_announce_final: GameEventTypes.IEventRoundAnnounceFinal
-
     round_announce_last_round_half: GameEventTypes.IEventRoundAnnounceLastRoundHalf
-
     round_announce_match_start: GameEventTypes.IEventRoundAnnounceMatchStart
-
     round_announce_warmup: GameEventTypes.IEventRoundAnnounceWarmup
-
     round_end: GameEventTypes.IEventRoundEnd
-
     round_end_upload_stats: GameEventTypes.IEventRoundEndUploadStats
-
     round_officially_ended: GameEventTypes.IEventRoundOfficiallyEnded
-
     ugc_map_info_received: GameEventTypes.IEventUgcMapInfoReceived
-
     ugc_map_unsubscribed: GameEventTypes.IEventUgcMapUnsubscribed
-
     ugc_map_download_error: GameEventTypes.IEventUgcMapDownloadError
-
     ugc_file_download_finished: GameEventTypes.IEventUgcFileDownloadFinished
-
     ugc_file_download_start: GameEventTypes.IEventUgcFileDownloadStart
-
     begin_new_match: GameEventTypes.IEventBeginNewMatch
-
     round_start_pre_entity: GameEventTypes.IEventRoundStartPreEntity
-
     teamplay_round_start: GameEventTypes.IEventTeamplayRoundStart
-
     hostname_changed: GameEventTypes.IEventHostnameChanged
-
     difficulty_changed: GameEventTypes.IEventDifficultyChanged
-
     finale_start: GameEventTypes.IEventFinaleStart
-
     game_message: GameEventTypes.IEventGameMessage
-
     dm_bonus_weapon_start: GameEventTypes.IEventDmBonusWeaponStart
-
     survival_announce_phase: GameEventTypes.IEventSurvivalAnnouncePhase
-
     break_breakable: GameEventTypes.IEventBreakBreakable
-
     break_prop: GameEventTypes.IEventBreakProp
-
     player_decal: GameEventTypes.IEventPlayerDecal
-
     entity_killed: GameEventTypes.IEventEntityKilled
-
     bonus_updated: GameEventTypes.IEventBonusUpdated
-
     player_stats_updated: GameEventTypes.IEventPlayerStatsUpdated
-
     achievement_event: GameEventTypes.IEventAchievementEvent
-
     achievement_increment: GameEventTypes.IEventAchievementIncrement
-
     achievement_earned: GameEventTypes.IEventAchievementEarned
-
     achievement_write_failed: GameEventTypes.IEventAchievementWriteFailed
-
     physgun_pickup: GameEventTypes.IEventPhysgunPickup
-
     flare_ignite_npc: GameEventTypes.IEventFlareIgniteNpc
-
     helicopter_grenade_punt_miss: GameEventTypes.IEventHelicopterGrenadePuntMiss
-
     user_data_downloaded: GameEventTypes.IEventUserDataDownloaded
-
     ragdoll_dissolved: GameEventTypes.IEventRagdollDissolved
-
     gameinstructor_draw: GameEventTypes.IEventGameinstructorDraw
-
     gameinstructor_nodraw: GameEventTypes.IEventGameinstructorNodraw
-
     map_transition: GameEventTypes.IEventMapTransition
-
     entity_visible: GameEventTypes.IEventEntityVisible
-
     set_instructor_group_enabled: GameEventTypes.IEventSetInstructorGroupEnabled
-
     instructor_server_hint_create: GameEventTypes.IEventInstructorServerHintCreate
-
     instructor_server_hint_stop: GameEventTypes.IEventInstructorServerHintStop
-
     read_game_titledata: GameEventTypes.IEventReadGameTitledata
-
     write_game_titledata: GameEventTypes.IEventWriteGameTitledata
-
     reset_game_titledata: GameEventTypes.IEventResetGameTitledata
-
     weaponhud_selection: GameEventTypes.IEventWeaponhudSelection
-
     vote_ended: GameEventTypes.IEventVoteEnded
-
     vote_started: GameEventTypes.IEventVoteStarted
-
     vote_changed: GameEventTypes.IEventVoteChanged
-
     vote_passed: GameEventTypes.IEventVotePassed
-
     vote_failed: GameEventTypes.IEventVoteFailed
-
     vote_cast: GameEventTypes.IEventVoteCast
-
     vote_options: GameEventTypes.IEventVoteOptions
-
     endmatch_mapvote_selecting_map: GameEventTypes.IEventEndmatchMapvoteSelectingMap
-
     endmatch_cmm_start_reveal_items: GameEventTypes.IEventEndmatchCmmStartRevealItems
-
     inventory_updated: GameEventTypes.IEventInventoryUpdated
-
     cart_updated: GameEventTypes.IEventCartUpdated
-
     store_pricesheet_updated: GameEventTypes.IEventStorePricesheetUpdated
-
     gc_connected: GameEventTypes.IEventGcConnected
-
     item_schema_initialized: GameEventTypes.IEventItemSchemaInitialized
-
     client_loadout_changed: GameEventTypes.IEventClientLoadoutChanged
-
     add_player_sonar_icon: GameEventTypes.IEventAddPlayerSonarIcon
-
     add_bullet_hit_marker: GameEventTypes.IEventAddBulletHitMarker
-
     verify_client_hit: GameEventTypes.IEventVerifyClientHit
-
     other_death: GameEventTypes.IEventOtherDeath
-
     item_purchase: GameEventTypes.IEventItemPurchase
-
     bomb_beginplant: GameEventTypes.IEventBombBeginplant
-
     bomb_abortplant: GameEventTypes.IEventBombAbortplant
-
     bomb_planted: GameEventTypes.IEventBombPlanted
-
     bomb_defused: GameEventTypes.IEventBombDefused
-
     bomb_exploded: GameEventTypes.IEventBombExploded
-
     bomb_dropped: GameEventTypes.IEventBombDropped
-
     bomb_pickup: GameEventTypes.IEventBombPickup
-
     defuser_dropped: GameEventTypes.IEventDefuserDropped
-
     defuser_pickup: GameEventTypes.IEventDefuserPickup
-
     announce_phase_end: GameEventTypes.IEventAnnouncePhaseEnd
-
     cs_intermission: GameEventTypes.IEventCsIntermission
-
     bomb_begindefuse: GameEventTypes.IEventBombBegindefuse
-
     bomb_abortdefuse: GameEventTypes.IEventBombAbortdefuse
-
     hostage_follows: GameEventTypes.IEventHostageFollows
-
     hostage_hurt: GameEventTypes.IEventHostageHurt
-
     hostage_killed: GameEventTypes.IEventHostageKilled
-
     hostage_rescued: GameEventTypes.IEventHostageRescued
-
     hostage_stops_following: GameEventTypes.IEventHostageStopsFollowing
-
     hostage_rescued_all: GameEventTypes.IEventHostageRescuedAll
-
     hostage_call_for_help: GameEventTypes.IEventHostageCallForHelp
-
     vip_escaped: GameEventTypes.IEventVipEscaped
-
     vip_killed: GameEventTypes.IEventVipKilled
-
     player_radio: GameEventTypes.IEventPlayerRadio
-
     bomb_beep: GameEventTypes.IEventBombBeep
-
     weapon_fire: GameEventTypes.IEventWeaponFire
-
     weapon_fire_on_empty: GameEventTypes.IEventWeaponFireOnEmpty
-
     grenade_thrown: GameEventTypes.IEventGrenadeThrown
-
     weapon_outofammo: GameEventTypes.IEventWeaponOutofammo
-
     weapon_reload: GameEventTypes.IEventWeaponReload
-
     weapon_zoom: GameEventTypes.IEventWeaponZoom
-
     silencer_detach: GameEventTypes.IEventSilencerDetach
-
     inspect_weapon: GameEventTypes.IEventInspectWeapon
-
     weapon_zoom_rifle: GameEventTypes.IEventWeaponZoomRifle
-
     player_spawned: GameEventTypes.IEventPlayerSpawned
-
     item_pickup: GameEventTypes.IEventItemPickup
-
     item_remove: GameEventTypes.IEventItemRemove
-
     ammo_pickup: GameEventTypes.IEventAmmoPickup
-
     item_equip: GameEventTypes.IEventItemEquip
-
     enter_buyzone: GameEventTypes.IEventEnterBuyzone
-
     exit_buyzone: GameEventTypes.IEventExitBuyzone
-
     buytime_ended: GameEventTypes.IEventBuytimeEnded
-
     enter_bombzone: GameEventTypes.IEventEnterBombzone
-
     exit_bombzone: GameEventTypes.IEventExitBombzone
-
     enter_rescue_zone: GameEventTypes.IEventEnterRescueZone
-
     exit_rescue_zone: GameEventTypes.IEventExitRescueZone
-
     silencer_off: GameEventTypes.IEventSilencerOff
-
     silencer_on: GameEventTypes.IEventSilencerOn
-
     buymenu_open: GameEventTypes.IEventBuymenuOpen
-
     buymenu_close: GameEventTypes.IEventBuymenuClose
-
     round_prestart: GameEventTypes.IEventRoundPrestart
-
     round_poststart: GameEventTypes.IEventRoundPoststart
-
     grenade_bounce: GameEventTypes.IEventGrenadeBounce
-
     hegrenade_detonate: GameEventTypes.IEventHegrenadeDetonate
-
     flashbang_detonate: GameEventTypes.IEventFlashbangDetonate
-
     smokegrenade_detonate: GameEventTypes.IEventSmokegrenadeDetonate
-
     smokegrenade_expired: GameEventTypes.IEventSmokegrenadeExpired
-
     molotov_detonate: GameEventTypes.IEventMolotovDetonate
-
     decoy_detonate: GameEventTypes.IEventDecoyDetonate
-
     decoy_started: GameEventTypes.IEventDecoyStarted
-
     tagrenade_detonate: GameEventTypes.IEventTagrenadeDetonate
-
     inferno_startburn: GameEventTypes.IEventInfernoStartburn
-
     inferno_expire: GameEventTypes.IEventInfernoExpire
-
     inferno_extinguish: GameEventTypes.IEventInfernoExtinguish
-
     decoy_firing: GameEventTypes.IEventDecoyFiring
-
     bullet_impact: GameEventTypes.IEventBulletImpact
-
     player_footstep: GameEventTypes.IEventPlayerFootstep
-
     player_jump: GameEventTypes.IEventPlayerJump
-
     player_blind: GameEventTypes.IEventPlayerBlind
-
     player_falldamage: GameEventTypes.IEventPlayerFalldamage
-
     door_moving: GameEventTypes.IEventDoorMoving
-
     round_freeze_end: GameEventTypes.IEventRoundFreezeEnd
-
     mb_input_lock_success: GameEventTypes.IEventMbInputLockSuccess
-
     mb_input_lock_cancel: GameEventTypes.IEventMbInputLockCancel
-
     nav_blocked: GameEventTypes.IEventNavBlocked
-
     nav_generate: GameEventTypes.IEventNavGenerate
-
     achievement_info_loaded: GameEventTypes.IEventAchievementInfoLoaded
-
     spec_target_updated: GameEventTypes.IEventSpecTargetUpdated
-
     spec_mode_updated: GameEventTypes.IEventSpecModeUpdated
-
     hltv_changed_mode: GameEventTypes.IEventHltvChangedMode
-
     cs_game_disconnected: GameEventTypes.IEventCsGameDisconnected
-
     cs_win_panel_round: GameEventTypes.IEventCsWinPanelRound
-
     cs_win_panel_match: GameEventTypes.IEventCsWinPanelMatch
-
     cs_match_end_restart: GameEventTypes.IEventCsMatchEndRestart
-
     cs_pre_restart: GameEventTypes.IEventCsPreRestart
-
     show_freezepanel: GameEventTypes.IEventShowFreezepanel
-
     hide_freezepanel: GameEventTypes.IEventHideFreezepanel
-
     freezecam_started: GameEventTypes.IEventFreezecamStarted
-
     player_avenged_teammate: GameEventTypes.IEventPlayerAvengedTeammate
-
     achievement_earned_local: GameEventTypes.IEventAchievementEarnedLocal
-
     item_found: GameEventTypes.IEventItemFound
-
     repost_xbox_achievements: GameEventTypes.IEventRepostXboxAchievements
-
     match_end_conditions: GameEventTypes.IEventMatchEndConditions
-
     round_mvp: GameEventTypes.IEventRoundMvp
-
     client_disconnect: GameEventTypes.IEventClientDisconnect
-
     gg_player_levelup: GameEventTypes.IEventGgPlayerLevelup
-
     ggtr_player_levelup: GameEventTypes.IEventGgtrPlayerLevelup
-
     assassination_target_killed: GameEventTypes.IEventAssassinationTargetKilled
-
     ggprogressive_player_levelup: GameEventTypes.IEventGgprogressivePlayerLevelup
-
     gg_killed_enemy: GameEventTypes.IEventGgKilledEnemy
-
     gg_final_weapon_achieved: GameEventTypes.IEventGgFinalWeaponAchieved
-
     gg_bonus_grenade_achieved: GameEventTypes.IEventGgBonusGrenadeAchieved
-
     switch_team: GameEventTypes.IEventSwitchTeam
-
     gg_leader: GameEventTypes.IEventGgLeader
-
     gg_team_leader: GameEventTypes.IEventGgTeamLeader
-
     gg_player_impending_upgrade: GameEventTypes.IEventGgPlayerImpendingUpgrade
-
     write_profile_data: GameEventTypes.IEventWriteProfileData
-
     trial_time_expired: GameEventTypes.IEventTrialTimeExpired
-
     update_matchmaking_stats: GameEventTypes.IEventUpdateMatchmakingStats
-
     player_reset_vote: GameEventTypes.IEventPlayerResetVote
-
     enable_restart_voting: GameEventTypes.IEventEnableRestartVoting
-
     sfuievent: GameEventTypes.IEventSfuievent
-
     start_vote: GameEventTypes.IEventStartVote
-
     player_given_c4: GameEventTypes.IEventPlayerGivenC4
-
     gg_reset_round_start_sounds: GameEventTypes.IEventGgResetRoundStartSounds
-
     tr_player_flashbanged: GameEventTypes.IEventTrPlayerFlashbanged
-
     tr_mark_complete: GameEventTypes.IEventTrMarkComplete
-
     tr_mark_best_time: GameEventTypes.IEventTrMarkBestTime
-
     tr_exit_hint_trigger: GameEventTypes.IEventTrExitHintTrigger
-
     bot_takeover: GameEventTypes.IEventBotTakeover
-
     tr_show_finish_msgbox: GameEventTypes.IEventTrShowFinishMsgbox
-
     tr_show_exit_msgbox: GameEventTypes.IEventTrShowExitMsgbox
-
     reset_player_controls: GameEventTypes.IEventResetPlayerControls
-
     jointeam_failed: GameEventTypes.IEventJointeamFailed
-
     teamchange_pending: GameEventTypes.IEventTeamchangePending
-
     material_default_complete: GameEventTypes.IEventMaterialDefaultComplete
-
     cs_prev_next_spectator: GameEventTypes.IEventCsPrevNextSpectator
-
     nextlevel_changed: GameEventTypes.IEventNextlevelChanged
-
     seasoncoin_levelup: GameEventTypes.IEventSeasoncoinLevelup
-
     tournament_reward: GameEventTypes.IEventTournamentReward
-
     start_halftime: GameEventTypes.IEventStartHalftime
-
     hltv_status: GameEventTypes.IEventHltvStatus
-
     hltv_cameraman: GameEventTypes.IEventHltvCameraman
-
     hltv_rank_camera: GameEventTypes.IEventHltvRankCamera
-
     hltv_rank_entity: GameEventTypes.IEventHltvRankEntity
-
     hltv_fixed: GameEventTypes.IEventHltvFixed
-
     hltv_chase: GameEventTypes.IEventHltvChase
-
     hltv_message: GameEventTypes.IEventHltvMessage
-
     hltv_title: GameEventTypes.IEventHltvTitle
-
     hltv_chat: GameEventTypes.IEventHltvChat
-
     hltv_changed_target: GameEventTypes.IEventHltvChangedTarget
 }
 
-export declare interface GameEvents {
+export declare interface GamesEvents {
     on(
         event: "event",
         listener: (event: GameEventTypes.INonSpecificGameEvent) => void,
@@ -1510,8 +1265,8 @@ export declare interface GameEvents {
     ): this
     // most exhaustive case
     on(
-        event: keyof EventsMap,
-        listener: (event: EventsMap[keyof EventsMap]) => void,
+        event: keyof GameEventsMap,
+        listener: (event: GameEventsMap[keyof GameEventsMap]) => void,
     ): this
 }
 

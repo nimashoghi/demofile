@@ -54,11 +54,14 @@ import {
 import {StringTables} from "./stringtables"
 import {UserMessages} from "./usermessages"
 
+export {ConVarEventsMap} from "./convars"
 export {GameRules} from "./entities/gamerules"
 export {Player} from "./entities/player"
 export {Team, TeamNumber} from "./entities/team"
-export {EventsMap} from "./gameevents"
+export {GameEventsMap} from "./gameevents"
 export {parseBinaryKeyValues} from "./keyvalues"
+export {StringTablesEventsMap} from "./stringtables"
+export {UserMessagesEventsMap} from "./usermessages"
 
 interface IDemoHeader {
     /**

@@ -73,6 +73,75 @@ interface IUserMessageEvent {
     msg: any
 }
 
+export interface UserMessagesEventsMap {
+    message: IUserMessageEvent
+    VGUIMenu: RequiredNonNullable<ICCSUsrMsg_VGUIMenu>
+    Geiger: RequiredNonNullable<ICCSUsrMsg_Geiger>
+    Train: RequiredNonNullable<ICCSUsrMsg_Train>
+    HudText: RequiredNonNullable<ICCSUsrMsg_HudText>
+    SayText: RequiredNonNullable<ICCSUsrMsg_SayText>
+    SayText2: RequiredNonNullable<ICCSUsrMsg_SayText2>
+    TextMsg: RequiredNonNullable<ICCSUsrMsg_TextMsg>
+    HudMsg: RequiredNonNullable<ICCSUsrMsg_HudMsg>
+    ResetHud: RequiredNonNullable<ICCSUsrMsg_ResetHud>
+    GameTitle: RequiredNonNullable<ICCSUsrMsg_GameTitle>
+    Shake: RequiredNonNullable<ICCSUsrMsg_Shake>
+    Fade: RequiredNonNullable<ICCSUsrMsg_Fade>
+    Rumble: RequiredNonNullable<ICCSUsrMsg_Rumble>
+    CloseCaption: RequiredNonNullable<ICCSUsrMsg_CloseCaption>
+    CloseCaptionDirect: RequiredNonNullable<ICCSUsrMsg_CloseCaptionDirect>
+    SendAudio: RequiredNonNullable<ICCSUsrMsg_SendAudio>
+    RawAudio: RequiredNonNullable<ICCSUsrMsg_RawAudio>
+    VoiceMask: RequiredNonNullable<ICCSUsrMsg_VoiceMask>
+    RequestState: RequiredNonNullable<ICCSUsrMsg_RequestState>
+    Damage: RequiredNonNullable<ICCSUsrMsg_Damage>
+    RadioText: RequiredNonNullable<ICCSUsrMsg_RadioText>
+    HintText: RequiredNonNullable<ICCSUsrMsg_HintText>
+    KeyHintText: RequiredNonNullable<ICCSUsrMsg_KeyHintText>
+    ProcessSpottedEntityUpdate: RequiredNonNullable<
+        ICCSUsrMsg_ProcessSpottedEntityUpdate
+    >
+    ReloadEffect: RequiredNonNullable<ICCSUsrMsg_ReloadEffect>
+    AdjustMoney: RequiredNonNullable<ICCSUsrMsg_AdjustMoney>
+    StopSpectatorMode: RequiredNonNullable<ICCSUsrMsg_StopSpectatorMode>
+    KillCam: RequiredNonNullable<ICCSUsrMsg_KillCam>
+    DesiredTimescale: RequiredNonNullable<ICCSUsrMsg_DesiredTimescale>
+    CurrentTimescale: RequiredNonNullable<ICCSUsrMsg_CurrentTimescale>
+    AchievementEvent: RequiredNonNullable<ICCSUsrMsg_AchievementEvent>
+    MatchEndConditions: RequiredNonNullable<ICCSUsrMsg_MatchEndConditions>
+    DisconnectToLobby: RequiredNonNullable<ICCSUsrMsg_DisconnectToLobby>
+    PlayerStatsUpdate: RequiredNonNullable<ICCSUsrMsg_PlayerStatsUpdate>
+    DisplayInventory: RequiredNonNullable<ICCSUsrMsg_DisplayInventory>
+    WarmupHasEnded: RequiredNonNullable<ICCSUsrMsg_WarmupHasEnded>
+    ClientInfo: RequiredNonNullable<ICCSUsrMsg_ClientInfo>
+    XRankGet: RequiredNonNullable<ICCSUsrMsg_XRankGet>
+    XRankUpd: RequiredNonNullable<ICCSUsrMsg_XRankUpd>
+    CallVoteFailed: RequiredNonNullable<ICCSUsrMsg_CallVoteFailed>
+    VoteStart: RequiredNonNullable<ICCSUsrMsg_VoteStart>
+    VotePass: RequiredNonNullable<ICCSUsrMsg_VotePass>
+    VoteFailed: RequiredNonNullable<ICCSUsrMsg_VoteFailed>
+    VoteSetup: RequiredNonNullable<ICCSUsrMsg_VoteSetup>
+    ServerRankRevealAll: RequiredNonNullable<ICCSUsrMsg_ServerRankRevealAll>
+    SendLastKillerDamageToClient: RequiredNonNullable<
+        ICCSUsrMsg_SendLastKillerDamageToClient
+    >
+    ServerRankUpdate: RequiredNonNullable<ICCSUsrMsg_ServerRankUpdate>
+    ItemPickup: RequiredNonNullable<ICCSUsrMsg_ItemPickup>
+    ShowMenu: RequiredNonNullable<ICCSUsrMsg_ShowMenu>
+    BarTime: RequiredNonNullable<ICCSUsrMsg_BarTime>
+    AmmoDenied: RequiredNonNullable<ICCSUsrMsg_AmmoDenied>
+    MarkAchievement: RequiredNonNullable<ICCSUsrMsg_MarkAchievement>
+    MatchStatsUpdate: RequiredNonNullable<ICCSUsrMsg_MatchStatsUpdate>
+    ItemDrop: RequiredNonNullable<ICCSUsrMsg_ItemDrop>
+    GlowPropTurnOff: RequiredNonNullable<ICCSUsrMsg_GlowPropTurnOff>
+    SendPlayerItemDrops: RequiredNonNullable<ICCSUsrMsg_SendPlayerItemDrops>
+    RoundBackupFilenames: RequiredNonNullable<ICCSUsrMsg_RoundBackupFilenames>
+    SendPlayerItemFound: RequiredNonNullable<ICCSUsrMsg_SendPlayerItemFound>
+    ReportHit: RequiredNonNullable<ICCSUsrMsg_ReportHit>
+    XpUpdate: RequiredNonNullable<ICCSUsrMsg_XpUpdate>
+    QuestProgress: RequiredNonNullable<ICCSUsrMsg_QuestProgress>
+}
+
 export declare interface UserMessages {
     /**
      * Fired when any user message is sent.
@@ -81,7 +150,6 @@ export declare interface UserMessages {
     on(message: "message", listener: (event: IUserMessageEvent) => void): this
     emit(message: "message", event: IUserMessageEvent): boolean
 
-    emit(message: UserMessageName, msg: any): boolean
     on(
         message: "VGUIMenu",
         listener: (msg: RequiredNonNullable<ICCSUsrMsg_VGUIMenu>) => void,
@@ -364,6 +432,18 @@ export declare interface UserMessages {
         message: "QuestProgress",
         listener: (msg: RequiredNonNullable<ICCSUsrMsg_QuestProgress>) => void,
     ): this
+
+    on(
+        message: keyof UserMessagesEventsMap,
+        listener: (
+            msg: UserMessagesEventsMap[keyof UserMessagesEventsMap],
+        ) => void,
+    ): this
+    emit(
+        message: keyof UserMessagesEventsMap,
+        msg: UserMessagesEventsMap[keyof UserMessagesEventsMap],
+    ): boolean
+    emit(message: UserMessageName, msg: any): boolean
 }
 
 /**

@@ -116,6 +116,12 @@ export type WellKnownStringTable =
     | "Movies"
     | "GameRulesCreation"
 
+export interface StringTablesEventsMap {
+    create: IStringTable<any>
+    postcreate: IStringTable<any>
+    update: IStringTableUpdateEvent<any>
+}
+
 export declare interface StringTables {
     findTableByName(table: "userinfo"): IStringTable<IPlayerInfo> | undefined
     findTableByName(
@@ -142,6 +148,17 @@ export declare interface StringTables {
         listener: (event: IStringTableUpdateEvent<any>) => void,
     ): this
     emit(name: "update", event: IStringTableUpdateEvent<any>): boolean
+
+    on(
+        event: keyof StringTablesEventsMap,
+        listener: (
+            event: StringTablesEventsMap[keyof StringTablesEventsMap],
+        ) => void,
+    ): this
+    emit(
+        name: keyof StringTablesEventsMap,
+        event: StringTablesEventsMap[keyof StringTablesEventsMap],
+    ): boolean
 }
 
 /**

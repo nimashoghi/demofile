@@ -32,7 +32,6 @@ import {
 import {CCSGameRulesProxy, CCSPlayerResource} from "./sendtabletypes"
 import {IStringTableUpdateEvent} from "./stringtables"
 
-export {EventsMap} from "./gameevents"
 export interface NetworkableConstructor<T = Networkable<any>> {
     new (
         demo: DemoFile,
@@ -197,6 +196,17 @@ export interface ITempEntEvent {
     props: UnknownEntityProps
 }
 
+export interface EntityEventMap {
+    datatablesready: undefined
+    baselineupdate: IBaselineUpdateEvent
+    create: IEntityCreationEvent
+    postcreate: IEntityCreationEvent
+    beforeremove: IEntityBeforeRemoveEvent
+    remove: IEntityRemoveEvent
+    change: IEntityChangeEvent
+    tempent: ITempEntEvent
+}
+
 export declare interface Entities {
     /**
      * Fired after data tables have been parsed.
@@ -258,6 +268,15 @@ export declare interface Entities {
      */
     on(event: "tempent", listener: (event: ITempEntEvent) => void): this
     emit(name: "tempent", event: ITempEntEvent): boolean
+
+    on(
+        event: keyof EntityEventMap,
+        listener: (event: EntityEventMap[keyof EntityEventMap]) => void,
+    ): this
+    emit(
+        name: keyof EntityEventMap,
+        event: EntityEventMap[keyof EntityEventMap],
+    ): boolean
 }
 
 /**

@@ -196,7 +196,7 @@ export interface ITempEntEvent {
     props: UnknownEntityProps
 }
 
-export interface EntityEventMap {
+export interface EntityEventsMap {
     datatablesready: undefined
     baselineupdate: IBaselineUpdateEvent
     create: IEntityCreationEvent
@@ -270,12 +270,12 @@ export declare interface Entities {
     emit(name: "tempent", event: ITempEntEvent): boolean
 
     on(
-        event: keyof EntityEventMap,
-        listener: (event: EntityEventMap[keyof EntityEventMap]) => void,
+        event: keyof EntityEventsMap,
+        listener: (event: EntityEventsMap[keyof EntityEventsMap]) => void,
     ): this
     emit(
-        name: keyof EntityEventMap,
-        event: EntityEventMap[keyof EntityEventMap],
+        name: keyof EntityEventsMap,
+        event: EntityEventsMap[keyof EntityEventsMap],
     ): boolean
 }
 

@@ -32,6 +32,7 @@ import {
 import {CCSGameRulesProxy, CCSPlayerResource} from "./sendtabletypes"
 import {IStringTableUpdateEvent} from "./stringtables"
 
+export {EventsMap} from "./gameevents"
 export interface NetworkableConstructor<T = Networkable<any>> {
     new (
         demo: DemoFile,

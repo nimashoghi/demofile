@@ -1,6 +1,6 @@
 {
     "name": "@nimashoghi/demofile",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "author": "Nima Shoghi",
     "license": "MIT",
     "repository": {
@@ -8,7 +8,9 @@
         "url": "https://github.com/nimashoghi/demofile.git"
     },
     "scripts": {
+        "clean": "rm -rf dist/",
         "build": "tsc && mkdir -p ./dist/protobufs/ && tsc --allowJs --declaration false --outDir ./dist/protobufs/ ./src/protobufs/*.js && cp ./src/protobufs/*.d.ts ./dist/protobufs/",
+        "rebuild": "yarn clean && yarn build",
         "watch": "tsc -w"
     },
     "main": "dist/demo.js",
